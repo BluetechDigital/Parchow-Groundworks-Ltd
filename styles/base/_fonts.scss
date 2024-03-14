@@ -1,0 +1,19 @@
+/*===== FONTS =====*/
+@font-face {
+	font-family: aspektaMain;
+	src: url("../fonts/Aspekta-750.woff2");
+}
+
+@font-face {
+	font-family: PlusJakartaSans;
+	src: url("../fonts/PlusJakartaSans.woff");
+}
+
+@font-face {
+	font-family: aspektaRegular;
+	src: url("../fonts/Aspekta-400.woff2");
+}
+
+// Font Stack Properties
+$main: "aspektaMain", sans-serif;
+$body: "aspektaRegular", "PlusJakartaSans", sans-serif;
