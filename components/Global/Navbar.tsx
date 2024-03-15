@@ -64,7 +64,7 @@ const Navbar: FC = () => {
 					viewport={{once: true}}
 					className="py-2 px-4 bg-primary-default flex items-center justify-between w-auto gap-2 lg:items-baseline"
 				>
-					<div className="flex items-center justify-center gap-4">
+					<div className="mx-auto md:mx-0 flex items-center justify-center gap-4">
 						<div
 							className={
 								globalContext?.themesOptionsContent?.email
@@ -133,7 +133,7 @@ const Navbar: FC = () => {
 							</Link>
 						</div>
 					</div>
-					<div className="flex items-center justify-center my-0 gap-4 text-center">
+					<div className="hidden md:flex items-center justify-center my-0 gap-4 text-center">
 						<Link
 							href={`${globalContext?.themesOptionsContent?.facebookLink}`}
 							className={
