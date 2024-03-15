@@ -38,7 +38,7 @@ const Footer: FC = () => {
 								height={500}
 								alt="Parchow Groundworks Ltd Logo"
 								src="/img/logos/Parchow-Groundworks-Ltd-logo.png"
-								className="object-contain object-center mx-auto lg:mx-0 w-fit h-[75px]"
+								className="object-contain object-center mx-auto lg:mx-0 w-[175px] h-[75px]"
 							/>
 						</Link>
 						<Paragraph
