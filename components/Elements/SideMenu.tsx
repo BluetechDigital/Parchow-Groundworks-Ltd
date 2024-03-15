@@ -313,7 +313,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 											version="1.1"
 											xmlns="http://www.w3.org/2000/svg"
 										>
-											<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+											<g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
 											<g
 												id="SVGRepo_tracerCarrier"
 												strokeLinecap="round"
@@ -350,7 +350,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 											version="1.1"
 											xmlns="http://www.w3.org/2000/svg"
 										>
-											<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+											<g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
 											<g
 												id="SVGRepo_tracerCarrier"
 												strokeLinecap="round"
@@ -386,7 +386,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 											className="w-5 h-5"
 											xmlns="http://www.w3.org/2000/svg"
 										>
-											<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+											<g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
 											<g
 												id="SVGRepo_tracerCarrier"
 												strokeLinecap="round"
@@ -422,7 +422,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 											className="w-5 h-5"
 											xmlns="http://www.w3.org/2000/svg"
 										>
-											<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+											<g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
 											<g
 												id="SVGRepo_tracerCarrier"
 												strokeLinecap="round"

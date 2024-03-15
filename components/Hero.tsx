@@ -31,7 +31,7 @@ const Hero: FC<IHero> = ({
 		<>
 			<div className={styles.hero + " relative z-50 flex flex-col lg:mb-28"}>
 				<div
-					className="lg:relative pb-8 lg:pb-28 pt-[85px] lg:pt-[110px] h-[75vh] flex flex-col lg:flex-row bg-primary-darker w-full bg-cover bg-center bg-no-repeat"
+					className="lg:relative pb-8 lg:pb-28 pt-[85px] lg:pt-[110px] h-[85vh] flex flex-col lg:flex-row bg-primary-darker w-full bg-cover bg-center bg-no-repeat"
 					style={{
 						backgroundImage: `linear-gradient(
 								0deg,
@@ -106,7 +106,7 @@ const Hero: FC<IHero> = ({
 										variants={arrayLoopStaggerChildren}
 									>
 										<div
-											className={`flex flex-col items-center justify-center p-2 bg-primary-dark w-full h-full sm:min-h-[22.5vh] sm:max-h-[22.5vh] transition-all ease-in-out duration-500`}
+											className={`flex flex-col items-center justify-center p-2 bg-primary-dark w-full h-full sm:min-h-[22.5vh] lg:min-h-[25vh] xl:max-h-[22.5vh] transition-all ease-in-out duration-500`}
 										>
 											<Image
 												alt={item?.icon?.altText}
