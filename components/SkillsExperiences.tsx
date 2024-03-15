@@ -53,7 +53,7 @@ const SkillsExperiences: FC<ISkillsExperiences> = ({
 							/>
 						</div>
 					</div>
-					<div className=" p-4 w-full grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 items-center justify-center">
+					<div className="p-4 w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-y-6 gap-4 items-center justify-center">
 						{skillsExperiencesGrid?.length > 0 ? (
 							skillsExperiencesGrid?.map((item: any, keys: number) => (
 								<Fragment key={keys}>
@@ -63,27 +63,19 @@ const SkillsExperiences: FC<ISkillsExperiences> = ({
 										whileInView="animate"
 										viewport={{once: true}}
 										variants={arrayLoopStaggerChildren}
-										className="flex items-center h-fit"
+										className="flex flex-col items-center justify-center h-fit"
 									>
-										<span>
-											<svg
-												version="1.1"
-												fill="#11acff"
-												viewBox="0 0 32 32"
-												className="block mr-5 w-4 h-4 md:w-7 md:h-7"
-												xmlns="http://www.w3.org/2000/svg"
-											>
-												<g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-												<g
-													id="SVGRepo_tracerCarrier"
-													strokeLinecap="round"
-													strokeLinejoin="round"
-												></g>
-												<g id="SVGRepo_iconCarrier">
-													<path d="M28.998 8.531l-2.134-2.134c-0.394-0.393-1.030-0.393-1.423 0l-12.795 12.795-6.086-6.13c-0.393-0.393-1.029-0.393-1.423 0l-2.134 2.134c-0.393 0.394-0.393 1.030 0 1.423l8.924 8.984c0.393 0.393 1.030 0.393 1.423 0l15.648-15.649c0.393-0.392 0.393-1.030 0-1.423z"></path>{" "}
-												</g>
-											</svg>
-										</span>
+										<Image
+											alt={item?.image?.altText}
+											src={item?.image?.sourceUrl}
+											width={item?.image?.mediaDetails.width}
+											height={item?.image?.mediaDetails.height}
+											className={`${
+												item?.image?.sourceUrl
+													? "bg-lightGreyTwo mx-auto rounded-full w-32 h-32 mb-6 object-cover object-center"
+													: "hidden"
+											}`}
+										/>
 										<Paragraph
 											content={item?.text}
 											tailwindStyling="text-black text-tiny xl:text-tiny text-left"

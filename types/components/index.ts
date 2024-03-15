@@ -257,6 +257,14 @@ export type ISkillsExperiences = {
 	skillsExperiencesGrid: [
 		{
 			text: string;
+			image: {
+				altText: string;
+				sourceUrl: string;
+				mediaDetails: {
+					width: number;
+					height: number;
+				};
+			};
 		}
 	];
 };

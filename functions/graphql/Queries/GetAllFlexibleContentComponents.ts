@@ -216,6 +216,14 @@ export const getAllFlexibleContentComponents = async (
 												}
             									skillsExperiencesGrid {
             										text
+													image {
+														altText
+														sourceUrl
+														mediaDetails {
+															height
+															width
+														}
+													}
             									}
             								}
 											... on ${postTypeFlexibleContent}_OurLocation {
