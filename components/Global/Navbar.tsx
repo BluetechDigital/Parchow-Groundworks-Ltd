@@ -57,13 +57,7 @@ const Navbar: FC = () => {
 		<>
 			<nav className={styles.navbar + ` z-[999] h-fit w-full fixed`}>
 				<NoticeInfoBanner />
-				<motion.div
-					initial={initial}
-					variants={stagger}
-					whileInView="animate"
-					viewport={{once: true}}
-					className="py-2 px-4 bg-primary-default flex items-center justify-between w-auto gap-2 lg:items-baseline"
-				>
+				<div className="py-2 px-4 bg-primary-default flex items-center justify-between w-auto gap-2 lg:items-baseline">
 					<div className="mx-auto md:mx-0 flex items-center justify-center gap-4">
 						<div
 							className={
@@ -259,7 +253,7 @@ const Navbar: FC = () => {
 							</svg>
 						</Link>
 					</div>
-				</motion.div>
+				</div>
 				<BookAppointment link={`/contact`} />
 				<div className="flex p-0 bg-white">
 					<div className="container mx-auto w-full lg:w-[20%] xl:w-[40%] py-0 px-4">
