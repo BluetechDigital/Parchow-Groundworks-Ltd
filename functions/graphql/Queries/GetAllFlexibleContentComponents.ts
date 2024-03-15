@@ -340,8 +340,13 @@ export const getAllFlexibleContentComponents = async (
 													target
 												}
 												backgroundImage {
-													sourceUrl
-												}
+            										altText
+            										sourceUrl
+            										mediaDetails {
+            											height
+            											width
+            										}
+            									}
 											}
 											... on ${postTypeFlexibleContent}_ContactForm {
 												fieldGroupName

@@ -20,6 +20,7 @@ import styles from "./../../styles/components/Navbar.module.scss";
 // Components
 import SideMenu from "../Elements/SideMenu";
 import NoticeInfoBanner from "../NoticeInfoBanner";
+import BookAppointment from "../Elements/BookAppointment";
 
 const Navbar: FC = () => {
 	const globalContext = useGlobalContext();
@@ -64,7 +65,7 @@ const Navbar: FC = () => {
 					className="py-2 px-4 bg-primary-default flex items-center justify-between w-auto gap-2 lg:items-baseline"
 				>
 					<div className=""></div>
-					<div className=" flex gap-4">
+					<div className="mx-auto lg:mx-0 flex items-center justify-center gap-4">
 						<div
 							className={
 								globalContext?.themesOptionsContent?.email
@@ -134,6 +135,7 @@ const Navbar: FC = () => {
 						</div>
 					</div>
 				</motion.div>
+				<BookAppointment link={`/contact`} />
 				<div className="flex p-0 bg-white">
 					<div className="container mx-auto w-full lg:w-[20%] xl:w-[40%] py-0 px-4">
 						<Link href="/">
@@ -143,7 +145,7 @@ const Navbar: FC = () => {
 								height={500}
 								alt="Parchow Groundworks Ltd Logo"
 								src="/img/logos/Parchow-Groundworks-Ltd-logo.png"
-								className="object-contain object-center w-[65px] h-[65px]"
+								className="object-contain object-center w-[125px] h-[65px]"
 							/>
 						</Link>
 					</div>
@@ -267,7 +269,7 @@ const Navbar: FC = () => {
 					</div>
 					<div
 						className="w-[5rem] hidden lg:block bg-accent-default"
-						style={{clipPath: "polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%)"}}
+						style={{clipPath: "polygon(50% 0%, 100% 0%, 100% 100%, 0% 100%)"}}
 					/>
 					<motion.div
 						initial={initialTwo}

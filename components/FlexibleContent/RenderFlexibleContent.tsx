@@ -198,7 +198,7 @@ const RenderFlexibleContent: FC = () => {
 									title={item?.title}
 									paragraph={item?.paragraph}
 									buttonLink={item?.buttonLink}
-									backgroundImage={item?.backgroundImage?.sourceUrl}
+									backgroundImage={item?.backgroundImage}
 								/>
 							</>
 						) : item?.fieldGroupName === `${FlexibleContent}_ContactForm` &&

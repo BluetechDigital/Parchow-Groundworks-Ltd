@@ -23,14 +23,14 @@ const SkillsExperiences: FC<ISkillsExperiences> = ({
 	return (
 		<>
 			<section className="relative overflow-hidden py-8 px-4 ">
-				<div className="container px-0 mx-auto">
+				<div className="lg:container px-0 mx-auto">
 					<div className="flex flex-wrap border-b border-primary-dark my-4">
 						<div className="w-full lg:w-1/2 p-4">
 							<motion.h3
 								initial={initial}
 								whileInView={fadeInUp}
 								viewport={{once: true}}
-								className="my-3 max-w-xl mx-auto lg:mx-0 uppercase text-black text-center lg:text-left font-semibold text-lg lg:text-xl"
+								className="my-3 max-w-xl mx-auto lg:mx-0 text-black text-center lg:text-left font-semibold text-lg sm:text-3xl"
 							>
 								{title}
 							</motion.h3>
@@ -53,7 +53,7 @@ const SkillsExperiences: FC<ISkillsExperiences> = ({
 							/>
 						</div>
 					</div>
-					<div className="p-4 w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-y-6 gap-4 items-center justify-center">
+					<div className="p-4 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-y-6 gap-4 items-center justify-center">
 						{skillsExperiencesGrid?.length > 0 ? (
 							skillsExperiencesGrid?.map((item: any, keys: number) => (
 								<Fragment key={keys}>

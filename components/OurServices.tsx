@@ -25,7 +25,7 @@ const OurServices: FC<IOurServices> = ({
 	return (
 		<>
 			<div className={styles.ourServices + " py-12 px-4 bg-primary-darker"}>
-				<div className="container m-auto flex flex-col items-center gap-6 lg:gap-8">
+				<div className="container m-auto flex flex-col items-center gap-12 lg:gap-6 lg:gap-8">
 					<motion.div
 						initial={initial}
 						variants={stagger}
@@ -46,7 +46,7 @@ const OurServices: FC<IOurServices> = ({
 								initial={initial}
 								whileInView={fadeInUp}
 								viewport={{once: true}}
-								className="my-3 max-w-lg mx-auto lg:mx-0 uppercase text-white text-center lg:text-left font-semibold text-lg sm:text-3xl"
+								className="my-3 max-w-lg mx-auto lg:mx-0 text-white text-center lg:text-left font-semibold text-lg sm:text-3xl"
 							>
 								{title}
 							</motion.h3>
@@ -55,7 +55,7 @@ const OurServices: FC<IOurServices> = ({
 								tailwindStyling="max-w-full lg:max-w-lg text-white text-base text-center lg:text-left"
 							/>
 						</div>
-						<div className="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full lg:w-[66%]">
+						<div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-6 w-full lg:w-[66%]">
 							{servicesGrid?.length > 0 ? (
 								servicesGrid?.slice(0, 2)?.map((item: any, keys: number) => (
 									<Fragment key={keys}>
@@ -80,7 +80,7 @@ const OurServices: FC<IOurServices> = ({
 							)}
 						</div>
 					</motion.div>
-					<div className="grid grid-cols-1 lg:grid-cols-3 p-0 gap-6 w-full">
+					<div className="grid grid-cols-1 lg:grid-cols-3 p-0 gap-12 lg:gap-6 w-full">
 						{servicesGrid?.length > 0 ? (
 							servicesGrid?.slice(2)?.map((item: any, keys: number) => (
 								<Fragment key={keys}>

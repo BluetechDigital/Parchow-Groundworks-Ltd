@@ -2,11 +2,18 @@
 export type ICTA = {
 	title: string;
 	paragraph: string;
-	backgroundImage: string;
 	buttonLink: {
 		url: string;
 		title: string;
 		target: string;
+	};
+	backgroundImage: {
+		altText: string;
+		sourceUrl: string;
+		mediaDetails: {
+			width: number;
+			height: number;
+		};
 	};
 };
 export type IHero = {
@@ -434,5 +441,8 @@ export type IRenderStars = {
 	rating: number;
 };
 export type IBackHoverButton = {
+	link: string;
+};
+export type IBookAppointment = {
 	link: string;
 };

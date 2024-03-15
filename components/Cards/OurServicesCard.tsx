@@ -52,7 +52,7 @@ const OurServicesCard: FC<IOurServicesCard> = ({
 									initial={initial}
 									whileInView={fadeInUp}
 									viewport={{once: true}}
-									className="text-center lg:text-left text-grey uppercase text-paragraph my-3 font-semibold transition-all duration-500 ease-in-out"
+									className="text-center lg:text-left text-white uppercase text-paragraph my-3 font-semibold transition-all duration-500 ease-in-out"
 								>
 									{title}
 								</motion.h3>
@@ -62,7 +62,7 @@ const OurServicesCard: FC<IOurServicesCard> = ({
 											? paragraph?.substring(0, 235) + "..."
 											: paragraph
 									}
-									tailwindStyling="text-center lg:text-left text-grey text-base sm:text-tiny"
+									tailwindStyling="text-center lg:text-left text-white text-base sm:text-tiny"
 								/>
 							</div>
 							<motion.button

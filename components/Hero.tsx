@@ -55,7 +55,7 @@ const Hero: FC<IHero> = ({
 							initial={initialTwo}
 							whileInView={fadeIn}
 							viewport={{once: true}}
-							className="max-w-xl text-center lg:text-left uppercase text-lg sm:text-3xl lg:text-7xl text-white font-extrabold lg:leading-[3.25rem]"
+							className="max-w-2xl text-center lg:text-left uppercase text-lg sm:text-3xl lg:text-5xl xl:text-6xl text-white font-extrabold lg:leading-[3rem]"
 						>
 							{title}
 						</motion.h1>
@@ -63,7 +63,7 @@ const Hero: FC<IHero> = ({
 							content={paragraph}
 							tailwindStyling="max-w-xl py-2 text-white leading-[1.5rem] text-base text-center lg:text-left"
 						/>
-						<div className="flex flex-col md:flex-row gap-4 max-w-sm lg:max-w-4xl mx-auto lg:mx-0">
+						<div className="flex flex-col sm:flex-row gap-4 max-w-sm lg:max-w-4xl mx-auto lg:mx-0">
 							<Link
 								href={`${buttonLink?.url}`}
 								target={buttonLink?.target}
@@ -94,7 +94,7 @@ const Hero: FC<IHero> = ({
 					</motion.div>
 				</div>
 				<div className="relative flex flex-row py-0 justify-center items-center lg:justify-between">
-					<ul className="hidden md:grid grid-cols-4 w-full lg:w-[90%] mx-auto bg-primary-light gap-1 absolute mb-[130px] lg:mb-[-30px] 2xl:mb-[0px] left-0 right-0 flex-row items-center justify-center">
+					<ul className="hidden md:grid grid-cols-4 w-full lg:w-[90%] mx-auto bg-primary-dark gap-1 absolute mb-[130px] lg:mb-[-30px] 2xl:mb-[0px] left-0 right-0 flex-row items-center justify-center">
 						{servicesList?.length > 0 ? (
 							servicesList?.map((item: any, keys: number) => (
 								<Fragment key={keys}>
@@ -106,7 +106,7 @@ const Hero: FC<IHero> = ({
 										variants={arrayLoopStaggerChildren}
 									>
 										<div
-											className={`flex flex-col items-center justify-center p-2 bg-primary-dark w-full h-full sm:min-h-[22.5vh] lg:min-h-[25vh] xl:max-h-[22.5vh] transition-all ease-in-out duration-500`}
+											className={`flex flex-col items-center justify-center p-2 w-full h-full sm:min-h-[22.5vh] lg:min-h-[25vh] xl:max-h-[22.5vh] transition-all ease-in-out duration-500`}
 										>
 											<Image
 												alt={item?.icon?.altText}
