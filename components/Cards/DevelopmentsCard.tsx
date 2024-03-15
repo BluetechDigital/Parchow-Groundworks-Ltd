@@ -11,12 +11,12 @@ import Link from "next/link";
 import Image from "next/image";
 import {motion} from "framer-motion";
 import dateFormat from "dateformat";
-import {IOurWorksCard} from "@/types/components/index";
+import {IDevelopmentsCard} from "@/types/components/index";
 
 // Components
 import Paragraph from "@/components/Elements/Paragraph";
 
-const OurWorksCard: FC<IOurWorksCard> = ({
+const DevelopmentsCard: FC<IDevelopmentsCard> = ({
 	slug,
 	date,
 	title,
@@ -90,4 +90,4 @@ const OurWorksCard: FC<IOurWorksCard> = ({
 	);
 };
 
-export default OurWorksCard;
+export default DevelopmentsCard;

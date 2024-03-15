@@ -16,7 +16,7 @@ import {IPagination} from "@/types/components/index";
 
 // Components
 import Paragraph from "./Paragraph";
-import OurWorksCard from "../Cards/OurWorksCard";
+import DevelopmentsCard from "../Cards/DevelopmentsCard";
 import TestimonialsCard from "../Cards/TestimonialsCard";
 
 const Pagination: FC<IPagination> = ({
@@ -47,7 +47,7 @@ const Pagination: FC<IPagination> = ({
 	};
 
 	const tailwindButtonStyling =
-		"relative px-6 py-2 text-pureBlack hover:text-white font-semibold tracking-widest text-tiny w-fit border-2 border-solid border-primary-default hover:bg-primary-default hover:border-primary-default transition-all ease-in-out duration-500 before:left-[15%]";
+		"relative px-6 py-2 text-black hover:text-white font-semibold tracking-widest text-tiny w-fit border-2 border-solid border-primary-default hover:bg-primary-default hover:border-primary-default transition-all ease-in-out duration-500 before:left-[15%]";
 
 	return (
 		<>
@@ -91,9 +91,9 @@ const Pagination: FC<IPagination> = ({
 											paragraph={item?.node?.testimonialReview?.paragraph}
 										/>
 									</>
-								) : contentType === `OurWorksCard` ? (
+								) : contentType === `DevelopmentsCard` ? (
 									<>
-										<OurWorksCard
+										<DevelopmentsCard
 											slug={item?.node?.slug}
 											date={item?.node?.date}
 											title={item?.node?.title}

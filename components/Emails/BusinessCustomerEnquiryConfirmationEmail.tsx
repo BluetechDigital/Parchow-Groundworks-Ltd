@@ -42,7 +42,7 @@ export const BusinessCustomerEnquiryConfirmationEmail: React.FC<
 			<Body style={main}>
 				<Container style={container}>
 					<EmailHeader
-						imagesDirUrl={`${imagesDirUrl}/Husky-Carpentry-Limited-Email-Header-Business.png`}
+						imagesDirUrl={`${imagesDirUrl}/Parchow-Groundworks-Ltd-Email-Header-Business.png`}
 					/>
 					<Section style={content}>
 						<Text style={introParagraph}>Hello Team,</Text>
@@ -82,11 +82,11 @@ export const BusinessCustomerEnquiryConfirmationEmail: React.FC<
 						</Text>
 						<Text style={paragraph}>Best regards,</Text>
 						<Text style={paragraph}>
-							Jamie Byrne,
+							Andy Philip Howe,
 							<br />
 							Director,
 							<br />
-							Husky Carpentry Limited
+							Parchow Groundworks Ltd
 						</Text>
 					</Section>
 					<EmailFooter

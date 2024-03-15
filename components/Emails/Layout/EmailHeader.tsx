@@ -12,7 +12,7 @@ const EmailHeader: React.FC<IEmailHeader.IEmailHeader> = ({imagesDirUrl}) => {
 					height="105"
 					style={logo}
 					src={imagesDirUrl}
-					alt="Southern Joinery Limited Logo"
+					alt="Parchow Groundworks Ltd Logo"
 				/>
 			</Section>
 			<Section style={{border: "5px solid", borderColor: "#11acff"}}></Section>

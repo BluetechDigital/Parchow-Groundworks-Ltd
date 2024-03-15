@@ -17,8 +17,8 @@ const EmailFooter: React.FC<IEmailFooter.IEmailFooter> = ({
 							width="105px"
 							height="105px"
 							style={footerLogo}
-							alt="Husky Carpentry Limited Ltd Logo White"
-							src={`${imagesDirUrl}/southern-joinery-logo-white.png`}
+							alt="Parchow Groundworks Ltd Ltd Logo White"
+							src={`${imagesDirUrl}/Parchow-Groundworks-Ltd-logo-white.png`}
 						/>
 					</Link>
 				</Section>

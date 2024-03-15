@@ -12,15 +12,16 @@ import OurClients from "../OurClients";
 import OurServices from "../OurServices";
 import ContactForm from "../ContactForm";
 import OurLocation from "../OurLocation";
-import OurWorksGrid from "../OurWorksGrid";
 import ErrorPage from "../Global/ErrorPage";
 import GallerySlider from "../GallerySlider";
 import GettingStarted from "../GettingStarted";
 import TitleParagraph from "../TitleParagraph";
 import Maintenance from "../Global/Maintenance";
+import DevelopmentsGrid from "../DevelopmentsGrid";
 import TestimonialsGrid from "../TestimonialsGrid";
 import TitleContentImage from "../TitleContentImage";
 import SkillsExperiences from "../SkillsExperiences";
+import ContentSectorGrid from "../ContentSectorGrid";
 import TestimonialsSlider from "../TestimonialsSlider";
 import OurServicesGridTwo from "../OurServicesGridTwo";
 
@@ -102,6 +103,17 @@ const RenderFlexibleContent: FC = () => {
 								/>
 							</>
 						) : item?.fieldGroupName ===
+								`${FlexibleContent}_ContentSectorGrid` &&
+						  item?.displaySection ? (
+							<>
+								<ContentSectorGrid
+									title={item?.title}
+									subtitle={item?.subtitle}
+									paragraph={item?.paragraph}
+									sectorGrid={item?.sectorGrid}
+								/>
+							</>
+						) : item?.fieldGroupName ===
 								`${FlexibleContent}_OurServicesGridTwo` &&
 						  item?.displaySection ? (
 							<>
@@ -138,10 +150,11 @@ const RenderFlexibleContent: FC = () => {
 									stepThree={item?.stepThree}
 								/>
 							</>
-						) : item?.fieldGroupName === `${FlexibleContent}_OurWorksGrid` &&
+						) : item?.fieldGroupName ===
+								`${FlexibleContent}_DevelopmentsGrid` &&
 						  item?.displaySection ? (
 							<>
-								<OurWorksGrid
+								<DevelopmentsGrid
 									title={item?.title}
 									subtitle={item?.subtitle}
 									paragraph={item?.paragraph}

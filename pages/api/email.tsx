@@ -68,7 +68,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 			const customerEmail: ICustomerEmail = {
 				from: `${themesOptionsContent?.email}`,
 				to: `${data?.email}`,
-				subject: `Thank You for Contacting Husky Carpentry Limited`,
+				subject: `Thank You for Contacting Parchow Groundworks Ltd`,
 				html: customerEmailHtml,
 			};
 

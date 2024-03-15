@@ -80,12 +80,9 @@ export const getAllFlexibleContentComponents = async (
 											... on ${postTypeFlexibleContent}_TitleContentImage {
             									fieldGroupName
             									title
+            									textTitle
             									subtitle
             									paragraph
-            									textTitle
-												bulletPoints {
-              										point
-              									}
             									image {
             										altText
             										sourceUrl
@@ -98,6 +95,9 @@ export const getAllFlexibleContentComponents = async (
             										url
             										title
             										target
+            									}
+            									bulletPoints {
+            										points
             									}
             									displaySection
             									displayContentOption
@@ -136,6 +136,31 @@ export const getAllFlexibleContentComponents = async (
 													card {
 														title
 														paragraph
+														link {
+															url
+															title
+															target
+														}
+														icon {
+															altText
+															sourceUrl
+															mediaDetails {
+																height
+																width
+															}
+														}
+													}
+												}
+											}
+											... on ${postTypeFlexibleContent}_ContentSectorGrid {
+												fieldGroupName
+												title
+												subtitle
+												paragraph
+												displaySection
+												sectorGrid {
+													card {
+														title
 														link {
 															url
 															title
@@ -241,7 +266,7 @@ export const getAllFlexibleContentComponents = async (
             										}
             									}
             								}
-											... on ${postTypeFlexibleContent}_OurWorksGrid {
+											... on ${postTypeFlexibleContent}_DevelopmentsGrid {
 												fieldGroupName
 												title
 												subtitle

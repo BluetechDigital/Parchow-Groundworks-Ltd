@@ -2,14 +2,18 @@
 import {FC} from "react";
 import {motion} from "framer-motion";
 import {useGlobalContext} from "@/context/global";
-import {IOurWorksGrid} from "@/types/components";
+import {IDevelopmentsGrid} from "@/types/components";
 import {initial, fadeInUp, stagger} from "@/animations/animations";
 
 // Components
 import Paragraph from "./Elements/Paragraph";
 import Pagination from "./Elements/Pagination";
 
-const OurWorksGrid: FC<IOurWorksGrid> = ({title, subtitle, paragraph}) => {
+const DevelopmentsGrid: FC<IDevelopmentsGrid> = ({
+	title,
+	subtitle,
+	paragraph,
+}) => {
 	const globalContext = useGlobalContext();
 
 	return (
@@ -47,9 +51,9 @@ const OurWorksGrid: FC<IOurWorksGrid> = ({title, subtitle, paragraph}) => {
 						/>
 					</motion.div>
 					<Pagination
-						contentType="OurWorksCard"
+						contentType="DevelopmentsCard"
 						numberOfItemsRenderedPerPage={12}
-						contentArray={globalContext?.ourWorks}
+						contentArray={globalContext?.developments}
 						tailwindStyling={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 py-6 px-0 sm:px-4 lg:-m-4 gap-16 lg:gap-6`}
 					/>
 				</div>
@@ -58,4 +62,4 @@ const OurWorksGrid: FC<IOurWorksGrid> = ({title, subtitle, paragraph}) => {
 	);
 };
 
-export default OurWorksGrid;
+export default DevelopmentsGrid;

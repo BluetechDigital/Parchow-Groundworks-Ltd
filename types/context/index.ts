@@ -38,9 +38,9 @@ export type IPostTypes = {
 	previewPage: string;
 	previewPost: string;
 	testimonials: string;
-	OurWorks: string;
+	Developments: string;
 };
-export type IOurWorks = [
+export type IDevelopments = [
 	{
 		node: {
 			id: string;
@@ -150,9 +150,9 @@ export type IPageContext = {
 	postTypeFlexibleContent: IPostTypeFlexibleContent;
 };
 export type IGlobalProps = {
-	ourWorks: IOurWorks;
 	mobileLinks: IMobileLinks;
 	testimonials: ITestimonials;
+	developments: IDevelopments;
 	copyrightLinks: ICopyrightLinks;
 	navbarMenuLinks: INavbarMenuLinks;
 	footerMenuLinks: IFooterMenuLinks;
@@ -160,7 +160,7 @@ export type IGlobalProps = {
 	themesOptionsContent: IThemesOptionsContent;
 };
 export type IGlobalContext = {
-	ourWorks: IOurWorks;
+	developments: IDevelopments;
 	mobileLinks: IMobileLinks;
 	testimonials: ITestimonials;
 	copyrightLinks: ICopyrightLinks;

@@ -38,16 +38,16 @@ export const CustomerEnquiryConfirmationEmail: React.FC<
 		<>
 			<Html>
 				<Head />
-				<Preview>Thank You for Contacting Husky Carpentry Limited</Preview>
+				<Preview>Thank You for Contacting Parchow Groundworks Ltd</Preview>
 				<Body style={main}>
 					<Container style={container}>
 						<EmailHeader
-							imagesDirUrl={`${imagesDirUrl}/Husky-Carpentry-Limited-Email-Header-Customer.png`}
+							imagesDirUrl={`${imagesDirUrl}/Parchow-Groundworks-Ltd-Email-Header-Customer.png`}
 						/>
 						<Section style={content}>
 							<Text style={introParagraph}>Hi {firstName},</Text>
 							<Text style={paragraph}>
-								Thank you for reaching out to Husky Carpentry Limited regarding,{" "}
+								Thank you for reaching out to Parchow Groundworks Ltd regarding,{" "}
 								&quot;{subject}&quot; and our {selectedServices} services. We
 								have received your website inquiry on {formattedDate} and are
 								eager to assist you with your goals. At this moment there is no
@@ -79,18 +79,18 @@ export const CustomerEnquiryConfirmationEmail: React.FC<
 								</Link>
 							</Text>
 							<Text style={paragraph}>
-								Thank you once again for considering Husky Carpentry Limited for
+								Thank you once again for considering Parchow Groundworks Ltd for
 								your {selectedServices} needs. We look forward to the
 								opportunity to work with you and transform your ideas to
 								reality.
 							</Text>
 							<Text style={paragraph}>Best regards,</Text>
 							<Text style={paragraph}>
-								Jamie Byrne,
+								Andy Philip Howe,
 								<br />
 								Director,
 								<br />
-								Husky Carpentry Limited
+								Parchow Groundworks Ltd
 							</Text>
 							<Text style={paragraph}>
 								Tel:{" "}

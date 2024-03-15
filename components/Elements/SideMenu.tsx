@@ -31,7 +31,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 				className={` ${styles.nav} ${menuActive ? styles.navReveal : "hidden"}`}
 			>
 				<div
-					className="relative flex flex-col w-full h-full px-6 py-6 overflow-x-hidden overflow-y-auto bg-primary-darker border-solid border-l-8 border-primary-default bg-cover bg-center bg-no-repeat"
+					className="relative flex flex-col w-full h-full px-6 py-6 overflow-x-hidden overflow-y-auto bg-white border-solid border-l-8 border-primary-three bg-cover bg-center bg-no-repeat"
 					style={{
 						backgroundImage: `url("/svg/background/layered-peaks-haikei-primary-bluedarker-mobile.svg")`,
 					}}
@@ -45,9 +45,9 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 							<Image
 								width={500}
 								height={500}
-								alt="Southern Joinery Limited Logo White"
-								src="/svg/logo/southern-joinery-logo.svg"
-								className="object-contain object-center w-[65px] h-[65px]"
+								alt="Parchow Groundworks Ltd Logo White"
+								src="/img/logos/Parchow-Groundworks-Ltd-logo.png"
+								className="object-contain object-center w-[65px] h-[40px]"
 							/>
 						</Link>
 						<button
@@ -72,13 +72,13 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 										{item?.node?.url === "/services" ? (
 											<li
 												onClick={displayOurServicesSublinks}
-												className="border-b-[1px] border-primary-default border-opacity-50 cursor-pointer"
+												className="border-b-[1px] border-accent-two border-opacity-50 cursor-pointer"
 											>
 												<div className="py-4 flex flex-row justify-between items-center gap-2">
 													<Link
 														onClick={toggleMenu}
 														href={item?.node?.url}
-														className="text-white text-tiny text-center tracking-[0.05rem] hover:text-primary-two"
+														className="text-black text-tiny text-center tracking-[0.05rem] hover:text-accent-two"
 													>
 														{item?.node?.label}
 													</Link>
@@ -86,7 +86,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 														width={550}
 														height={550}
 														alt="Black Arrow Icon"
-														src="/svg/navigation-menu-dropdown-arrow-white.svg"
+														src="/svg/navigation-menu-dropdown-arrow-black.svg"
 														className={` w-[25px] h-[25px] object-contain object-center ${
 															ourServicesSublinksOpen
 																? "rotate-180"
@@ -115,9 +115,9 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 																				<li
 																					className={`${
 																						keys < 1
-																							? "border-t-[1px] border-primary-default  border-opacity-50"
+																							? "border-t-[1px] border-accent-two  border-opacity-50"
 																							: "border-t-[0px]"
-																					} hover:border-primary-default hover:bg-primary-default border-y-[1px] border-primary-default border-opacity-50 text-white`}
+																					} hover:border-primary-three hover:bg-primary-three border-y-[1px] border-accent-two border-opacity-50 text-black hover:text-white`}
 																				>
 																					<Link
 																						onClick={toggleMenu}
@@ -139,11 +139,11 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 												) : null}
 											</li>
 										) : (
-											<li className="border-b-[1px] border-primary-default border-opacity-50">
+											<li className="border-b-[1px] border-accent-two border-opacity-50">
 												<Link
 													onClick={toggleMenu}
 													href={`${item?.node?.url}`}
-													className="block py-4 text-tiny text-white hover:text-primary-two"
+													className="block py-4 text-tiny text-black hover:text-accent-two"
 												>
 													{item?.node?.label}
 												</Link>
@@ -164,19 +164,23 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 							viewport={{once: true}}
 							className="flex flex-col items-center justify-between gap-4"
 						>
-							<h4 className="mb-5 text-base tracking-normal text-center uppercase md:text-left text-white">
+							<h4 className="mb-5 text-base tracking-normal text-center uppercase md:text-left text-black">
 								Contact Links
 							</h4>
 							<div className="flex items-center justify-center gap-4 text-center">
 								<Link
-									className="inline-block px-1 hover:opacity-70"
 									href={`${globalContext?.themesOptionsContent?.facebookLink}`}
+									className={
+										globalContext?.themesOptionsContent?.facebookLink
+											? "inline-block px-1 hover:opacity-70"
+											: "hidden"
+									}
 								>
 									<svg
 										height="100%"
 										className="w-5 h-5"
 										style={{
-											fill: "#ffffff",
+											fill: "#111",
 											fillRule: "evenodd",
 											clipRule: "evenodd",
 											strokeLinejoin: "round",
@@ -193,14 +197,18 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 									</svg>
 								</Link>
 								<Link
-									className="inline-block px-1 hover:opacity-70"
 									href={`${globalContext?.themesOptionsContent?.twitterLink}`}
+									className={
+										globalContext?.themesOptionsContent?.twitterLink
+											? "inline-block px-1 hover:opacity-70"
+											: "hidden"
+									}
 								>
 									<svg
 										height="100%"
 										className="w-5 h-5"
 										style={{
-											fill: "#ffffff",
+											fill: "#111",
 											fillRule: "evenodd",
 											clipRule: "evenodd",
 											strokeLinejoin: "round",
@@ -217,8 +225,12 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 									</svg>
 								</Link>
 								<Link
-									className="inline-block px-1 hover:opacity-70"
 									href={`${globalContext?.themesOptionsContent?.instagramLink}`}
+									className={
+										globalContext?.themesOptionsContent?.instagramLink
+											? "inline-block px-1 hover:opacity-70"
+											: "hidden"
+									}
 								>
 									<svg
 										viewBox="0 0 24 24"
@@ -237,23 +249,51 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 												fillRule="evenodd"
 												clipRule="evenodd"
 												d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z"
-												fill="#ffffff"
+												fill="#111"
 											></path>{" "}
 											<path
 												d="M18 5C17.4477 5 17 5.44772 17 6C17 6.55228 17.4477 7 18 7C18.5523 7 19 6.55228 19 6C19 5.44772 18.5523 5 18 5Z"
-												fill="#ffffff"
+												fill="#111"
 											></path>{" "}
 											<path
 												fillRule="evenodd"
 												clipRule="evenodd"
 												d="M1.65396 4.27606C1 5.55953 1 7.23969 1 10.6V13.4C1 16.7603 1 18.4405 1.65396 19.7239C2.2292 20.8529 3.14708 21.7708 4.27606 22.346C5.55953 23 7.23969 23 10.6 23H13.4C16.7603 23 18.4405 23 19.7239 22.346C20.8529 21.7708 21.7708 20.8529 22.346 19.7239C23 18.4405 23 16.7603 23 13.4V10.6C23 7.23969 23 5.55953 22.346 4.27606C21.7708 3.14708 20.8529 2.2292 19.7239 1.65396C18.4405 1 16.7603 1 13.4 1H10.6C7.23969 1 5.55953 1 4.27606 1.65396C3.14708 2.2292 2.2292 3.14708 1.65396 4.27606ZM13.4 3H10.6C8.88684 3 7.72225 3.00156 6.82208 3.0751C5.94524 3.14674 5.49684 3.27659 5.18404 3.43597C4.43139 3.81947 3.81947 4.43139 3.43597 5.18404C3.27659 5.49684 3.14674 5.94524 3.0751 6.82208C3.00156 7.72225 3 8.88684 3 10.6V13.4C3 15.1132 3.00156 16.2777 3.0751 17.1779C3.14674 18.0548 3.27659 18.5032 3.43597 18.816C3.81947 19.5686 4.43139 20.1805 5.18404 20.564C5.49684 20.7234 5.94524 20.8533 6.82208 20.9249C7.72225 20.9984 8.88684 21 10.6 21H13.4C15.1132 21 16.2777 20.9984 17.1779 20.9249C18.0548 20.8533 18.5032 20.7234 18.816 20.564C19.5686 20.1805 20.1805 19.5686 20.564 18.816C20.7234 18.5032 20.8533 18.0548 20.9249 17.1779C20.9984 16.2777 21 15.1132 21 13.4V10.6C21 8.88684 20.9984 7.72225 20.9249 6.82208C20.8533 5.94524 20.7234 5.49684 20.564 5.18404C20.1805 4.43139 19.5686 3.81947 18.816 3.43597C18.5032 3.27659 18.0548 3.14674 17.1779 3.0751C16.2777 3.00156 15.1132 3 13.4 3Z"
-												fill="#ffffff"
+												fill="#111"
 											></path>
 										</g>
 									</svg>
 								</Link>
+								<Link
+									href={`${globalContext?.themesOptionsContent?.linkedinLink}`}
+									className={
+										globalContext?.themesOptionsContent?.linkedinLink
+											? "inline-block px-1 hover:opacity-70"
+											: "hidden"
+									}
+								>
+									<svg
+										height="100%"
+										style={{
+											fill: "#111",
+											fillRule: "evenodd",
+											clipRule: "evenodd",
+											strokeLinejoin: "round",
+											strokeMiterlimit: "2",
+										}}
+										version="1.1"
+										viewBox="0 0 512 512"
+										className="w-5 h-5"
+										width="100%"
+									>
+										<path
+											d="M473.305,-1.353c20.88,0 37.885,16.533 37.885,36.926l0,438.251c0,20.393 -17.005,36.954 -37.885,36.954l-436.459,0c-20.839,0 -37.773,-16.561 -37.773,-36.954l0,-438.251c0,-20.393 16.934,-36.926 37.773,-36.926l436.459,0Zm-37.829,436.389l0,-134.034c0,-65.822 -14.212,-116.427 -91.12,-116.427c-36.955,0 -61.739,20.263 -71.867,39.476l-1.04,0l0,-33.411l-72.811,0l0,244.396l75.866,0l0,-120.878c0,-31.883 6.031,-62.773 45.554,-62.773c38.981,0 39.468,36.461 39.468,64.802l0,118.849l75.95,0Zm-284.489,-244.396l-76.034,0l0,244.396l76.034,0l0,-244.396Zm-37.997,-121.489c-24.395,0 -44.066,19.735 -44.066,44.047c0,24.318 19.671,44.052 44.066,44.052c24.299,0 44.026,-19.734 44.026,-44.052c0,-24.312 -19.727,-44.047 -44.026,-44.047Z"
+											style={{fillRule: "nonzero"}}
+										/>
+									</svg>
+								</Link>
 							</div>
-							<div className="flex flex-col sm:flex-row items-center justify-center w-auto gap-2 py-6 mb-10">
+							<div className="flex flex-col lg:flex-row items-center justify-center w-auto gap-2 py-6 mb-10">
 								<motion.div
 									initial={initialTwo}
 									whileInView={fadeIn}
@@ -264,25 +304,28 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 											: "hidden"
 									}
 								>
-									<div className="flex items-center justify-center w-8 h-8 rounded-full bg-primary-default sm:mr-3">
+									<div className="flex items-center justify-center w-8 h-8 rounded-full bg-accent-default sm:mr-3">
 										<svg
-											width="20"
-											height="20"
-											viewBox="0 0 20 20"
-											fill="none"
+											fill="#ffffff"
+											className="w-6 h-6"
+											viewBox="0 0 100.354 100.354"
+											id="Layer_1"
+											version="1.1"
 											xmlns="http://www.w3.org/2000/svg"
 										>
-											<path
-												d="M2.5 6.66669L9.0755 11.0504C9.63533 11.4236 10.3647 11.4236 10.9245 11.0504L17.5 6.66669M4.16667 15.8334H15.8333C16.7538 15.8334 17.5 15.0872 17.5 14.1667V5.83335C17.5 4.91288 16.7538 4.16669 15.8333 4.16669H4.16667C3.24619 4.16669 2.5 4.91288 2.5 5.83335V14.1667C2.5 15.0872 3.24619 15.8334 4.16667 15.8334Z"
-												stroke="white"
-												strokeWidth="1.5"
+											<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+											<g
+												id="SVGRepo_tracerCarrier"
 												strokeLinecap="round"
 												strokeLinejoin="round"
-											></path>
+											></g>
+											<g id="SVGRepo_iconCarrier">
+												<path d="M93.09,76.224c0.047-0.145,0.079-0.298,0.079-0.459V22.638c0-0.162-0.032-0.316-0.08-0.462 c-0.007-0.02-0.011-0.04-0.019-0.06c-0.064-0.171-0.158-0.325-0.276-0.46c-0.008-0.009-0.009-0.02-0.017-0.029 c-0.005-0.005-0.011-0.007-0.016-0.012c-0.126-0.134-0.275-0.242-0.442-0.323c-0.013-0.006-0.023-0.014-0.036-0.02 c-0.158-0.071-0.33-0.111-0.511-0.123c-0.018-0.001-0.035-0.005-0.053-0.005c-0.017-0.001-0.032-0.005-0.049-0.005H8.465 c-0.017,0-0.033,0.004-0.05,0.005c-0.016,0.001-0.032,0.004-0.048,0.005c-0.183,0.012-0.358,0.053-0.518,0.125 c-0.01,0.004-0.018,0.011-0.028,0.015c-0.17,0.081-0.321,0.191-0.448,0.327c-0.005,0.005-0.011,0.006-0.016,0.011 c-0.008,0.008-0.009,0.019-0.017,0.028c-0.118,0.135-0.213,0.29-0.277,0.461c-0.008,0.02-0.012,0.04-0.019,0.061 c-0.048,0.146-0.08,0.3-0.08,0.462v53.128c0,0.164,0.033,0.32,0.082,0.468c0.007,0.02,0.011,0.039,0.018,0.059 c0.065,0.172,0.161,0.327,0.28,0.462c0.007,0.008,0.009,0.018,0.016,0.026c0.006,0.007,0.014,0.011,0.021,0.018 c0.049,0.051,0.103,0.096,0.159,0.14c0.025,0.019,0.047,0.042,0.073,0.06c0.066,0.046,0.137,0.083,0.21,0.117 c0.018,0.008,0.034,0.021,0.052,0.028c0.181,0.077,0.38,0.121,0.589,0.121h83.204c0.209,0,0.408-0.043,0.589-0.121 c0.028-0.012,0.054-0.03,0.081-0.044c0.062-0.031,0.124-0.063,0.181-0.102c0.03-0.021,0.057-0.048,0.086-0.071 c0.051-0.041,0.101-0.082,0.145-0.129c0.008-0.008,0.017-0.014,0.025-0.022c0.008-0.009,0.01-0.021,0.018-0.03 c0.117-0.134,0.211-0.288,0.275-0.458C93.078,76.267,93.083,76.246,93.09,76.224z M9.965,26.04l25.247,23.061L9.965,72.346V26.04z M61.711,47.971c-0.104,0.068-0.214,0.125-0.301,0.221c-0.033,0.036-0.044,0.083-0.073,0.121l-11.27,10.294L12.331,24.138h75.472 L61.711,47.971z M37.436,51.132l11.619,10.613c0.287,0.262,0.649,0.393,1.012,0.393s0.725-0.131,1.011-0.393l11.475-10.481 l25.243,23.002H12.309L37.436,51.132z M64.778,49.232L90.169,26.04v46.33L64.778,49.232z"></path>
+											</g>
 										</svg>
 									</div>
 									<Link
-										className="font-medium text-tiny tracking-wide text-white hover:text-primary-default"
+										className="font-medium text-tiny tracking-wide text-black hover:text-primary-three"
 										href={`mailto:${globalContext?.themesOptionsContent?.email}`}
 									>
 										{globalContext?.themesOptionsContent?.email}
@@ -298,25 +341,28 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 											: "hidden"
 									}
 								>
-									<div className="flex items-center justify-center w-8 h-8 rounded-full bg-primary-default sm:mr-3">
+									<div className="flex items-center justify-center w-8 h-8 rounded-full bg-accent-default sm:mr-3">
 										<svg
-											width="20"
-											height="20"
-											viewBox="0 0 20 20"
-											fill="none"
+											fill="#ffffff"
+											className="w-6 h-6"
+											viewBox="0 0 100.354 100.354"
+											id="Layer_1"
+											version="1.1"
 											xmlns="http://www.w3.org/2000/svg"
 										>
-											<path
-												d="M2.5 6.66669L9.0755 11.0504C9.63533 11.4236 10.3647 11.4236 10.9245 11.0504L17.5 6.66669M4.16667 15.8334H15.8333C16.7538 15.8334 17.5 15.0872 17.5 14.1667V5.83335C17.5 4.91288 16.7538 4.16669 15.8333 4.16669H4.16667C3.24619 4.16669 2.5 4.91288 2.5 5.83335V14.1667C2.5 15.0872 3.24619 15.8334 4.16667 15.8334Z"
-												stroke="white"
-												strokeWidth="1.5"
+											<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+											<g
+												id="SVGRepo_tracerCarrier"
 												strokeLinecap="round"
 												strokeLinejoin="round"
-											></path>
+											></g>
+											<g id="SVGRepo_iconCarrier">
+												<path d="M93.09,76.224c0.047-0.145,0.079-0.298,0.079-0.459V22.638c0-0.162-0.032-0.316-0.08-0.462 c-0.007-0.02-0.011-0.04-0.019-0.06c-0.064-0.171-0.158-0.325-0.276-0.46c-0.008-0.009-0.009-0.02-0.017-0.029 c-0.005-0.005-0.011-0.007-0.016-0.012c-0.126-0.134-0.275-0.242-0.442-0.323c-0.013-0.006-0.023-0.014-0.036-0.02 c-0.158-0.071-0.33-0.111-0.511-0.123c-0.018-0.001-0.035-0.005-0.053-0.005c-0.017-0.001-0.032-0.005-0.049-0.005H8.465 c-0.017,0-0.033,0.004-0.05,0.005c-0.016,0.001-0.032,0.004-0.048,0.005c-0.183,0.012-0.358,0.053-0.518,0.125 c-0.01,0.004-0.018,0.011-0.028,0.015c-0.17,0.081-0.321,0.191-0.448,0.327c-0.005,0.005-0.011,0.006-0.016,0.011 c-0.008,0.008-0.009,0.019-0.017,0.028c-0.118,0.135-0.213,0.29-0.277,0.461c-0.008,0.02-0.012,0.04-0.019,0.061 c-0.048,0.146-0.08,0.3-0.08,0.462v53.128c0,0.164,0.033,0.32,0.082,0.468c0.007,0.02,0.011,0.039,0.018,0.059 c0.065,0.172,0.161,0.327,0.28,0.462c0.007,0.008,0.009,0.018,0.016,0.026c0.006,0.007,0.014,0.011,0.021,0.018 c0.049,0.051,0.103,0.096,0.159,0.14c0.025,0.019,0.047,0.042,0.073,0.06c0.066,0.046,0.137,0.083,0.21,0.117 c0.018,0.008,0.034,0.021,0.052,0.028c0.181,0.077,0.38,0.121,0.589,0.121h83.204c0.209,0,0.408-0.043,0.589-0.121 c0.028-0.012,0.054-0.03,0.081-0.044c0.062-0.031,0.124-0.063,0.181-0.102c0.03-0.021,0.057-0.048,0.086-0.071 c0.051-0.041,0.101-0.082,0.145-0.129c0.008-0.008,0.017-0.014,0.025-0.022c0.008-0.009,0.01-0.021,0.018-0.03 c0.117-0.134,0.211-0.288,0.275-0.458C93.078,76.267,93.083,76.246,93.09,76.224z M9.965,26.04l25.247,23.061L9.965,72.346V26.04z M61.711,47.971c-0.104,0.068-0.214,0.125-0.301,0.221c-0.033,0.036-0.044,0.083-0.073,0.121l-11.27,10.294L12.331,24.138h75.472 L61.711,47.971z M37.436,51.132l11.619,10.613c0.287,0.262,0.649,0.393,1.012,0.393s0.725-0.131,1.011-0.393l11.475-10.481 l25.243,23.002H12.309L37.436,51.132z M64.778,49.232L90.169,26.04v46.33L64.778,49.232z"></path>
+											</g>
 										</svg>
 									</div>
 									<Link
-										className="font-medium text-tiny tracking-wide text-white hover:text-primary-default"
+										className="font-medium text-tiny tracking-wide text-black hover:text-primary-three"
 										href={`mailto:${globalContext?.themesOptionsContent?.emailTwo}`}
 									>
 										{globalContext?.themesOptionsContent?.emailTwo}
@@ -332,33 +378,27 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 											: "hidden"
 									}
 								>
-									<div className="flex items-center justify-center w-8 h-8 rounded-full bg-primary-two sm:mr-1">
+									<div className="flex items-center justify-center w-8 h-8 rounded-full bg-accent-two sm:mr-1">
 										<svg
-											viewBox="0 0 24 24"
-											fill="none"
+											fill="#ffffff"
+											viewBox="0 0 32 32"
+											version="1.1"
 											className="w-5 h-5"
 											xmlns="http://www.w3.org/2000/svg"
 										>
-											<g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+											<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
 											<g
 												id="SVGRepo_tracerCarrier"
 												strokeLinecap="round"
 												strokeLinejoin="round"
 											></g>
 											<g id="SVGRepo_iconCarrier">
-												{" "}
-												<path
-													d="M14.5 6.5C15.2372 6.64382 15.9689 6.96892 16.5 7.5C17.0311 8.03108 17.3562 8.76284 17.5 9.5M15 3C16.5315 3.17014 17.9097 3.91107 19 5C20.0903 6.08893 20.8279 7.46869 21 9M20.9995 16.4767V19.1864C21.0037 20.2223 20.0723 21.0873 19.0265 20.9929C10.0001 21 3.00006 13.935 3.00713 4.96919C2.91294 3.92895 3.77364 3.00106 4.80817 3.00009H7.52331C7.96253 2.99577 8.38835 3.151 8.72138 3.43684C9.66819 4.24949 10.2772 7.00777 10.0429 8.10428C9.85994 8.96036 8.99696 9.55929 8.41026 10.1448C9.69864 12.4062 11.5747 14.2785 13.8405 15.5644C14.4272 14.9788 15.0274 14.1176 15.8851 13.935C16.9855 13.7008 19.7615 14.3106 20.5709 15.264C20.858 15.6021 21.0105 16.0337 20.9995 16.4767Z"
-													stroke="#ffffff"
-													strokeWidth="1.5"
-													strokeLinecap="round"
-													strokeLinejoin="round"
-												></path>{" "}
+												<path d="M8.194 1.156c1.169 1.612 2.563 3.694 4.175 6.237 0.406 0.688 0.344 1.512-0.181 2.481-0.2 0.406-0.706 1.331-1.512 2.787 0.887 1.25 2.238 2.787 4.056 4.6s3.331 3.169 4.538 4.056c1.45-0.85 2.381-1.369 2.788-1.575 0.525-0.281 1.031-0.425 1.512-0.425 0.363 0 0.688 0.081 0.969 0.244 1.856 1.131 3.956 2.525 6.294 4.175 0.444 0.325 0.694 0.769 0.756 1.331 0.063 0.569-0.113 1.169-0.512 1.819-0.2 0.281-0.525 0.694-0.969 1.244-0.444 0.544-1.113 1.231-2 2.056s-1.613 1.244-2.181 1.244h-0.063c-4.269-0.169-9.531-3.369-15.762-9.6-6.237-6.238-9.438-11.494-9.6-15.769 0-0.563 0.412-1.3 1.244-2.212 0.825-0.906 1.506-1.563 2.025-1.969 0.525-0.4 0.969-0.725 1.331-0.969 0.444-0.325 0.95-0.481 1.513-0.481 0.694 0 1.212 0.244 1.581 0.725zM6.194 2.425c-0.85 0.606-1.644 1.287-2.394 2.031-0.744 0.75-1.181 1.3-1.3 1.662 0.163 3.756 3.156 8.537 8.988 14.35s10.625 8.819 14.375 9.019c0.325-0.119 0.856-0.563 1.606-1.331s1.425-1.575 2.025-2.419c0.119-0.163 0.163-0.3 0.119-0.425-2.419-1.694-4.438-3.044-6.056-4.056-0.163 0-0.363 0.063-0.606 0.181-0.363 0.2-1.269 0.706-2.725 1.512l-1.031 0.606-1.031-0.669c-1.331-0.925-2.944-2.363-4.844-4.3-1.894-1.894-3.306-3.512-4.238-4.844l-0.725-0.969 0.606-1.088c0.806-1.45 1.313-2.363 1.512-2.725 0.119-0.244 0.181-0.444 0.181-0.606-1.438-2.294-2.769-4.313-3.981-6.050h-0.063c-0.156 0-0.3 0.044-0.419 0.119z"></path>
 											</g>
 										</svg>
 									</div>
 									<Link
-										className="font-medium text-tiny tracking-wide text-lightGrey hover:text-primary-two"
+										className="font-medium text-tiny tracking-wide text-black hover:text-primary-three"
 										href={`tel:${globalContext?.themesOptionsContent?.phoneNumber}`}
 									>
 										{globalContext?.themesOptionsContent?.phoneNumber}
@@ -374,33 +414,27 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 											: "hidden"
 									}
 								>
-									<div className="flex items-center justify-center w-8 h-8 rounded-full bg-primary-two sm:mr-1">
+									<div className="flex items-center justify-center w-8 h-8 rounded-full bg-accent-two sm:mr-1">
 										<svg
-											viewBox="0 0 24 24"
-											fill="none"
+											fill="#ffffff"
+											viewBox="0 0 32 32"
+											version="1.1"
 											className="w-5 h-5"
 											xmlns="http://www.w3.org/2000/svg"
 										>
-											<g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+											<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
 											<g
 												id="SVGRepo_tracerCarrier"
 												strokeLinecap="round"
 												strokeLinejoin="round"
 											></g>
 											<g id="SVGRepo_iconCarrier">
-												{" "}
-												<path
-													d="M14.5 6.5C15.2372 6.64382 15.9689 6.96892 16.5 7.5C17.0311 8.03108 17.3562 8.76284 17.5 9.5M15 3C16.5315 3.17014 17.9097 3.91107 19 5C20.0903 6.08893 20.8279 7.46869 21 9M20.9995 16.4767V19.1864C21.0037 20.2223 20.0723 21.0873 19.0265 20.9929C10.0001 21 3.00006 13.935 3.00713 4.96919C2.91294 3.92895 3.77364 3.00106 4.80817 3.00009H7.52331C7.96253 2.99577 8.38835 3.151 8.72138 3.43684C9.66819 4.24949 10.2772 7.00777 10.0429 8.10428C9.85994 8.96036 8.99696 9.55929 8.41026 10.1448C9.69864 12.4062 11.5747 14.2785 13.8405 15.5644C14.4272 14.9788 15.0274 14.1176 15.8851 13.935C16.9855 13.7008 19.7615 14.3106 20.5709 15.264C20.858 15.6021 21.0105 16.0337 20.9995 16.4767Z"
-													stroke="#ffffff"
-													strokeWidth="1.5"
-													strokeLinecap="round"
-													strokeLinejoin="round"
-												></path>{" "}
+												<path d="M8.194 1.156c1.169 1.612 2.563 3.694 4.175 6.237 0.406 0.688 0.344 1.512-0.181 2.481-0.2 0.406-0.706 1.331-1.512 2.787 0.887 1.25 2.238 2.787 4.056 4.6s3.331 3.169 4.538 4.056c1.45-0.85 2.381-1.369 2.788-1.575 0.525-0.281 1.031-0.425 1.512-0.425 0.363 0 0.688 0.081 0.969 0.244 1.856 1.131 3.956 2.525 6.294 4.175 0.444 0.325 0.694 0.769 0.756 1.331 0.063 0.569-0.113 1.169-0.512 1.819-0.2 0.281-0.525 0.694-0.969 1.244-0.444 0.544-1.113 1.231-2 2.056s-1.613 1.244-2.181 1.244h-0.063c-4.269-0.169-9.531-3.369-15.762-9.6-6.237-6.238-9.438-11.494-9.6-15.769 0-0.563 0.412-1.3 1.244-2.212 0.825-0.906 1.506-1.563 2.025-1.969 0.525-0.4 0.969-0.725 1.331-0.969 0.444-0.325 0.95-0.481 1.513-0.481 0.694 0 1.212 0.244 1.581 0.725zM6.194 2.425c-0.85 0.606-1.644 1.287-2.394 2.031-0.744 0.75-1.181 1.3-1.3 1.662 0.163 3.756 3.156 8.537 8.988 14.35s10.625 8.819 14.375 9.019c0.325-0.119 0.856-0.563 1.606-1.331s1.425-1.575 2.025-2.419c0.119-0.163 0.163-0.3 0.119-0.425-2.419-1.694-4.438-3.044-6.056-4.056-0.163 0-0.363 0.063-0.606 0.181-0.363 0.2-1.269 0.706-2.725 1.512l-1.031 0.606-1.031-0.669c-1.331-0.925-2.944-2.363-4.844-4.3-1.894-1.894-3.306-3.512-4.238-4.844l-0.725-0.969 0.606-1.088c0.806-1.45 1.313-2.363 1.512-2.725 0.119-0.244 0.181-0.444 0.181-0.606-1.438-2.294-2.769-4.313-3.981-6.050h-0.063c-0.156 0-0.3 0.044-0.419 0.119z"></path>
 											</g>
 										</svg>
 									</div>
 									<Link
-										className="font-medium text-tiny tracking-wide text-lightGrey hover:text-primary-two"
+										className="font-medium text-tiny tracking-wide text-black hover:text-primary-three"
 										href={`tel:${globalContext?.themesOptionsContent?.phoneNumberTwo}`}
 									>
 										{globalContext?.themesOptionsContent?.phoneNumberTwo}

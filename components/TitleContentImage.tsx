@@ -47,7 +47,7 @@ const TitleContentImage: FC<ITitleContentImage> = ({
 		<>
 			<div className={`titleContentImage py-16 ${backgroundColor}`}>
 				<div className="lg:container m-auto px-0">
-					<div className="py-4">
+					<div className={title && subtitle ? "block py-4" : "hidden"}>
 						<motion.h4
 							initial={initial}
 							whileInView={fadeInUp}
@@ -60,7 +60,7 @@ const TitleContentImage: FC<ITitleContentImage> = ({
 							initial={initial}
 							whileInView={fadeInUp}
 							viewport={{once: true}}
-							className="text-black text-center lg:text-left font-semibold text-lg sm:text-3xl lg:text-7xl"
+							className="my-2 max-w-3xl leading-[2.5rem] lg:leading-[3rem] text-black text-center lg:text-left font-semibold text-lg sm:text-3xl lg:text-7xl"
 						>
 							{title}
 						</motion.h3>
@@ -104,7 +104,7 @@ const TitleContentImage: FC<ITitleContentImage> = ({
 									initial={initialTwo}
 									whileInView={fadeIn}
 									viewport={{once: true}}
-									className="mb-2 font-semibold text-center lg:text-left text-primary-default text-medium"
+									className="mb-2 font-semibold text-center lg:text-left text-primary-light text-medium"
 								>
 									{textTitle}
 								</motion.h3>
@@ -147,8 +147,8 @@ const TitleContentImage: FC<ITitleContentImage> = ({
 															</svg>
 														</span>
 														<span>
-															<h4 className="mb-2 tetext-left text-black text-base">
-																{item?.point}
+															<h4 className=" text-left text-black text-base">
+																{item?.points}
 															</h4>
 														</span>
 													</div>
@@ -168,9 +168,9 @@ const TitleContentImage: FC<ITitleContentImage> = ({
 										<div
 											className={`py-4 px-6 text-center cursor-pointer bg-accent-default hover:bg-accent-two transition-all ease-in-out duration-500`}
 										>
-											<span className="tracking-[0.10rem] text-white text-base text-center">
+											<h3 className="tracking-[0.10rem] text-white text-base text-center">
 												{buttonLink?.title}
-											</span>
+											</h3>
 										</div>
 									</Link>
 								</div>

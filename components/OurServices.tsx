@@ -24,8 +24,8 @@ const OurServices: FC<IOurServices> = ({
 }) => {
 	return (
 		<>
-			<div className={styles.ourServices + " py-12 px-4 bg-white"}>
-				<div className="container m-auto flex flex-col items-center gap-6 lg:gap-16">
+			<div className={styles.ourServices + " py-12 px-4 bg-primary-darker"}>
+				<div className="container m-auto flex flex-col items-center gap-6 lg:gap-8">
 					<motion.div
 						initial={initial}
 						variants={stagger}
@@ -33,12 +33,12 @@ const OurServices: FC<IOurServices> = ({
 						viewport={{once: true}}
 						className="flex flex-col lg:flex-row items-center justify-between gap-8 w-full"
 					>
-						<div>
+						<div className="w-full lg:w-[25%]">
 							<motion.h4
 								initial={initial}
 								whileInView={fadeInUp}
 								viewport={{once: true}}
-								className="max-w-sm mx-auto lg:mx-0 text-center lg:text-left text-base text-primary-default"
+								className="max-w-sm mx-auto xl:mx-0 text-center xl:text-left text-base text-accent-default"
 							>
 								{subtitle}
 							</motion.h4>
@@ -46,19 +46,43 @@ const OurServices: FC<IOurServices> = ({
 								initial={initial}
 								whileInView={fadeInUp}
 								viewport={{once: true}}
-								className="my-3 max-w-xl mx-auto lg:mx-0 uppercase text-black text-center lg:text-left font-semibold text-lg lg:text-xl"
+								className="my-3 max-w-lg mx-auto lg:mx-0 uppercase text-white text-center lg:text-left font-semibold text-lg sm:text-3xl"
 							>
 								{title}
 							</motion.h3>
+							<Paragraph
+								content={paragraph}
+								tailwindStyling="max-w-full lg:max-w-lg text-white text-base text-center lg:text-left"
+							/>
 						</div>
-						<Paragraph
-							content={paragraph}
-							tailwindStyling="max-w-full lg:max-w-xl text-black text-base text-center lg:text-left"
-						/>
+						<div className="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full lg:w-[66%]">
+							{servicesGrid?.length > 0 ? (
+								servicesGrid?.slice(0, 2)?.map((item: any, keys: number) => (
+									<Fragment key={keys}>
+										<motion.div
+											custom={keys}
+											initial={initial}
+											whileInView="animate"
+											viewport={{once: true}}
+											variants={arrayLoopStaggerChildren}
+										>
+											<OurServicesCard
+												link={item?.card?.link}
+												icon={item?.card?.icon}
+												title={item?.card?.title}
+												paragraph={item?.card?.paragraph}
+											/>
+										</motion.div>
+									</Fragment>
+								))
+							) : (
+								<></>
+							)}
+						</div>
 					</motion.div>
-					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 py-6 px-0 sm:px-4 lg:-m-4 gap-16 lg:gap-6">
+					<div className="grid grid-cols-1 lg:grid-cols-3 p-0 gap-6 w-full">
 						{servicesGrid?.length > 0 ? (
-							servicesGrid?.map((item: any, keys: number) => (
+							servicesGrid?.slice(2)?.map((item: any, keys: number) => (
 								<Fragment key={keys}>
 									<motion.div
 										custom={keys}
@@ -69,7 +93,7 @@ const OurServices: FC<IOurServices> = ({
 									>
 										<OurServicesCard
 											link={item?.card?.link}
-											image={item?.card?.image}
+											icon={item?.card?.icon}
 											title={item?.card?.title}
 											paragraph={item?.card?.paragraph}
 										/>

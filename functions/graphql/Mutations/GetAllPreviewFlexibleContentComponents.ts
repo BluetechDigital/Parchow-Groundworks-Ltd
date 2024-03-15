@@ -229,7 +229,7 @@ export const getAllPreviewFlexibleContentComponents = async (
             										}
             									}
             								}
-											... on ${postTypeFlexibleContent}_OurWorksGrid {
+											... on ${postTypeFlexibleContent}_DevelopmentsGrid {
 												fieldGroupName
 												title
 												subtitle

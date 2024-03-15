@@ -28,7 +28,7 @@ import {getAllTestimonialsContent} from "@/functions/graphql/Queries/GetAllTesti
 import PageLoadingSquares from "@/components/Global/PageLoadingSquares";
 import GlobalContextProvider from "@/components/Context/GlobalContextProvider";
 import PostHogContextProvider from "@/components/Context/PostHogProviderContext";
-import {getAllOurWorksContent} from "@/functions/graphql/Queries/GetAllOurWorks";
+import {getAllDevelopmentsContent} from "@/functions/graphql/Queries/GetAllDevelopments";
 
 export default function App({
 	Component,
@@ -72,16 +72,16 @@ App.getInitialProps = async ({Component, ctx}: any) => {
 	/* Fetch all global content
 	remaining content simultaneously */
 	const mobileLinks: any = await getMobileLinks();
-	const ourWorks: any = await getAllOurWorksContent();
 	const copyrightLinks: any = await getCopyrightLinks();
 	const navbarMenuLinks: any = await getNavbarMenuLinks();
 	const footerMenuLinks: any = await getFooterMenuLinks();
+	const developments: any = await getAllDevelopmentsContent();
 	const testimonials: any = await getAllTestimonialsContent();
 	const servicesSublinks: any = await getOurServicesSublinks();
 	const themesOptionsContent: any = await getThemesOptionsContent();
 
 	const globalProps: IGlobalProps = {
-		ourWorks: ourWorks,
+		developments: developments,
 		mobileLinks: mobileLinks,
 		testimonials: testimonials,
 		copyrightLinks: copyrightLinks,

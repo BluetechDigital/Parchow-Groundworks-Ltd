@@ -55,20 +55,20 @@ const Navbar: FC = () => {
 		<>
 			<nav className={styles.navbar + ` z-[999] h-fit w-full fixed`}>
 				<NoticeInfoBanner />
-				<div className="flex px-4 py-1 bg-primary-dark">
-					<div className="container mx-auto w-full lg:w-[20%] xl:w-[40%]">
+				<div className="flex p-0 bg-white">
+					<div className="container mx-auto w-full lg:w-[20%] xl:w-[40%] py-0 px-4">
 						<Link href="/">
 							<Image
 								priority
 								width={500}
 								height={500}
-								alt="Southern Joinery Limited Logo"
-								src="/img/logos/southern-joinery-logo.png"
+								alt="Parchow Groundworks Ltd Logo"
+								src="/img/logos/Parchow-Groundworks-Ltd-logo.png"
 								className="object-contain object-center w-[65px] h-[65px]"
 							/>
 						</Link>
 					</div>
-					<div className="w-full lg:w-full xl:w-[65%] flex justify-end gap-8 2xl:gap-12 xl:gap-24">
+					<div className="w-full lg:w-full xl:w-[65%] flex justify-end gap-8 px-4 2xl:gap-12 xl:gap-24">
 						<div className="hidden lg:flex items-center justify-end">
 							<div className="hidden lg:flex items-center gap-8">
 								<ul className="flex lg:items-center">
@@ -91,9 +91,9 @@ const Navbar: FC = () => {
 																	target={item?.node?.target}
 																	onClick={resetNavbarStyling}
 																>
-																	<h3 className="text-pureBlack group-hover:text-accent-default text-tiny text-center  uppercase tracking-[0.05rem]">
+																	<span className="text-black group-hover:text-primary-three text-tiny text-center tracking-[0.05rem]">
 																		{item?.node?.label}
-																	</h3>
+																	</span>
 																</Link>
 																<Image
 																	width={550}
@@ -114,11 +114,11 @@ const Navbar: FC = () => {
 																		onMouseLeave={resetNavbarStyling}
 																		onMouseEnter={displayNavBackgroundColor}
 																	>
-																		<div className="fixed mt-[1.6rem] w-full mx-auto left-0 bg-white flex flex-col items-center justify-center">
+																		<div className="fixed mt-[1.25rem] w-full mx-auto left-0 bg-white flex flex-col items-center justify-center">
 																			<ul
 																				className={
 																					styles.aboutUsSublinks +
-																					" px-28 py-6 w-full grid grid-cols-4 gap-4 border-b-8 border-solid border-primary-default z-[999]"
+																					" px-28 py-6 w-full grid grid-cols-4 gap-4 border-b-8 border-solid border-primary-three z-[999]"
 																				}
 																			>
 																				{globalContext?.servicesSublinks
@@ -139,7 +139,7 @@ const Navbar: FC = () => {
 																										href={`${item?.node?.url}`}
 																										className={` ${
 																											ourServicesSublinksOpen
-																												? "w-full hover:bg-primary-default text-center text-white hover:text-white"
+																												? "w-full hover:bg-primary-three text-center text-black hover:text-white"
 																												: "text-black"
 																										} block p-4 text-tiny`}
 																									>
@@ -170,9 +170,9 @@ const Navbar: FC = () => {
 																href={`${item?.node?.url}`}
 																target={item?.node?.target}
 															>
-																<h3 className="py-0 px-4 text-white hover:text-accent-default text-tiny text-center uppercase tracking-[0.05rem]">
+																<span className="py-0 px-4 text-black hover:text-primary-three text-tiny text-center tracking-[0.05rem]">
 																	{item?.node?.label}
-																</h3>
+																</span>
 															</Link>
 														</motion.li>
 													)}
@@ -186,6 +186,10 @@ const Navbar: FC = () => {
 							</div>
 						</div>
 					</div>
+					<div
+						className="w-[5rem] hidden lg:block bg-accent-default"
+						style={{clipPath: "polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%)"}}
+					/>
 					<motion.div
 						initial={initialTwo}
 						whileInView={fadeIn}

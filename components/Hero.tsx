@@ -5,7 +5,6 @@ import {
 	initialTwo,
 	slideInLeftInitial,
 	slideInRightFinish,
-	slideInRightInitial,
 	arrayLoopStaggerChildren,
 } from "../animations/animations";
 import Link from "next/link";
@@ -19,7 +18,6 @@ import styles from "../styles/components/Hero.module.scss";
 
 // Components
 import Paragraph from "./Elements/Paragraph";
-import Title from "./Elements/Title";
 
 const Hero: FC<IHero> = ({
 	title,
@@ -74,9 +72,9 @@ const Hero: FC<IHero> = ({
 								<div
 									className={`py-4 px-6 text-center cursor-pointer bg-primary-light hover:bg-primary-default transition-all ease-in-out duration-500`}
 								>
-									<span className="tracking-[0.10rem] text-white text-base text-center">
+									<h3 className="tracking-[0.10rem] text-white text-base text-center">
 										{buttonLink?.title}
-									</span>
+									</h3>
 								</div>
 							</Link>
 							<Link
@@ -87,16 +85,16 @@ const Hero: FC<IHero> = ({
 								<div
 									className={`py-4 px-6 text-center cursor-pointer bg-accent-default hover:bg-accent-two transition-all ease-in-out duration-500`}
 								>
-									<span className="tracking-[0.10rem] text-white text-base text-center">
+									<h3 className="tracking-[0.10rem] text-white text-base text-center">
 										{buttonLinkTwo?.title}
-									</span>
+									</h3>
 								</div>
 							</Link>
 						</div>
 					</motion.div>
 				</div>
 				<div className="relative flex flex-row py-0 justify-center items-center lg:justify-between">
-					<ul className="hidden md:grid grid-cols-4 w-full lg:w-[90%] mx-auto absolute mb-[130px] lg:mb-[-30px] 2xl:mb-[0px] left-0 right-0 flex-row items-center justify-center">
+					<ul className="hidden md:grid grid-cols-4 w-full lg:w-[90%] mx-auto bg-primary-light gap-1 absolute mb-[130px] lg:mb-[-30px] 2xl:mb-[0px] left-0 right-0 flex-row items-center justify-center">
 						{servicesList?.length > 0 ? (
 							servicesList?.map((item: any, keys: number) => (
 								<Fragment key={keys}>
@@ -108,19 +106,18 @@ const Hero: FC<IHero> = ({
 										variants={arrayLoopStaggerChildren}
 									>
 										<div
-											className={`flex flex-col items-center justify-center p-2 bg-primary-darker w-full h-full sm:min-h-[22.5vh] sm:max-h-[22.5vh] transition-all ease-in-out duration-500`}
+											className={`flex flex-col items-center justify-center p-2 bg-primary-dark w-full h-full sm:min-h-[22.5vh] sm:max-h-[22.5vh] transition-all ease-in-out duration-500`}
 										>
 											<Image
 												alt={item?.icon?.altText}
 												src={item?.icon?.sourceUrl}
 												width={item?.icon?.mediaDetails?.width}
 												height={item?.icon?.mediaDetails?.height}
-												className="mb-4 w-[25px] h-[25px] object-contain object-center"
+												className="my-4 w-[50px] h-[50px] object-contain object-center"
 											/>
-											<Title
-												content={item?.title}
-												tailwindStyling="text-white font-semibold text-base leading-[1.5rem] text-center tracking-[0.10rem]"
-											/>
+											<h3 className="text-white mt-2 font-semibold text-base leading-[1.5rem] text-center tracking-[0.10rem]">
+												{item?.title}
+											</h3>
 											<Paragraph
 												content={item?.paragraph}
 												tailwindStyling="p-2 text-white text-tiny text-center"

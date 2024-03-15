@@ -8,12 +8,12 @@ type SlugResponse = {
 
 interface ISlug extends Array<SlugResponse> {}
 
-/* OUR WORK SLUGS (URLS) */
-export const getAllOurWorksSlugs = async (): Promise<ISlug> => {
+/* DEVELOPMENTS SLUGS (URLS) */
+export const getAllDevelopmentsSlugs = async (): Promise<ISlug> => {
 	try {
 		const content: DocumentNode = gql`
 			{
-				ourWorksSlugs: ourWorks(where: {status: PUBLISH}, last: 100) {
+				developmentsSlugs: developments(where: {status: PUBLISH}, last: 100) {
 					nodes {
 						slug
 						modified
@@ -26,19 +26,21 @@ export const getAllOurWorksSlugs = async (): Promise<ISlug> => {
 			query: content,
 		});
 
-		return response?.data?.ourWorksSlugs?.nodes;
+		return response?.data?.developmentsSlugs?.nodes;
 	} catch (error) {
 		console.log(error);
-		throw new Error("Something went wrong trying to fetch the our works slugs");
+		throw new Error(
+			"Something went wrong trying to fetch the developments slugs"
+		);
 	}
 };
 
-// All Our Works Content
-export const getAllOurWorksContent = async () => {
+// All Developments Content
+export const getAllDevelopmentsContent = async () => {
 	try {
 		const content: DocumentNode = gql`
 			{
-				ourWorksContent: ourWorks(
+				developmentsContent: developments(
 					where: {status: PUBLISH, orderby: {field: DATE, order: DESC}}
 					first: 100
 				) {
@@ -68,11 +70,11 @@ export const getAllOurWorksContent = async () => {
 			query: content,
 		});
 
-		return response?.data?.ourWorksContent?.edges;
+		return response?.data?.developmentsContent?.edges;
 	} catch (error) {
 		console.log(error);
 		throw new Error(
-			"Something went wrong trying to fetch all the our works content"
+			"Something went wrong trying to fetch all the developments content"
 		);
 	}
 };

@@ -2,18 +2,18 @@
 import {Readable} from "stream";
 import {SitemapStream, streamToPromise} from "sitemap";
 import {getAllPagesSlugs} from "@/functions/graphql/Queries/GetAllPagesSlugs";
-import {getAllOurWorksSlugs} from "@/functions/graphql/Queries/GetAllOurWorks";
+import {getAllDevelopmentsSlugs} from "@/functions/graphql/Queries/GetAllDevelopments";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default async (req: any, res: any) => {
-	const [pagesSlugs, ourWorksSlugs] = await Promise.all([
+	const [pagesSlugs, developmentsSlugs] = await Promise.all([
 		getAllPagesSlugs(),
-		getAllOurWorksSlugs(),
+		getAllDevelopmentsSlugs(),
 	]);
 
 	/* Pages, News Insights Posts Arrays */
 	const pagesLinks: any = [];
-	const ourWorksLinks: any = [];
+	const developmentsLinks: any = [];
 
 	// Pages Dynamic Links
 	pagesSlugs?.map((keys: any) => {
@@ -27,8 +27,8 @@ export default async (req: any, res: any) => {
 		pagesLinks.push(object);
 	});
 
-	// Our Works Dynamic Links
-	ourWorksSlugs?.map((keys: any) => {
+	// Developments Dynamic Links
+	developmentsSlugs?.map((keys: any) => {
 		const object = {
 			url: `/projects/${keys?.slug}`,
 			changefreq: "daily",
@@ -36,11 +36,11 @@ export default async (req: any, res: any) => {
 			priority: 0.8,
 		};
 
-		ourWorksLinks.push(object);
+		developmentsLinks.push(object);
 	});
 
 	// Arrays with your all dynamic links
-	const allLinks: any = [...pagesLinks, ...ourWorksLinks];
+	const allLinks: any = [...pagesLinks, ...developmentsLinks];
 
 	// Create a stream to write to
 	const stream = new SitemapStream({hostname: process.env.SITE_URL});

@@ -108,7 +108,7 @@ export type IOurServices = {
 					title: string;
 					target: string;
 				};
-				image: {
+				icon: {
 					altText: string;
 					sourceUrl: string;
 					mediaDetails: {
@@ -206,7 +206,7 @@ export type IGettingStarted = {
 		};
 	};
 };
-export type IOurWorksGrid = {
+export type IDevelopmentsGrid = {
 	title: string;
 	subtitle: string;
 	paragraph: string;
@@ -239,7 +239,7 @@ export type ITitleContentImage = {
 	};
 	bulletPoints: [
 		{
-			point: string;
+			points: string;
 		}
 	];
 };
@@ -257,6 +257,31 @@ export type ISkillsExperiences = {
 	skillsExperiencesGrid: [
 		{
 			text: string;
+		}
+	];
+};
+export type IContentSectorGrid = {
+	title: string;
+	subtitle: string;
+	paragraph: string;
+	sectorGrid: [
+		{
+			card: {
+				title: string;
+				link: {
+					url: string;
+					title: string;
+					target: string;
+				};
+				image: {
+					altText: string;
+					sourceUrl: string;
+					mediaDetails: {
+						width: number;
+						height: number;
+					};
+				};
+			};
 		}
 	];
 };
@@ -308,7 +333,7 @@ export type IPagination = {
 };
 
 // Cards
-export type IOurWorksCard = {
+export type IDevelopmentsCard = {
 	slug: string;
 	date: string;
 	title: string;
@@ -332,7 +357,7 @@ export type IOurServicesCard = {
 		title: string;
 		target: string;
 	};
-	image: {
+	icon: {
 		altText: string;
 		sourceUrl: string;
 		mediaDetails: {
@@ -358,6 +383,22 @@ export type ITestimonialsCard = {
 export type IOurServicesCardTwo = {
 	title: string;
 	paragraph: string;
+	image: {
+		altText: string;
+		sourceUrl: string;
+		mediaDetails: {
+			width: number;
+			height: number;
+		};
+	};
+};
+export type IContentSectorGridCard = {
+	title: string;
+	link: {
+		url: string;
+		title: string;
+		target: string;
+	};
 	image: {
 		altText: string;
 		sourceUrl: string;
