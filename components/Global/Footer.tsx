@@ -403,7 +403,7 @@ const Footer: FC = () => {
 												className="w-5 h-5"
 												xmlns="http://www.w3.org/2000/svg"
 											>
-												<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+												<g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
 												<g
 													id="SVGRepo_tracerCarrier"
 													strokeLinecap="round"
@@ -414,13 +414,13 @@ const Footer: FC = () => {
 													<path
 														d="M12 12C14.4853 12 16.5 9.98528 16.5 7.5C16.5 5.01472 14.4853 3 12 3C9.51472 3 7.5 5.01472 7.5 7.5C7.5 9.98528 9.51472 12 12 12Z"
 														stroke="#ffffff"
-														stroke-miterlimit="10"
+														strokeMiterlimit="10"
 														strokeLinecap="round"
 													></path>{" "}
 													<path
 														d="M12 14.0137V22"
 														stroke="#ffffff"
-														stroke-miterlimit="10"
+														strokeMiterlimit="10"
 														strokeLinecap="round"
 													></path>{" "}
 												</g>

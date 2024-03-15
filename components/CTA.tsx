@@ -12,7 +12,7 @@ import Paragraph from "./Elements/Paragraph";
 const CTA: FC<ICTA> = ({title, paragraph, buttonLink, backgroundImage}) => {
 	return (
 		<>
-			<div className="hidden lg:block py-8 px-0">
+			<div className="hidden lg:block">
 				<div
 					className="p-8 relative flex flex-col justify-end lg:flex-row gap-4 bg-cover bg-no-repeat bg-center"
 					style={{

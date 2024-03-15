@@ -22,7 +22,17 @@ const SkillsExperiences: FC<ISkillsExperiences> = ({
 }) => {
 	return (
 		<>
-			<section className="relative overflow-hidden py-8 px-4 ">
+			<div
+				className="relative overflow-hidden py-8 px-4 bg-center bg-no-repeat bg-cover"
+				style={{
+					backgroundImage: `linear-gradient(
+								0deg,
+								rgb(255, 255, 255, 0.70),
+								rgba(255, 255, 255, 0.70),
+								rgba(255, 255, 255, 0.70)
+							),url("/img/background/Cement-Floor-Background.jpg")`,
+				}}
+			>
 				<div className="lg:container px-0 mx-auto">
 					<div className="flex flex-wrap border-b border-accent-default my-4">
 						<div className="w-full lg:w-1/2 p-4">
@@ -88,7 +98,7 @@ const SkillsExperiences: FC<ISkillsExperiences> = ({
 						)}
 					</div>
 				</div>
-			</section>
+			</div>
 		</>
 	);
 };
