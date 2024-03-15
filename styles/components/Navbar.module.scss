@@ -63,12 +63,13 @@
 
 	.navToggle {
 		cursor: pointer;
-		position: fixed;
+		position: absolute;
 		z-index: 999;
 		right: 0px;
-		top: 45px;
+		top: 0px;
 		padding: 0px;
 		width: 50px;
+		margin-top: 0.65rem;
 		margin-right: 1rem;
 		height: 45px;
 		border: none;
@@ -128,14 +129,15 @@
 	// Open Full Screen Nav
 	.navToggleOpen {
 		cursor: pointer;
-		position: fixed;
+		position: absolute;
 		z-index: 999;
 		right: 0px;
-		top: 45px;
+		top: 0px;
 		padding: 0;
 		width: 50px;
 		height: 45px;
 		border: none;
+		margin-top: -1rem;
 		margin-right: 1rem;
 		line-height: 0.6;
 		text-align: center;

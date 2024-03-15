@@ -50,14 +50,6 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 								className="object-contain object-center w-[65px] h-[40px]"
 							/>
 						</Link>
-						<button
-							type="button"
-							onClick={toggleMenu}
-							aria-label="toggle menu"
-							className={menuActive ? styles.navToggleOpen : styles.navToggle}
-						>
-							<span />
-						</button>
 					</div>
 					<div className="flex flex-col px-4 mt-4">
 						<motion.ul
