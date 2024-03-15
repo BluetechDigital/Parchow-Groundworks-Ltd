@@ -79,6 +79,9 @@ export type IGallery = {
 		}
 	];
 };
+export type INewsletter = {
+	paragraph: string;
+};
 export type IOurClients = {
 	title: string;
 	subtitle: string;

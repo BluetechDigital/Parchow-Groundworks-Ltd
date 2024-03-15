@@ -15,6 +15,7 @@ import {useGlobalContext} from "@/context/global";
 import styles from "@/styles/components/Footer.module.scss";
 
 // Components
+import Newsletter from "../Elements/FooterNewsletter";
 import Paragraph from "@/components/Elements/Paragraph";
 
 const Footer: FC = () => {
@@ -183,7 +184,7 @@ const Footer: FC = () => {
 							</Link>
 						</div>
 					</motion.div>
-					<div className="flex flex-col md:flex-row items-center lg:items-start justify-center gap-6 xl:gap-20">
+					<div className="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-6 xl:gap-14">
 						<div className="flex flex-col px-0">
 							<h3 className="mb-5 text-base tracking-normal text-center text-black uppercase lg:text-left">
 								About
@@ -388,7 +389,58 @@ const Footer: FC = () => {
 											{globalContext?.themesOptionsContent?.phoneNumberTwo}
 										</Link>
 									</div>
+									<div
+										className={
+											globalContext?.themesOptionsContent?.address
+												? "flex items-center justify-center gap-2"
+												: "hidden"
+										}
+									>
+										<div className="flex items-center justify-center w-8 h-8 rounded-full bg-accent-two sm:mr-1">
+											<svg
+												viewBox="-0.5 0 25 25"
+												fill="none"
+												className="w-5 h-5"
+												xmlns="http://www.w3.org/2000/svg"
+											>
+												<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+												<g
+													id="SVGRepo_tracerCarrier"
+													strokeLinecap="round"
+													strokeLinejoin="round"
+												></g>
+												<g id="SVGRepo_iconCarrier">
+													{" "}
+													<path
+														d="M12 12C14.4853 12 16.5 9.98528 16.5 7.5C16.5 5.01472 14.4853 3 12 3C9.51472 3 7.5 5.01472 7.5 7.5C7.5 9.98528 9.51472 12 12 12Z"
+														stroke="#ffffff"
+														stroke-miterlimit="10"
+														strokeLinecap="round"
+													></path>{" "}
+													<path
+														d="M12 14.0137V22"
+														stroke="#ffffff"
+														stroke-miterlimit="10"
+														strokeLinecap="round"
+													></path>{" "}
+												</g>
+											</svg>
+										</div>
+										<span className="max-w-xs w-full mx-auto lg:mx-0 text-center lg:text-left text-tiny tracking-wide text-black">
+											{globalContext?.themesOptionsContent?.address}
+										</span>
+									</div>
 								</motion.div>
+							</div>
+						</div>
+						<div className="flex flex-col px-0">
+							<h3 className="mb-5 text-base tracking-normal text-center text-black uppercase lg:text-left">
+								Newsletter
+							</h3>
+							<div className="flex flex-col items-start justify-start">
+								<Newsletter
+									paragraph={`Sign Up to get updates & news about us`}
+								/>
 							</div>
 						</div>
 					</div>

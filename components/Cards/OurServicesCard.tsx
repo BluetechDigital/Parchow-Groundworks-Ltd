@@ -25,7 +25,7 @@ const OurServicesCard: FC<IOurServicesCard> = ({
 					initial={initial}
 					whileInView={fadeInUp}
 					viewport={{once: true}}
-					className="relative group h-full min-h-[300px]"
+					className="group h-full min-h-[300px] max-h-[450px]"
 				>
 					<motion.div
 						initial={initial}
@@ -34,7 +34,7 @@ const OurServicesCard: FC<IOurServicesCard> = ({
 						viewport={{once: true}}
 						className={
 							link?.url
-								? "absolute border-solid border-2 border-white hover:border-primary-three hover:bg-primary-three transition-all duration-500 ease-in-out"
+								? "border-solid border-2 border-white hover:border-primary-three hover:bg-primary-three transition-all duration-500 ease-in-out"
 								: "hidden"
 						}
 					>

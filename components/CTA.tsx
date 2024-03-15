@@ -12,14 +12,14 @@ import Paragraph from "./Elements/Paragraph";
 const CTA: FC<ICTA> = ({title, paragraph, buttonLink, backgroundImage}) => {
 	return (
 		<>
-			<div className="hidden lg:block lg:container mx-auto py-8 px-4">
+			<div className="hidden lg:block py-8 px-0">
 				<div
 					className="p-8 relative flex flex-col justify-end lg:flex-row gap-4 bg-cover bg-no-repeat bg-center"
 					style={{
 						backgroundImage: `url("${backgroundImage?.sourceUrl}")`,
 					}}
 				>
-					<div className="py-10 px-8 lg:max-w-xl bg-white">
+					<div className="py-10 px-8 lg:max-w-xl lg:container mx-auto lg:mx-0 bg-white">
 						<motion.h3
 							initial={initialTwo}
 							whileInView={fadeIn}

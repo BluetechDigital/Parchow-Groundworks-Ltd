@@ -31,7 +31,7 @@ const Hero: FC<IHero> = ({
 		<>
 			<div className={styles.hero + " relative z-50 flex flex-col lg:mb-28"}>
 				<div
-					className="lg:relative pb-8 lg:pb-28 pt-[85px] lg:pt-[110px] h-[85vh] flex flex-col lg:flex-row bg-primary-darker w-full bg-cover bg-center bg-no-repeat"
+					className="lg:relative pb-8 lg:pb-28 pt-[85px] lg:pt-[110px] h-[90vh] flex flex-col lg:flex-row bg-primary-darker w-full bg-cover bg-center bg-no-repeat"
 					style={{
 						backgroundImage: `linear-gradient(
 								0deg,
@@ -94,7 +94,7 @@ const Hero: FC<IHero> = ({
 					</motion.div>
 				</div>
 				<div className="relative flex flex-row py-0 justify-center items-center lg:justify-between">
-					<ul className="hidden md:grid grid-cols-4 w-full lg:w-[90%] mx-auto bg-primary-dark gap-1 absolute mb-[130px] lg:mb-[-30px] 2xl:mb-[0px] left-0 right-0 flex-row items-center justify-center">
+					<ul className="hidden md:grid grid-cols-4 w-full lg:w-[90%] mx-auto bg-primary-dark absolute mb-[130px] lg:mb-[-30px] 2xl:mb-[0px] left-0 right-0 flex-row items-center justify-center">
 						{servicesList?.length > 0 ? (
 							servicesList?.map((item: any, keys: number) => (
 								<Fragment key={keys}>
@@ -105,9 +105,7 @@ const Hero: FC<IHero> = ({
 										viewport={{once: true}}
 										variants={arrayLoopStaggerChildren}
 									>
-										<div
-											className={`flex flex-col items-center justify-center p-2 w-full h-full sm:min-h-[22.5vh] lg:min-h-[25vh] xl:max-h-[22.5vh] transition-all ease-in-out duration-500`}
-										>
+										<div className="flex flex-col items-center justify-center border-x-4 border-solid border-primary-three p-2 w-full h-full sm:min-h-[22.5vh] lg:min-h-[25vh] xl:max-h-[22.5vh] transition-all ease-in-out duration-500">
 											<Image
 												alt={item?.icon?.altText}
 												src={item?.icon?.sourceUrl}
