@@ -23,7 +23,7 @@ const OurServicesCardTwo: FC<IOurServicesCardTwo> = ({
 				<Image
 					className={
 						image?.sourceUrl
-							? "bg-lightGreyTwo mx-auto rounded-full w-44 h-44 mb-6 object-cover object-center"
+							? "bg-lightGreyTwo mx-auto w-full h-32 mb-6 object-cover object-center"
 							: "hidden"
 					}
 					alt={image?.altText}

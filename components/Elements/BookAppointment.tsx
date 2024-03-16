@@ -1,7 +1,6 @@
 // Imports
 import {FC} from "react";
 import Link from "next/link";
-import Image from "next/image";
 import {IBookAppointment} from "@/types/components";
 
 const BookAppointment: FC<IBookAppointment> = ({link}) => {

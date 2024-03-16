@@ -6,7 +6,6 @@ import {IPostTypeFlexibleContent} from "@/types/context";
 // Components
 import CTA from "../CTA";
 import Hero from "../Hero";
-import CTATwo from "../CTATwo";
 import HeroTwo from "../HeroTwo";
 import Gallery from "../Gallery";
 import OurClients from "../OurClients";
@@ -220,6 +219,7 @@ const RenderFlexibleContent: FC = () => {
 								<CTATwo
 									paragraph={item?.paragraph}
 									buttonLink={item?.buttonLink}
+									backgroundImage={item?.backgroundImage}
 								/>
 							</>
 						) : item?.fieldGroupName === `${FlexibleContent}_ContactForm` &&

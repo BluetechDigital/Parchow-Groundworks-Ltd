@@ -30,27 +30,46 @@ const OurServicesGridTwo: FC<IOurServicesGridTwo> = ({
 					" relative py-8 px-4 bg-white bg-cover bg-center bg-no-repeat"
 				}
 				style={{
-					backgroundImage: `url("/svg/background/polygon-scatter-haikei-lightgrey-two.svg")`,
+					backgroundImage: `linear-gradient(
+										0deg,
+										rgba(255, 255, 255, 1),
+										rgba(255, 255, 255, 0.95),
+										rgba(255, 255, 255, 0.85),
+										rgba(255, 255, 255, 0.80)
+									),url("/svg/background/grid-background-06.svg")`,
 				}}
 			>
-				<div className="container relative m-auto flex flex-col items-center gap-6">
+				<div className="lg:container relative m-auto flex flex-col gap-6">
 					<motion.div
 						initial={initial}
 						variants={stagger}
 						whileInView="animate"
 						viewport={{once: true}}
-						className="flex flex-col items-center"
+						className="flex flex-col lg:flex-row items-center justify-between"
 					>
 						<motion.h3
 							initial={initial}
 							whileInView={fadeInUp}
 							viewport={{once: true}}
-							className="my-3 max-w-xl mx-auto lg:mx-0 uppercase text-black text-center lg:text-left font-semibold text-lg lg:text-xl"
+							className="my-3 max-w-lg mx-auto lg:mx-0 text-black text-center lg:text-left font-semibold text-lg sm:text-3xl"
 						>
 							{title}
 						</motion.h3>
+						<Link
+							href={`${buttonLink?.url}`}
+							target={buttonLink?.target}
+							className={`${buttonLink?.url ? "block mt-4" : "hidden"}`}
+						>
+							<div
+								className={`py-4 px-6 text-center cursor-pointer bg-primary-three hover:bg-primary-dark transition-all ease-in-out duration-500`}
+							>
+								<h3 className="tracking-[0.10rem] text-white text-base text-center">
+									{buttonLink?.title}
+								</h3>
+							</div>
+						</Link>
 					</motion.div>
-					<div className="w-full relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 py-6 px-0 sm:px-4 gap-6 items-start justify-center">
+					<div className="w-full relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 py-6 px-0 sm:px-4 gap-6 items-start justify-center">
 						{servicesGrid?.length > 0 ? (
 							servicesGrid?.map((item: any, keys: number) => (
 								<Fragment key={keys}>
@@ -73,26 +92,6 @@ const OurServicesGridTwo: FC<IOurServicesGridTwo> = ({
 							<></>
 						)}
 					</div>
-					<Link
-						href={`${buttonLink?.url}`}
-						target={buttonLink?.target}
-						className={`${buttonLink?.url ? "block" : "hidden"}`}
-					>
-						<div
-							className={`py-4 pl-4 pr-10 w-fit mx-auto lg:mx-0 cursor-pointer bg-primary-default hover:bg-primary-dark transition-all ease-in-out duration-500`}
-						>
-							<h3 className="relative flex items-center justify-center font-semibold tracking-[0.10rem] uppercase pl-4 text-lightGrey text-tiny text-center">
-								{buttonLink?.title}
-								<Image
-									width={550}
-									height={550}
-									alt="Black Arrow Icon"
-									src="/svg/navigation-menu-dropdown-arrow-white.svg"
-									className="my-auto ml-2 absolute top-[-20px] right-[-40px] rotate-[-135deg] cursor-pointer w-[35px] h-[35px] object-contain object-center"
-								/>
-							</h3>
-						</div>
-					</Link>
 				</div>
 			</div>
 		</>

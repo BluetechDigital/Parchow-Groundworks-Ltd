@@ -379,6 +379,16 @@ export const getAllFlexibleContentComponents = async (
             										}
             									}
 											}
+											... on ${postTypeFlexibleContent}_CtaTwo {
+												fieldGroupName
+												paragraph
+												displaySection
+												buttonLink {
+													url
+													title
+													target
+												}
+											}
 											... on ${postTypeFlexibleContent}_ContactForm {
 												fieldGroupName
 												title
