@@ -122,7 +122,7 @@ const Newsletter: FC<INewsletter> = ({paragraph}) => {
 							initial={initialTwo}
 							whileInView={fadeIn}
 							viewport={{once: true}}
-							className="my-2 text-xl font-bold text-center lg:text-left text-green-two"
+							className="my-2 text-xl font-bold text-center lg:text-left text-primary-two"
 						>
 							Sending Message...
 						</motion.h4>
@@ -131,7 +131,7 @@ const Newsletter: FC<INewsletter> = ({paragraph}) => {
 							initial={initialTwo}
 							whileInView={fadeIn}
 							viewport={{once: true}}
-							className="my-2 text-xl font-bold text-center lg:text-left text-green-two"
+							className="my-2 text-xl font-bold text-center lg:text-left text-primary-two"
 						>
 							Message Sent!
 						</motion.h4>
@@ -140,7 +140,7 @@ const Newsletter: FC<INewsletter> = ({paragraph}) => {
 							initial={initialTwo}
 							whileInView={fadeIn}
 							viewport={{once: true}}
-							className="my-2 text-xl font-bold text-center lg:text-left text-green-two"
+							className="my-2 text-xl font-bold text-center lg:text-left text-primary-two"
 						>
 							Error Message: Something went wrong with sending your message.
 							Please try again.

@@ -108,6 +108,11 @@ export type IOurServices = {
 	title: string;
 	subtitle: string;
 	paragraph: string;
+	buttonLink: {
+		url: string;
+		title: string;
+		target: string;
+	};
 	servicesGrid: [
 		{
 			card: {
@@ -119,6 +124,32 @@ export type IOurServices = {
 					target: string;
 				};
 				icon: {
+					altText: string;
+					sourceUrl: string;
+					mediaDetails: {
+						width: number;
+						height: number;
+					};
+				};
+			};
+		}
+	];
+};
+export type IServicesGrid = {
+	title: string;
+	subtitle: string;
+	paragraph: string;
+	servicesGrid: [
+		{
+			card: {
+				title: string;
+				paragraph: string;
+				link: {
+					url: string;
+					title: string;
+					target: string;
+				};
+				image: {
 					altText: string;
 					sourceUrl: string;
 					mediaDetails: {
@@ -376,6 +407,23 @@ export type IOurServicesCard = {
 		target: string;
 	};
 	icon: {
+		altText: string;
+		sourceUrl: string;
+		mediaDetails: {
+			width: number;
+			height: number;
+		};
+	};
+};
+export type IServicesGridCard = {
+	title: string;
+	paragraph: string;
+	link: {
+		url: string;
+		title: string;
+		target: string;
+	};
+	image: {
 		altText: string;
 		sourceUrl: string;
 		mediaDetails: {

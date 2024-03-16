@@ -18,3 +18,11 @@
 		}
 	}
 }
+
+.ServicesGrid {
+	.card:hover {
+		.content {
+			background-image: url("/svg/background/polygon-scatter-haikei-blue.svg") !important;
+		}
+	}
+}

@@ -5,6 +5,7 @@ import {
 	fadeInUp,
 	arrayLoopStaggerChildren,
 } from "../animations/animations";
+import Link from "next/link";
 import {FC, Fragment} from "react";
 import {motion} from "framer-motion";
 import {IOurServices} from "@/types/components/index";
@@ -20,6 +21,7 @@ const OurServices: FC<IOurServices> = ({
 	title,
 	subtitle,
 	paragraph,
+	buttonLink,
 	servicesGrid,
 }) => {
 	return (
@@ -54,6 +56,19 @@ const OurServices: FC<IOurServices> = ({
 								content={paragraph}
 								tailwindStyling="max-w-full lg:max-w-lg text-white text-base text-center lg:text-left"
 							/>
+							<Link
+								href={`${buttonLink?.url}`}
+								target={buttonLink?.target}
+								className={`${buttonLink?.url ? "block mt-4" : "hidden"}`}
+							>
+								<div
+									className={`py-4 px-6 text-center cursor-pointer bg-accent-default hover:bg-accent-two transition-all ease-in-out duration-500`}
+								>
+									<h3 className="tracking-[0.10rem] text-white text-base text-center">
+										{buttonLink?.title}
+									</h3>
+								</div>
+							</Link>
 						</div>
 						<div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-6 w-full lg:w-[66%]">
 							{servicesGrid?.length > 0 ? (

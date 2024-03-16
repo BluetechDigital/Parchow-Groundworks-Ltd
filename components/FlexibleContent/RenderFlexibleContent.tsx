@@ -12,6 +12,7 @@ import OurClients from "../OurClients";
 import OurServices from "../OurServices";
 import ContactForm from "../ContactForm";
 import OurLocation from "../OurLocation";
+import ServicesGrid from "../ServicesGrid";
 import ErrorPage from "../Global/ErrorPage";
 import GallerySlider from "../GallerySlider";
 import GettingStarted from "../GettingStarted";
@@ -96,6 +97,17 @@ const RenderFlexibleContent: FC = () => {
 						  item?.displaySection ? (
 							<>
 								<OurServices
+									title={item?.title}
+									subtitle={item?.subtitle}
+									paragraph={item?.paragraph}
+									buttonLink={item?.buttonLink}
+									servicesGrid={item?.servicesGrid}
+								/>
+							</>
+						) : item?.fieldGroupName === `${FlexibleContent}_ServicesGrid` &&
+						  item?.displaySection ? (
+							<>
+								<ServicesGrid
 									title={item?.title}
 									subtitle={item?.subtitle}
 									paragraph={item?.paragraph}

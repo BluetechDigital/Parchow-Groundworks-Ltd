@@ -1,11 +1,9 @@
 // Imports
 import {
 	initial,
-	stagger,
 	fadeInUp,
 	arrayLoopStaggerChildren,
 } from "../animations/animations";
-import Link from "next/link";
 import Image from "next/image";
 import {FC, Fragment} from "react";
 import {motion} from "framer-motion";

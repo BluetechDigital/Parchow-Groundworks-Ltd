@@ -131,6 +131,11 @@ export const getAllFlexibleContentComponents = async (
 												title
 												subtitle
 												paragraph
+												buttonLink {
+            										url
+            										title
+            										target
+            									}
 												displaySection
 												servicesGrid {
 													card {
@@ -142,6 +147,32 @@ export const getAllFlexibleContentComponents = async (
 															target
 														}
 														icon {
+															altText
+															sourceUrl
+															mediaDetails {
+																height
+																width
+															}
+														}
+													}
+												}
+											}
+											... on ${postTypeFlexibleContent}_ServicesGrid {
+												fieldGroupName
+												title
+												subtitle
+												paragraph
+												displaySection
+												servicesGrid {
+													card {
+														title
+														paragraph
+														link {
+															url
+															title
+															target
+														}
+														image {
 															altText
 															sourceUrl
 															mediaDetails {
