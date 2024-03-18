@@ -102,6 +102,7 @@ export const getAllFlexibleContentComponents = async (
             									displaySection
             									displayContentOption
             									displayBackgroundIcon
+            									displayParagraphColor
             									displayBackgroundColor
             								}
 											... on ${postTypeFlexibleContent}_OurClients {
@@ -255,6 +256,54 @@ export const getAllFlexibleContentComponents = async (
 															width
 														}
 													}
+            									}
+            								}
+											... on ${postTypeFlexibleContent}_TeamMembers {
+            									fieldGroupName
+            									title
+            									paragraph
+												displaySection
+            									teamMembersGrid {
+            										card {
+            											name
+            											position
+            											twitterLink
+            											linkedinLink
+            											facebookLink
+            											instagramLink
+            											image {
+            												altText
+            												sourceUrl
+            												mediaDetails {
+            													height
+            													width
+            												}
+            											}
+            										}
+            									}
+            								}
+            								... on ${postTypeFlexibleContent}_ExecutiveLeadershipsTeam {
+            									fieldGroupName
+            									title
+            									paragraph
+												displaySection
+            									leadershipTeamGrid {
+            										card {
+            											name
+            											position
+            											twitterLink
+            											linkedinLink
+            											facebookLink
+            											instagramLink
+            											image {
+            												altText
+            												sourceUrl
+            												mediaDetails {
+            													height
+            													width
+            												}
+            											}
+            										}
             									}
             								}
 											... on ${postTypeFlexibleContent}_OurLocation {

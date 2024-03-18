@@ -11,6 +11,7 @@ import HeroTwo from "../HeroTwo";
 import Gallery from "../Gallery";
 import OurClients from "../OurClients";
 import VideoBlock from "../VideoBlock";
+import TeamMembers from "../TeamMembers";
 import OurServices from "../OurServices";
 import ContactForm from "../ContactForm";
 import OurLocation from "../OurLocation";
@@ -29,6 +30,7 @@ import ContentSectorGrid from "../ContentSectorGrid";
 import TestimonialsSlider from "../TestimonialsSlider";
 import OurServicesGridTwo from "../OurServicesGridTwo";
 import RequestAppointmentForm from "../RequestAppointmentForm";
+import ExecutiveLeadershipsTeam from "../ExecutiveLeadershipsTeam";
 
 const RenderFlexibleContent: FC = () => {
 	const content = usePageContext();
@@ -83,6 +85,7 @@ const RenderFlexibleContent: FC = () => {
 									buttonLink={item?.buttonLink}
 									bulletPoints={item?.bulletPoints}
 									displayContentOption={item?.displayContentOption}
+									displayParagraphColor={item?.displayParagraphColor}
 									displayBackgroundIcon={item?.displayBackgroundIcon}
 									displayBackgroundColor={item?.displayBackgroundColor}
 								/>
@@ -148,6 +151,25 @@ const RenderFlexibleContent: FC = () => {
 									image={item?.image}
 									paragraph={item?.paragraph}
 									skillsExperiencesGrid={item?.skillsExperiencesGrid}
+								/>
+							</>
+						) : item?.fieldGroupName === `${FlexibleContent}_TeamMembers` &&
+						  item?.displaySection ? (
+							<>
+								<TeamMembers
+									title={item?.title}
+									paragraph={item?.paragraph}
+									teamMembersGrid={item?.teamMembersGrid}
+								/>
+							</>
+						) : item?.fieldGroupName ===
+								`${FlexibleContent}_ExecutiveLeadershipsTeam` &&
+						  item?.displaySection ? (
+							<>
+								<ExecutiveLeadershipsTeam
+									title={item?.title}
+									paragraph={item?.paragraph}
+									leadershipTeamGrid={item?.leadershipTeamGrid}
 								/>
 							</>
 						) : item?.fieldGroupName === `${FlexibleContent}_OurLocation` &&

@@ -159,20 +159,18 @@ export type IOurServices = {
 		}
 	];
 };
-export type IServicesGrid = {
+export type ITeamMembers = {
 	title: string;
-	subtitle: string;
 	paragraph: string;
-	servicesGrid: [
+	teamMembersGrid: [
 		{
 			card: {
-				title: string;
-				paragraph: string;
-				link: {
-					url: string;
-					title: string;
-					target: string;
-				};
+				name: string;
+				position: string;
+				facebookLink: string;
+				twitterLink: string;
+				linkedinLink: string;
+				instagramLink: string;
 				image: {
 					altText: string;
 					sourceUrl: string;
@@ -204,6 +202,32 @@ export type IMaintenance = {
 			height: number;
 		};
 	};
+};
+export type IServicesGrid = {
+	title: string;
+	subtitle: string;
+	paragraph: string;
+	servicesGrid: [
+		{
+			card: {
+				title: string;
+				paragraph: string;
+				link: {
+					url: string;
+					title: string;
+					target: string;
+				};
+				image: {
+					altText: string;
+					sourceUrl: string;
+					mediaDetails: {
+						width: number;
+						height: number;
+					};
+				};
+			};
+		}
+	];
 };
 export type IGallerySlider = {
 	gallerySlider: [
@@ -291,6 +315,7 @@ export type ITitleContentImage = {
 	paragraph: string;
 	textTitle: string;
 	displayContentOption: string;
+	displayParagraphColor: string;
 	displayBackgroundColor: string;
 	displayBackgroundIcon: boolean;
 	buttonLink: {
@@ -397,6 +422,30 @@ export type IRequestAppointmentForm = {
 		target: string;
 	};
 };
+export type IExecutiveLeadershipsTeam = {
+	title: string;
+	paragraph: string;
+	leadershipTeamGrid: [
+		{
+			card: {
+				name: string;
+				position: string;
+				facebookLink: string;
+				twitterLink: string;
+				linkedinLink: string;
+				instagramLink: string;
+				image: {
+					altText: string;
+					sourceUrl: string;
+					mediaDetails: {
+						width: number;
+						height: number;
+					};
+				};
+			};
+		}
+	];
+};
 
 // Global
 export type ILayout = {
@@ -420,6 +469,22 @@ export type IPagination = {
 };
 
 // Cards
+export type ITeamMembersCard = {
+	name: string;
+	position: string;
+	facebookLink: string;
+	twitterLink: string;
+	linkedinLink: string;
+	instagramLink: string;
+	image: {
+		altText: string;
+		sourceUrl: string;
+		mediaDetails: {
+			width: number;
+			height: number;
+		};
+	};
+};
 export type IDevelopmentsCard = {
 	slug: string;
 	date: string;
@@ -503,6 +568,22 @@ export type IContentSectorGridCard = {
 		title: string;
 		target: string;
 	};
+	image: {
+		altText: string;
+		sourceUrl: string;
+		mediaDetails: {
+			width: number;
+			height: number;
+		};
+	};
+};
+export type IExecutiveLeadershipsTeamCard = {
+	name: string;
+	position: string;
+	facebookLink: string;
+	twitterLink: string;
+	linkedinLink: string;
+	instagramLink: string;
 	image: {
 		altText: string;
 		sourceUrl: string;

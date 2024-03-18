@@ -1,8 +1,9 @@
 // Imports
-import fadeInUp, {
+import {
 	fadeIn,
 	stagger,
 	initial,
+	fadeInUp,
 	initialTwo,
 	slideInLeftInitial,
 	slideInRightFinish,
@@ -11,7 +12,6 @@ import fadeInUp, {
 } from "../animations/animations";
 import {FC, Fragment} from "react";
 import Link from "next/link";
-import Image from "next/image";
 import {motion} from "framer-motion";
 import {ITitleContentImage} from "@/types/components";
 
@@ -27,10 +27,12 @@ const TitleContentImage: FC<ITitleContentImage> = ({
 	buttonLink,
 	bulletPoints,
 	displayContentOption,
+	displayParagraphColor,
 	displayBackgroundIcon,
 	displayBackgroundColor,
 }) => {
 	let backgroundColor;
+	let paragraphColor;
 
 	switch (displayBackgroundColor) {
 		case "White":
@@ -41,6 +43,18 @@ const TitleContentImage: FC<ITitleContentImage> = ({
 			break;
 		default:
 			backgroundColor = "bg-white";
+			break;
+	}
+
+	switch (displayParagraphColor) {
+		case "Black":
+			paragraphColor = "text-black";
+			break;
+		case "Grey":
+			paragraphColor = "text-darkGrey";
+			break;
+		default:
+			paragraphColor = "text-black";
 			break;
 	}
 	return (
@@ -60,7 +74,7 @@ const TitleContentImage: FC<ITitleContentImage> = ({
 							initial={initial}
 							whileInView={fadeInUp}
 							viewport={{once: true}}
-							className="my-2 max-w-3xl leading-[2.5rem] lg:leading-[3rem] text-black text-center lg:text-left font-semibold text-lg sm:text-3xl lg:text-7xl"
+							className="my-2 max-w-3xl leading-[2.5rem] lg:leading-[3rem] uppercase text-black text-center lg:text-left font-semibold text-lg sm:text-3xl lg:text-6xl"
 						>
 							{title}
 						</motion.h3>
@@ -104,13 +118,17 @@ const TitleContentImage: FC<ITitleContentImage> = ({
 									initial={initialTwo}
 									whileInView={fadeIn}
 									viewport={{once: true}}
-									className="mb-2 font-semibold text-center lg:text-left text-black text-medium"
+									className={
+										textTitle
+											? "mb-2 font-semibold text-center lg:text-left text-black text-medium"
+											: "hidden"
+									}
 								>
 									{textTitle}
 								</motion.h3>
 								<Paragraph
 									content={paragraph}
-									tailwindStyling={`lg:max-w-xl leading-[1.5rem] text-base text-center lg:text-left text-darkGrey`}
+									tailwindStyling={`lg:max-w-xl leading-[1.5rem] text-base text-center lg:text-left ${paragraphColor}`}
 								/>
 								<div className="flex flex-col my-8 lg:my-6 gap-4">
 									{bulletPoints?.length > 0 ? (

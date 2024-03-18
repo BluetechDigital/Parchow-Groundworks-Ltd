@@ -24,7 +24,7 @@ const CTA: FC<ICTA> = ({title, paragraph, buttonLink, backgroundImage}) => {
 							initial={initialTwo}
 							whileInView={fadeIn}
 							viewport={{once: true}}
-							className="my-3 max-w-xl mx-auto lg:mx-0 text-black text-center lg:text-left text-lg sm:text-3xl"
+							className="my-3 max-w-xl mx-auto lg:mx-0 text-black uppercase leading-[2.25rem] text-center lg:text-left text-lg sm:text-3xl"
 						>
 							{title}
 						</motion.h3>

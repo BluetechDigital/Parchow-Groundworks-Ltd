@@ -1,9 +1,14 @@
 // Imports
+import {
+	initial,
+	stagger,
+	fadeInUp,
+	arrayLoopStaggerChildren,
+} from "../animations/animations";
 import Image from "next/image";
 import {FC, Fragment} from "react";
 import {motion} from "framer-motion";
 import {IOurClients} from "@/types/components/index";
-import {initial, stagger, fadeInUp} from "../animations/animations";
 
 // Styling
 import styles from "../styles/components/OurClients.module.scss";
@@ -19,7 +24,20 @@ const OurClients: FC<IOurClients> = ({
 }) => {
 	return (
 		<>
-			<div className={styles.ourClients + ` py-16 px-4 lg:px-0 bg-white`}>
+			<div
+				className={
+					styles.ourClients +
+					` py-16 px-4 lg:px-0 bg-white bg-center bg-no-repeat bg-cover`
+				}
+				style={{
+					backgroundImage: `linear-gradient(
+								0deg,
+								rgb(255, 255, 255, 0.70),
+								rgba(255, 255, 255, 0.70),
+								rgba(255, 255, 255, 0.70)
+							),url("/img/background/Cement-Floor-Background.jpg")`,
+				}}
+			>
 				<div className="container px-0 mx-auto">
 					<motion.div
 						initial={initial}
@@ -32,7 +50,7 @@ const OurClients: FC<IOurClients> = ({
 							initial={initial}
 							whileInView={fadeInUp}
 							viewport={{once: true}}
-							className="max-w-sm mx-auto xl:mx-0 text-center xl:text-left text-base text-primary-default"
+							className="text-center lg:text-left text-base text-accent-default"
 						>
 							{subtitle}
 						</motion.h4>
@@ -40,7 +58,7 @@ const OurClients: FC<IOurClients> = ({
 							initial={initial}
 							whileInView={fadeInUp}
 							viewport={{once: true}}
-							className="my-3 max-w-xl mx-auto xl:mx-0 uppercase text-black text-center font-semibold text-lg md:text-xl"
+							className="my-3 max-w-xl mx-auto lg:mx-0 text-black uppercase leading-[2.25rem] text-center lg:text-left text-lg sm:text-3xl"
 						>
 							{title}
 						</motion.h3>
@@ -62,7 +80,13 @@ const OurClients: FC<IOurClients> = ({
 							{imageGrid?.length > 0 ? (
 								imageGrid.map((item: any, keys: number) => (
 									<Fragment key={keys}>
-										<div>
+										<motion.div
+											custom={keys}
+											initial={initial}
+											whileInView="animate"
+											viewport={{once: true}}
+											variants={arrayLoopStaggerChildren}
+										>
 											<Image
 												alt={item?.image?.altText}
 												src={item?.image?.sourceUrl}
@@ -74,7 +98,7 @@ const OurClients: FC<IOurClients> = ({
 														: `hidden`
 												}
 											/>
-										</div>
+										</motion.div>
 									</Fragment>
 								))
 							) : (
