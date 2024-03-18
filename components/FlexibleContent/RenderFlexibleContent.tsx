@@ -10,6 +10,7 @@ import CTATwo from "../CTATwo";
 import HeroTwo from "../HeroTwo";
 import Gallery from "../Gallery";
 import OurClients from "../OurClients";
+import VideoBlock from "../VideoBlock";
 import OurServices from "../OurServices";
 import ContactForm from "../ContactForm";
 import OurLocation from "../OurLocation";
@@ -171,6 +172,20 @@ const RenderFlexibleContent: FC = () => {
 									title={item?.title}
 									subtitle={item?.subtitle}
 									paragraph={item?.paragraph}
+								/>
+							</>
+						) : item?.fieldGroupName === `${FlexibleContent}_VideoBlock` &&
+						  item?.displaySection ? (
+							<>
+								<VideoBlock
+									title={item?.title}
+									video={item?.video}
+									subtitle={item?.subtitle}
+									paragraph={item?.paragraph}
+									buttonLink={item?.buttonLink}
+									displayVideo={item?.displayVideo}
+									displayYoutubeIcon={item?.displayYoutubeIcon}
+									videoBackgroundImage={item?.videoBackgroundImage?.sourceUrl}
 								/>
 							</>
 						) : item?.fieldGroupName === `${FlexibleContent}_Gallery` &&

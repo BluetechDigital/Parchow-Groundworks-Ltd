@@ -24,30 +24,39 @@ export const getAllPreviewFlexibleContentComponents = async (
 										flexibleContent {
 											... on ${postTypeFlexibleContent}_Hero {
 												fieldGroupName
-												displaySection
-												heroSlider {
-              										title
-              										paragraph
-													buttonLink {
-                										url
-                										title
-                										target
-                									}
-                									buttonLinkTwo {
-                										url
-                										title
-                										target
-                									}
-              										backgroundImage {
-              											altText
-              											sourceUrl
-              											mediaDetails {
-              												height
-              												width
-              											}
-              										}
-													
-              									}
+            									title
+            									paragraph
+            									displaySection
+            									servicesList {
+            										title
+            										paragraph
+            										icon {
+            											altText
+            											sourceUrl
+            											mediaDetails {
+            												height
+            												width
+            											}
+            										}
+            									}
+            									buttonLink {
+            										url
+            										title
+            										target
+            									}
+            									buttonLinkTwo {
+            									 	url
+            									 	title
+            									 	target
+            									}
+            									backgroundImage {
+            										altText
+            										sourceUrl
+            										mediaDetails {
+            											height
+            											width
+            										}
+            									}
 											}
 											... on ${postTypeFlexibleContent}_HeroTwo {
 												fieldGroupName
@@ -73,13 +82,9 @@ export const getAllPreviewFlexibleContentComponents = async (
 											... on ${postTypeFlexibleContent}_TitleContentImage {
             									fieldGroupName
             									title
+            									textTitle
+            									subtitle
             									paragraph
-												displaySection
-            									buttonLink {
-            										url
-            										title
-            										target
-            									}
             									image {
             										altText
             										sourceUrl
@@ -88,8 +93,17 @@ export const getAllPreviewFlexibleContentComponents = async (
             											width
             										}
             									}
+            									buttonLink {
+            										url
+            										title
+            										target
+            									}
+            									bulletPoints {
+            										points
+            									}
+            									displaySection
             									displayContentOption
-												displayBackgroundIcon
+            									displayBackgroundIcon
             									displayBackgroundColor
             								}
 											... on ${postTypeFlexibleContent}_OurClients {
@@ -119,11 +133,67 @@ export const getAllPreviewFlexibleContentComponents = async (
 												title
 												subtitle
 												paragraph
+												buttonLink {
+            										url
+            										title
+            										target
+            									}
 												displaySection
 												servicesGrid {
 													card {
 														title
 														paragraph
+														link {
+															url
+															title
+															target
+														}
+														icon {
+															altText
+															sourceUrl
+															mediaDetails {
+																height
+																width
+															}
+														}
+													}
+												}
+											}
+											... on ${postTypeFlexibleContent}_ServicesGrid {
+												fieldGroupName
+												title
+												subtitle
+												paragraph
+												displaySection
+												servicesGrid {
+													card {
+														title
+														paragraph
+														link {
+															url
+															title
+															target
+														}
+														image {
+															altText
+															sourceUrl
+															mediaDetails {
+																height
+																width
+															}
+														}
+													}
+												}
+											}
+											... on ${postTypeFlexibleContent}_ContentSectorGrid {
+												fieldGroupName
+												title
+												subtitle
+												paragraph
+												displaySection
+												sectorGrid {
+													card {
+														title
 														link {
 															url
 															title
@@ -179,6 +249,14 @@ export const getAllPreviewFlexibleContentComponents = async (
 												}
             									skillsExperiencesGrid {
             										text
+													image {
+														altText
+														sourceUrl
+														mediaDetails {
+															height
+															width
+														}
+													}
             									}
             								}
 											... on ${postTypeFlexibleContent}_OurLocation {
@@ -235,6 +313,24 @@ export const getAllPreviewFlexibleContentComponents = async (
 												subtitle
 												paragraph
 												displaySection
+											}
+											... on ${postTypeFlexibleContent}_VideoBlock {
+												fieldGroupName
+												title
+												video
+												subtitle
+												paragraph
+												displayVideo
+												displaySection
+												displayYoutubeIcon
+												buttonLink {
+													url
+													title
+													target
+												}
+												videoBackgroundImage {
+            										sourceUrl
+              									}
 											}
 											... on ${postTypeFlexibleContent}_Gallery {
 												fieldGroupName
@@ -295,7 +391,22 @@ export const getAllPreviewFlexibleContentComponents = async (
 													target
 												}
 												backgroundImage {
-													sourceUrl
+            										altText
+            										sourceUrl
+            										mediaDetails {
+            											height
+            											width
+            										}
+            									}
+											}
+											... on ${postTypeFlexibleContent}_CtaTwo {
+												fieldGroupName
+												paragraph
+												displaySection
+												buttonLink {
+													url
+													title
+													target
 												}
 											}
 											... on ${postTypeFlexibleContent}_ContactForm {

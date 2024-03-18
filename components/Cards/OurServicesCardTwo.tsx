@@ -1,13 +1,9 @@
 // Imports
 import {FC} from "react";
-import Link from "next/link";
 import Image from "next/image";
 import {motion} from "framer-motion";
 import {IOurServicesCardTwo} from "@/types/components";
-import {initial, stagger, fadeInUp} from "@/animations/animations";
-
-// Styling
-import styles from "../../styles/components/OurServices.module.scss";
+import {initial, fadeInUp} from "@/animations/animations";
 
 // Components
 import Paragraph from "../Elements/Paragraph";

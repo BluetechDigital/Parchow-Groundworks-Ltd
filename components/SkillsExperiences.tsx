@@ -74,15 +74,15 @@ const SkillsExperiences: FC<ISkillsExperiences> = ({
 										className="flex flex-col items-center justify-center h-fit"
 									>
 										<Image
+											className={
+												item?.image?.sourceUrl
+													? "bg-lightGreyTwo mx-auto w-full h-32 mb-6 object-cover object-center"
+													: "hidden"
+											}
 											alt={item?.image?.altText}
 											src={item?.image?.sourceUrl}
-											width={item?.image?.mediaDetails.width}
-											height={item?.image?.mediaDetails.height}
-											className={`${
-												item?.image?.sourceUrl
-													? "bg-lightGreyTwo mx-auto rounded-full w-32 h-32 mb-6 object-cover object-center"
-													: "hidden"
-											}`}
+											width={item?.image?.mediaDetails?.width}
+											height={item?.image?.mediaDetails?.height}
 										/>
 										<Paragraph
 											content={item?.text}

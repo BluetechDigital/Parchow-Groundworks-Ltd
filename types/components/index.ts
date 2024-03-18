@@ -90,6 +90,22 @@ export type IGallery = {
 export type INewsletter = {
 	paragraph: string;
 };
+export type IVideoBlock = {
+	title: string;
+	video: string;
+	subtitle: string;
+	paragraph: string;
+	displayVideo: boolean;
+	displayYoutubeIcon: boolean;
+	buttonLink: {
+		url: string;
+		title: string;
+		target: string;
+	};
+	videoBackgroundImage: {
+		sourceUrl: string;
+	};
+};
 export type IOurClients = {
 	title: string;
 	subtitle: string;
@@ -499,9 +515,17 @@ export type IParagraph = {
 export type IRenderStars = {
 	rating: number;
 };
+export type IVideoWrapper = {
+	children: React.ReactNode;
+};
 export type IBackHoverButton = {
 	link: string;
 };
 export type IBookAppointment = {
 	link: string;
+};
+export type IYoutubeButton = {
+	title: string;
+	fullWidth: boolean;
+	displayYoutubeIcon: boolean;
 };
