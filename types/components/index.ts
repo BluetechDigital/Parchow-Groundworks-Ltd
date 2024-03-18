@@ -387,6 +387,16 @@ export type IOurServicesGridTwo = {
 		}
 	];
 };
+export type IRequestAppointmentForm = {
+	title: string;
+	subtitle: string;
+	paragraph: string;
+	buttonLink: {
+		url: string;
+		title: string;
+		target: string;
+	};
+};
 
 // Global
 export type ILayout = {

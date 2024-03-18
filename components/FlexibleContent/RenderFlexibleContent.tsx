@@ -28,6 +28,7 @@ import SkillsExperiences from "../SkillsExperiences";
 import ContentSectorGrid from "../ContentSectorGrid";
 import TestimonialsSlider from "../TestimonialsSlider";
 import OurServicesGridTwo from "../OurServicesGridTwo";
+import RequestAppointmentForm from "../RequestAppointmentForm";
 
 const RenderFlexibleContent: FC = () => {
 	const content = usePageContext();
@@ -250,6 +251,17 @@ const RenderFlexibleContent: FC = () => {
 						  item?.displaySection ? (
 							<>
 								<ContactForm title={item?.title} paragraph={item?.paragraph} />
+							</>
+						) : item?.fieldGroupName ===
+								`${FlexibleContent}_RequestAppointmentForm` &&
+						  item?.displaySection ? (
+							<>
+								<RequestAppointmentForm
+									title={item?.title}
+									subtitle={item?.subtitle}
+									paragraph={item?.paragraph}
+									buttonLink={item?.buttonLink}
+								/>
 							</>
 						) : item?.fieldGroupName === `${FlexibleContent}_Maintenance` &&
 						  item?.displaySection ? (

@@ -1,0 +1,10 @@
+// Imports
+@import "../base/fonts";
+@import "../base/colors";
+
+.requestAppointmentForm {
+	input,
+	textarea {
+		background-color: $white;
+	}
+}

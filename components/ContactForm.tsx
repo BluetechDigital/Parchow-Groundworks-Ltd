@@ -398,7 +398,7 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 									viewport={{once: true}}
 									className="flex items-center justify-center my-4 mb-8 gap-x-2"
 								>
-									<h3 className="text-xl font-semibold text-center uppercase text-primary-darker">
+									<h3 className="text-xl font-semibold text-center uppercase text-[#e20031]">
 										Error Message: Something went wrong with sending your
 										message. Please try again.
 									</h3>
@@ -626,7 +626,7 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 									}
 								>
 									<ReCAPTCHA
-										sitekey={`6LeV75gpAAAAAMO-pJCD28mN8upDYZtFncpgf-94`}
+										sitekey={`6LfF-pwpAAAAAGNKKz5Ae7Cbh18aLprnrq3r-ZEe`}
 										onChange={handleReCaptchaChange}
 									/>
 								</motion.div>
