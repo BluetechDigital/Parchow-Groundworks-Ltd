@@ -6,6 +6,7 @@ import {
 	slideInLeftInitial,
 	slideInRightFinish,
 	arrayLoopStaggerChildren,
+	stagger,
 } from "../animations/animations";
 import Link from "next/link";
 import Image from "next/image";
@@ -46,9 +47,10 @@ const Hero: FC<IHero> = ({
 					}}
 				>
 					<motion.div
+						initial={initial}
+						variants={stagger}
+						whileInView="animate"
 						viewport={{once: true}}
-						initial={slideInLeftInitial}
-						whileInView={slideInRightFinish}
 						className="lg:container px-4 lg:px-10 xl:px-0 mx-auto max-w-xl flex flex-col justify-center gap-2 h-full"
 					>
 						<motion.h1
@@ -72,7 +74,7 @@ const Hero: FC<IHero> = ({
 								<div
 									className={`py-4 px-6 text-center cursor-pointer bg-primary-light hover:bg-primary-default transition-all ease-in-out duration-500`}
 								>
-									<h3 className="tracking-[0.10rem] text-white text-base text-center">
+									<h3 className="tracking-[0.10rem] text-white text-base text-center uppercase">
 										{buttonLink?.title}
 									</h3>
 								</div>
@@ -85,7 +87,7 @@ const Hero: FC<IHero> = ({
 								<div
 									className={`py-4 px-6 text-center cursor-pointer bg-accent-default hover:bg-accent-two transition-all ease-in-out duration-500`}
 								>
-									<h3 className="tracking-[0.10rem] text-white text-base text-center">
+									<h3 className="tracking-[0.10rem] text-white text-base text-center uppercase">
 										{buttonLinkTwo?.title}
 									</h3>
 								</div>

@@ -168,7 +168,7 @@ const TitleContentImage: FC<ITitleContentImage> = ({
 										<div
 											className={`py-4 px-6 text-center cursor-pointer bg-accent-default hover:bg-accent-two transition-all ease-in-out duration-500`}
 										>
-											<h3 className="tracking-[0.10rem] text-white text-base text-center">
+											<h3 className="tracking-[0.10rem] text-white text-base text-center uppercase">
 												{buttonLink?.title}
 											</h3>
 										</div>

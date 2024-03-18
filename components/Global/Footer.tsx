@@ -15,7 +15,7 @@ import {useGlobalContext} from "@/context/global";
 import styles from "@/styles/components/Footer.module.scss";
 
 // Components
-import Newsletter from "../Elements/FooterNewsletter";
+import FooterNewsletter from "../Elements/FooterNewsletter";
 import Paragraph from "@/components/Elements/Paragraph";
 
 const Footer: FC = () => {
@@ -49,15 +49,7 @@ const Footer: FC = () => {
 									: "hidden"
 							}
 						/>
-						<Paragraph
-							content={globalContext?.themesOptionsContent?.businessHours}
-							tailwindStyling={
-								globalContext?.themesOptionsContent?.businessHours
-									? "block px-4 lg:px-0 max-w-full lg:max-w-xl text-tiny text-black text-center lg:text-left"
-									: "hidden"
-							}
-						/>
-						<div className="flex items-center justify-center my-4 gap-4 text-center">
+						<div className="flex items-center justify-center mt-2 gap-4 text-center">
 							<Link
 								href={`${globalContext?.themesOptionsContent?.facebookLink}`}
 								className={
@@ -410,25 +402,80 @@ const Footer: FC = () => {
 													strokeLinejoin="round"
 												></g>
 												<g id="SVGRepo_iconCarrier">
-													{" "}
 													<path
 														d="M12 12C14.4853 12 16.5 9.98528 16.5 7.5C16.5 5.01472 14.4853 3 12 3C9.51472 3 7.5 5.01472 7.5 7.5C7.5 9.98528 9.51472 12 12 12Z"
 														stroke="#ffffff"
 														strokeMiterlimit="10"
 														strokeLinecap="round"
-													></path>{" "}
+													></path>
 													<path
 														d="M12 14.0137V22"
 														stroke="#ffffff"
 														strokeMiterlimit="10"
 														strokeLinecap="round"
-													></path>{" "}
+													></path>
 												</g>
 											</svg>
 										</div>
 										<span className="max-w-xs w-full mx-auto lg:mx-0 text-center lg:text-left text-tiny tracking-wide text-black">
 											{globalContext?.themesOptionsContent?.address}
 										</span>
+									</div>
+									<div
+										className={
+											globalContext?.themesOptionsContent?.businessHours
+												? "flex items-center justify-center gap-2"
+												: "hidden"
+										}
+									>
+										<div className="flex items-center justify-center w-8 h-8 rounded-full bg-accent-two sm:mr-1">
+											<svg
+												fill="none"
+												className="w-5 h-5"
+												viewBox="0 0 24 24"
+												xmlns="http://www.w3.org/2000/svg"
+											>
+												<g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+												<g
+													id="SVGRepo_tracerCarrier"
+													strokeLinecap="round"
+													strokeLinejoin="round"
+												></g>
+												<g id="SVGRepo_iconCarrier">
+													<path
+														d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z"
+														stroke="#ffffff"
+														strokeWidth="1.5"
+														strokeLinecap="round"
+														strokeLinejoin="round"
+													></path>
+													<path
+														d="M12 6V12"
+														stroke="#ffffff"
+														strokeWidth="1.5"
+														strokeLinecap="round"
+														strokeLinejoin="round"
+													></path>
+													<path
+														d="M16.24 16.24L12 12"
+														stroke="#ffffff"
+														strokeWidth="1.5"
+														strokeLinecap="round"
+														strokeLinejoin="round"
+													></path>
+												</g>
+											</svg>
+										</div>
+										<Paragraph
+											content={
+												globalContext?.themesOptionsContent?.businessHours
+											}
+											tailwindStyling={
+												globalContext?.themesOptionsContent?.businessHours
+													? "block px-4 lg:px-0 max-w-full lg:max-w-xl text-tiny text-black text-center lg:text-left"
+													: "hidden"
+											}
+										/>
 									</div>
 								</motion.div>
 							</div>
@@ -438,7 +485,7 @@ const Footer: FC = () => {
 								Newsletter
 							</h3>
 							<div className="flex flex-col items-start justify-start">
-								<Newsletter
+								<FooterNewsletter
 									paragraph={`Sign Up to get updates & news about us`}
 								/>
 							</div>

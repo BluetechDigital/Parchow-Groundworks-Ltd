@@ -43,7 +43,7 @@ const CTA: FC<ICTA> = ({title, paragraph, buttonLink, backgroundImage}) => {
 								viewport={{once: true}}
 								className="mt-4 py-4 px-6 text-center cursor-pointer bg-accent-default hover:bg-accent-two transition-all ease-in-out duration-500"
 							>
-								<h3 className="tracking-[0.10rem] text-white text-base text-center">
+								<h3 className="tracking-[0.10rem] text-white text-base text-center uppercase">
 									{buttonLink?.title}
 								</h3>
 							</motion.div>
@@ -66,7 +66,7 @@ const CTA: FC<ICTA> = ({title, paragraph, buttonLink, backgroundImage}) => {
 								height={backgroundImage?.mediaDetails?.height}
 								className={
 									backgroundImage?.sourceUrl
-										? `block absolute inset-0 w-full h-full object-cover transform lg:group-hover:scale-105 transition-all ease-in-out duration-500 object-contain object-center`
+										? `block absolute inset-0 w-full h-full transform lg:group-hover:scale-105 transition-all ease-in-out duration-500 object-cover object-center`
 										: `hidden`
 								}
 							/>
@@ -102,7 +102,7 @@ const CTA: FC<ICTA> = ({title, paragraph, buttonLink, backgroundImage}) => {
 								viewport={{once: true}}
 								className="mt-4 py-4 px-6 mx-auto lg:mx-0 cursor-pointer bg-accent-default hover:bg-accent-two transition-all ease-in-out duration-500"
 							>
-								<h3 className="tracking-[0.10rem] text-lightGrey text-tiny text-center">
+								<h3 className="tracking-[0.10rem] text-lightGrey text-tiny text-center uppercase">
 									{buttonLink?.title}
 								</h3>
 							</motion.div>
