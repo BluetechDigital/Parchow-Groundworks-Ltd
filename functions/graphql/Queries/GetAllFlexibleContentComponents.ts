@@ -371,6 +371,12 @@ export const getAllFlexibleContentComponents = async (
 												fieldGroupName
 												displaySection
 											}
+											... on ${postTypeFlexibleContent}_TestimonialsTwo {
+												fieldGroupName
+												title
+												subtitle
+												displaySection
+											}
 											... on ${postTypeFlexibleContent}_TestimonialsGrid {
 												fieldGroupName
 												title

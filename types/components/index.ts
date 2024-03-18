@@ -271,6 +271,10 @@ export type IGettingStarted = {
 		};
 	};
 };
+export type ITestimonialsTwo = {
+	title: string;
+	subtitle: string;
+};
 export type IDevelopmentsGrid = {
 	title: string;
 	subtitle: string;
@@ -518,14 +522,14 @@ export type IRenderStars = {
 export type IVideoWrapper = {
 	children: React.ReactNode;
 };
+export type IYoutubeButton = {
+	title: string;
+	fullWidth: boolean;
+	displayYoutubeIcon: boolean;
+};
 export type IBackHoverButton = {
 	link: string;
 };
 export type IBookAppointment = {
 	link: string;
-};
-export type IYoutubeButton = {
-	title: string;
-	fullWidth: boolean;
-	displayYoutubeIcon: boolean;
 };

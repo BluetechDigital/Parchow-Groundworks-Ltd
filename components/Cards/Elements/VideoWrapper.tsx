@@ -19,7 +19,7 @@ const VideoWrapper: FC<IVideoWrapper> = ({children}) => {
 			width: 100%;
 			height: 100%;
 			position: static;
-			min-height: 225px;
+			min-height: 275px;
 			max-height: 1000px;
 		}
 
@@ -28,14 +28,6 @@ const VideoWrapper: FC<IVideoWrapper> = ({children}) => {
 			width: 1280px;
 			margin: 0 auto;
 			max-height: 1080px;
-		}
-
-		@media screen and (min-width: 425px) {
-			iframe,
-			object,
-			embed {
-				min-height: 275px;
-			}
 		}
 
 		@media screen and (min-width: 1024px) {

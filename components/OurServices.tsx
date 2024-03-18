@@ -27,7 +27,7 @@ const OurServices: FC<IOurServices> = ({
 	return (
 		<>
 			<div className={styles.ourServices + " py-12 px-4 bg-primary-darker"}>
-				<div className="container m-auto flex flex-col items-center gap-12 lg:gap-6 lg:gap-8">
+				<div className="container m-auto flex flex-col items-center gap-12 lg:gap-8">
 					<motion.div
 						initial={initial}
 						variants={stagger}

@@ -20,6 +20,7 @@ import GallerySlider from "../GallerySlider";
 import GettingStarted from "../GettingStarted";
 import TitleParagraph from "../TitleParagraph";
 import Maintenance from "../Global/Maintenance";
+import TestimonialsTwo from "../TestimonialsTwo";
 import DevelopmentsGrid from "../DevelopmentsGrid";
 import TestimonialsGrid from "../TestimonialsGrid";
 import TitleContentImage from "../TitleContentImage";
@@ -208,6 +209,14 @@ const RenderFlexibleContent: FC = () => {
 						  item?.displaySection ? (
 							<>
 								<TestimonialsSlider />
+							</>
+						) : item?.fieldGroupName === `${FlexibleContent}_TestimonialsTwo` &&
+						  item?.displaySection ? (
+							<>
+								<TestimonialsTwo
+									title={item?.title}
+									subtitle={item?.subtitle}
+								/>
 							</>
 						) : item?.fieldGroupName ===
 								`${FlexibleContent}_TestimonialsGrid` &&
