@@ -48,14 +48,6 @@ const RequestAppointmentForm: FC<IRequestAppointmentForm> = ({
 			errors.fullName = "Must be 25 characters or less";
 		}
 
-		if (!values?.email) {
-			errors.email = "Required*";
-		} else if (
-			!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values?.email)
-		) {
-			errors.email = "Invalid email address";
-		}
-
 		if (!values?.phoneNumber) {
 			errors.phoneNumber = "Required*";
 		} else if (values?.phoneNumber.length < 1) {
@@ -93,7 +85,6 @@ const RequestAppointmentForm: FC<IRequestAppointmentForm> = ({
 	const formik: any = useFormik({
 		initialValues: {
 			fullName: "",
-			email: "",
 			phoneNumber: "",
 			subject: "",
 			message: "",
@@ -184,7 +175,7 @@ const RequestAppointmentForm: FC<IRequestAppointmentForm> = ({
 								tailwindStyling="max-w-xl mx-auto xl:mx-0 text-black text-base text-center lg:text-left"
 							/>
 						</motion.div>
-						<div className="flex flex-col lg:flex-row gap-4 items-center justify-center lg:gap-12 lg:justify-start">
+						<div className="flex flex-col lg:flex-row gap-8 items-center justify-center lg:gap-12 lg:justify-start">
 							<Link
 								href={`${buttonLink?.url}`}
 								target={buttonLink?.target}
@@ -205,7 +196,7 @@ const RequestAppointmentForm: FC<IRequestAppointmentForm> = ({
 								viewport={{once: true}}
 								className="flex items-center"
 							>
-								<div className="hidden sm:flex flex-shrink-0 mr-5 sm:mr-8 items-center justify-center p-1 w-10 h-10 rounded-full bg-primary-default">
+								<div className="hidden sm:flex flex-shrink-0 mr-5  items-center justify-center p-1 w-10 h-10 rounded-full bg-primary-default">
 									<svg
 										viewBox="0 0 24 24"
 										fill="none"
@@ -265,7 +256,7 @@ const RequestAppointmentForm: FC<IRequestAppointmentForm> = ({
 						onSubmit={formik?.onSubmit}
 						initialValues={formik?.initialValues}
 					>
-						<Form className="py-6 bg-primary-three px-12 lg:mr-8 md:max-w-xl">
+						<Form className="py-6 px-12 lg:mr-8 w-full bg-primary-default md:max-w-xl">
 							{loading ? (
 								<motion.div
 									initial={initialTwo}
@@ -311,7 +302,7 @@ const RequestAppointmentForm: FC<IRequestAppointmentForm> = ({
 										initial={initial}
 										whileInView={fadeInUp}
 										viewport={{once: true}}
-										className="my-3 max-w-xl mx-auto xl:mx-0 uppercase text-white text-center lg:text-left font-semibold text-lg md:text-xl"
+										className="my-3 max-w-xl mx-auto xl:mx-0 uppercase text-white text-center lg:text-left font-semibold text-lg md:text-lg"
 									>
 										Make an Appointment
 									</motion.h3>
@@ -325,7 +316,7 @@ const RequestAppointmentForm: FC<IRequestAppointmentForm> = ({
 								viewport={{once: true}}
 								className="flex flex-col gap-4"
 							>
-								<div className="flex flex-col sm:flex-row gap-4">
+								<div className="flex flex-col md:flex-row gap-4">
 									<motion.div
 										initial={initial}
 										whileInView={fadeInUp}
@@ -334,7 +325,7 @@ const RequestAppointmentForm: FC<IRequestAppointmentForm> = ({
 									>
 										{formik?.touched?.fullName && formik?.errors?.fullName ? (
 											<div>
-												<p className="py-1 text-left text-tiny text-primary-darker">
+												<p className="py-1 text-left text-tiny md:text-base text-white">
 													{formik?.errors?.fullName}
 												</p>
 											</div>
@@ -346,7 +337,7 @@ const RequestAppointmentForm: FC<IRequestAppointmentForm> = ({
 											onBlur={formik?.handleBlur}
 											onChange={formik?.handleChange}
 											value={formik?.values?.fullName}
-											className="px-4 py-3 w-full text-darkGrey placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-primary-darker focus:border-primary-darker focus:ring-[1px] focus:ring-primary-darker"
+											className="px-4 py-3 w-full text-tiny md:text-base text-black placeholder-black bg-white bg-opacity-90 outline-none border-[1px] border-primary-default active:border-primary-darker focus:border-primary-darker focus:ring-[1px] focus:ring-primary-darker"
 										/>
 									</motion.div>
 									<motion.div
@@ -358,7 +349,7 @@ const RequestAppointmentForm: FC<IRequestAppointmentForm> = ({
 										{formik?.touched?.phoneNumber &&
 										formik?.errors?.phoneNumber ? (
 											<div>
-												<p className="py-1 text-left text-tiny text-primary-darker">
+												<p className="py-1 text-left text-tiny md:text-base text-white">
 													{formik?.errors?.phoneNumber}
 												</p>
 											</div>
@@ -371,57 +362,7 @@ const RequestAppointmentForm: FC<IRequestAppointmentForm> = ({
 											onBlur={formik?.handleBlur}
 											onChange={formik?.handleChange}
 											value={formik?.values?.phoneNumber}
-											className="px-4 py-3 w-full text-darkGrey placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-primary-darker focus:border-primary-darker focus:ring-[1px] focus:ring-primary-darker"
-										/>
-									</motion.div>
-								</div>
-								<div className="flex flex-col sm:flex-row gap-4">
-									<motion.div
-										initial={initial}
-										whileInView={fadeInUp}
-										viewport={{once: true}}
-										className="w-full"
-									>
-										{formik?.touched?.email && formik?.errors?.email ? (
-											<div>
-												<p className="py-1 text-left text-tiny text-primary-darker">
-													{formik?.errors?.email}
-												</p>
-											</div>
-										) : null}
-										<Field
-											id="email"
-											name="email"
-											type="email"
-											placeholder="Email Address"
-											onBlur={formik?.handleBlur}
-											onChange={formik?.handleChange}
-											value={formik?.values?.email}
-											className="px-4 py-3 w-full text-darkGrey placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-primary-darker focus:border-primary-darker focus:ring-[1px] focus:ring-primary-darker"
-										/>
-									</motion.div>
-									<motion.div
-										initial={initial}
-										whileInView={fadeInUp}
-										viewport={{once: true}}
-										className="w-full"
-									>
-										{formik?.touched?.subject && formik?.errors?.subject ? (
-											<div>
-												<p className="py-1 text-left text-tiny text-primary-darker">
-													{formik?.errors?.subject}
-												</p>
-											</div>
-										) : null}
-										<Field
-											id="subject"
-											name="subject"
-											type="text"
-											placeholder="Subject"
-											onBlur={formik?.handleBlur}
-											onChange={formik?.handleChange}
-											value={formik?.values?.subject}
-											className="px-4 py-3 w-full text-darkGrey placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-primary-darker focus:border-primary-darker focus:ring-[1px] focus:ring-primary-darker"
+											className="px-4 py-3 w-full text-tiny md:text-base text-black placeholder-black bg-white bg-opacity-90 outline-none border-[1px] border-primary-default active:border-primary-darker focus:border-primary-darker focus:ring-[1px] focus:ring-primary-darker"
 										/>
 									</motion.div>
 								</div>
@@ -429,10 +370,34 @@ const RequestAppointmentForm: FC<IRequestAppointmentForm> = ({
 									initial={initial}
 									whileInView={fadeInUp}
 									viewport={{once: true}}
+									className="w-full"
+								>
+									{formik?.touched?.subject && formik?.errors?.subject ? (
+										<div>
+											<p className="py-1 text-left text-tiny md:text-base text-white">
+												{formik?.errors?.subject}
+											</p>
+										</div>
+									) : null}
+									<Field
+										id="subject"
+										name="subject"
+										type="text"
+										placeholder="Subject"
+										onBlur={formik?.handleBlur}
+										onChange={formik?.handleChange}
+										value={formik?.values?.subject}
+										className="px-4 py-3 w-full text-tiny md:text-base text-black placeholder-black bg-white bg-opacity-90 outline-none border-[1px] border-primary-default active:border-primary-darker focus:border-primary-darker focus:ring-[1px] focus:ring-primary-darker"
+									/>
+								</motion.div>
+								<motion.div
+									initial={initial}
+									whileInView={fadeInUp}
+									viewport={{once: true}}
 								>
 									{formik?.touched?.message && formik?.errors?.message ? (
 										<div>
-											<p className="py-1 text-left text-tiny text-primary-darker">
+											<p className="py-1 text-left text-tiny md:text-base text-white">
 												{formik?.errors?.message}
 											</p>
 										</div>
@@ -445,7 +410,7 @@ const RequestAppointmentForm: FC<IRequestAppointmentForm> = ({
 										onBlur={formik?.handleBlur}
 										onChange={formik?.handleChange}
 										value={formik?.values?.message}
-										className="p-4 w-full h-48 text-darkGrey placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-primary-darker focus:border-primary-darker resize-none focus:ring-[1px] focus:ring-primary-darker"
+										className="p-4 w-full h-32 text-tiny md:text-base text-black placeholder-black bg-white bg-opacity-90 outline-none border-[1px] border-primary-default active:border-primary-darker focus:border-primary-darker resize-none focus:ring-[1px] focus:ring-primary-darker"
 									/>
 								</motion.div>
 								<motion.div

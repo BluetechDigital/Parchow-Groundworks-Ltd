@@ -63,7 +63,7 @@ const OurServicesGridTwo: FC<IOurServicesGridTwo> = ({
 							<div
 								className={`py-4 px-6 text-center cursor-pointer bg-primary-three hover:bg-primary-dark transition-all ease-in-out duration-500`}
 							>
-								<h3 className="tracking-[0.10rem] text-white text-base text-center">
+								<h3 className="tracking-[0.10rem] text-white text-base uppercase text-center">
 									{buttonLink?.title}
 								</h3>
 							</div>

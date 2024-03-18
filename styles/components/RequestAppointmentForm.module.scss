@@ -7,4 +7,12 @@
 	textarea {
 		background-color: $white;
 	}
+
+	.submitButton {
+		@apply w-fit flex items-center justify-center py-3 px-6 bg-accent-default hover:bg-accent-two transition-all duration-200 ease-in-out;
+	}
+
+	.messageSent {
+		@apply w-fit flex items-center justify-center py-3 px-6 bg-accent-default;
+	}
 }

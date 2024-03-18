@@ -65,7 +65,7 @@ const Hero: FC<IHero> = ({
 							content={paragraph}
 							tailwindStyling="max-w-xl py-2 text-white leading-[1.5rem] text-base text-center lg:text-left"
 						/>
-						<div className="flex flex-col sm:flex-row gap-4 max-w-sm lg:max-w-4xl mx-auto lg:mx-0">
+						<div className="flex flex-col md:flex-row gap-4 max-w-sm lg:max-w-4xl mx-auto lg:mx-0">
 							<Link
 								href={`${buttonLink?.url}`}
 								target={buttonLink?.target}
