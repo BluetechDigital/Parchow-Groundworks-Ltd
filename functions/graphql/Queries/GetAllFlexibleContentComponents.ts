@@ -369,7 +369,6 @@ export const getAllFlexibleContentComponents = async (
 												paragraph
 												displayVideo
 												displaySection
-												displayYoutubeIcon
 												buttonLink {
 													url
 													title
