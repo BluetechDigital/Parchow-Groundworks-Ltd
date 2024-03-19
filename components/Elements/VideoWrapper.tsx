@@ -31,24 +31,28 @@ const VideoWrapper: FC<IVideoWrapper> = ({children}) => {
 
 		@media screen and (min-width: 425px) {
 			iframe {
+				width: 100%;
 				height: 275px;
 			}
 		}
 
 		@media screen and (min-width: 640px) {
 			iframe {
+				width: 100%;
 				height: 400px;
 			}
 		}
 
 		@media screen and (min-width: 768px) {
 			iframe {
+				width: 100%;
 				height: 425px;
 			}
 		}
 
 		@media screen and (min-width: 1024px) {
 			iframe {
+				width: 100%;
 				height: 600px;
 			}
 		}

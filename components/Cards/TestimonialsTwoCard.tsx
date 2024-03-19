@@ -18,7 +18,7 @@ const TestimonialsTwoCard: FC<ITestimonialsCard> = ({
 }) => {
 	return (
 		<>
-			<div className="flex flex-col items-center justify-center p-6 h-full  min-h-[225px] bg-white border-2 border-primary-default border-solid">
+			<div className="flex flex-col items-center justify-center p-6 h-full min-h-[250px] bg-white border-2 border-primary-default border-solid">
 				<motion.div
 					initial={initial}
 					variants={stagger}
@@ -88,7 +88,7 @@ const TestimonialsTwoCard: FC<ITestimonialsCard> = ({
 									className="w-10 h-10 sm:w-12 sm:h-12"
 									xmlns="http://www.w3.org/2000/svg"
 								>
-									<g clip-path="url(#clip0_2_9526)">
+									<g clipPath="url(#clip0_2_9526)">
 										<path
 											d="M46.6421 9.99512C44.3826 7.45693 41.6404 6.16992 38.4917 6.16992C35.6618 6.16992 33.2628 7.17764 31.3607 9.16494C29.4708 11.1396 28.5125 13.5922 28.5125 16.4549C28.5125 19.1602 29.4804 21.5708 31.3895 23.62C33.0735 25.4278 35.1949 26.5777 37.7062 27.0464C37.2671 30.376 34.3236 33.3897 28.94 36.0157L27.9706 36.4887L31.9453 43.8266L32.8426 43.3718C44.2274 37.6009 50 29.4451 50 19.131C50 15.5726 48.8703 12.4989 46.6421 9.99512ZM32.8003 41.0638L30.8089 37.3878C36.7974 34.2498 39.8315 30.4776 39.8315 26.1647V25.2413L38.914 25.1374C36.4428 24.8577 34.4764 23.9004 32.9025 22.2106C31.3399 20.5332 30.5802 18.6506 30.5802 16.4549C30.5802 14.1104 31.3243 12.1936 32.8546 10.5945C34.3724 9.0085 36.2165 8.2375 38.4918 8.2375C41.0606 8.2375 43.2214 9.26211 45.0974 11.3697C47.0051 13.5131 47.9324 16.0518 47.9324 19.1309C47.9324 23.8581 46.6012 28.1259 43.9761 31.8156C41.4713 35.3361 37.7143 38.4442 32.8003 41.0638Z"
 											fill="#1414DC"
