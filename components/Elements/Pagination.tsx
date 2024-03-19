@@ -47,7 +47,7 @@ const Pagination: FC<IPagination> = ({
 	};
 
 	const tailwindButtonStyling =
-		"relative px-6 py-2 text-black hover:text-white font-semibold tracking-widest text-tiny w-fit border-2 border-solid border-primary-default hover:bg-primary-default hover:border-primary-default transition-all ease-in-out duration-500 before:left-[15%]";
+		"relative px-6 py-2 uppercase text-white font-semibold cursor-pointer tracking-widest text-tiny w-fit bg-primary-default hover:bg-primary-three transition-all ease-in-out duration-500 before:left-[15%]";
 
 	return (
 		<>
@@ -148,7 +148,7 @@ const Pagination: FC<IPagination> = ({
 			<div>
 				{totalPages > 1 && contentArray?.length > 0 ? (
 					<>
-						<div className="mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 lg:gap-6">
+						<div className="mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-end gap-4 lg:gap-6">
 							<motion.button
 								initial={initialTwo}
 								whileInView={fadeIn}
@@ -157,7 +157,7 @@ const Pagination: FC<IPagination> = ({
 								disabled={currentPage === 1}
 								className={tailwindButtonStyling}
 							>
-								Previous
+								<h3>Previous</h3>
 							</motion.button>
 							<span className="text-center text-tiny font-semibold leading-tight text-black">
 								{`Page ${currentPage} of ${totalPages}`}
@@ -170,7 +170,7 @@ const Pagination: FC<IPagination> = ({
 								disabled={currentPage === totalPages}
 								className={tailwindButtonStyling}
 							>
-								Next
+								<h3>Next</h3>
 							</motion.button>
 						</div>
 					</>

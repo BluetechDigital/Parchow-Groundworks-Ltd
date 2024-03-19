@@ -157,12 +157,18 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 	return (
 		<>
 			<div
-				className="px-4 py-10 bg-cover bg-center bg-no-repeat"
+				className="py-12 px-4 bg-white flex flex-col gap-14 bg-center bg-no-repeat bg-cover"
 				style={{
-					backgroundImage: `url("/svg/background/layered-peaks-haikei-lightgrey-grey-one.svg")`,
+					backgroundImage: `linear-gradient(
+										0deg,
+										rgba(255, 255, 255, 0.80),
+										rgba(255, 255, 255, 0.85),
+										rgba(255, 255, 255, 0.95),
+										rgba(255, 255, 255, 1)
+									),url("/svg/background/grid-background-12.svg")`,
 				}}
 			>
-				<div className="container mx-auto flex flex-col lg:flex-row items-baseline ">
+				<div className="lg:container mx-auto flex flex-col lg:flex-row items-baseline gap-14">
 					<div className="w-full lg:w-1/2 sm:p-6 flex flex-col">
 						<motion.div
 							initial={initial}
@@ -363,314 +369,326 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 							</motion.div>
 						</motion.div>
 					</div>
-					<Formik
-						onSubmit={formik?.onSubmit}
-						initialValues={formik?.initialValues}
-						className="w-full lg:w-1/2"
+					<div className=""></div>
+				</div>
+				<Formik
+					onSubmit={formik?.onSubmit}
+					initialValues={formik?.initialValues}
+				>
+					<Form
+						className="lg:container mx-auto p-10 lg:px-32 md:max-w-4xl bg-accent-default bg-center bg-no-repeat bg-cover"
+						style={{
+							backgroundImage: `linear-gradient(
+										0deg,
+										rgba(255, 255, 255, 0.40),
+										rgba(255, 255, 255, 0.35),
+										rgba(255, 255, 255, 0.25),
+										rgba(255, 255, 255, 0.1),
+										rgba(255, 255, 255, 0.1)
+									),url("/img/background/Cement-Floor-Background.jpg")`,
+						}}
 					>
-						<Form className="container mx-auto py-10 md:max-w-xl">
-							{loading ? (
-								<motion.div
-									initial={initialTwo}
-									whileInView={fadeIn}
+						{loading ? (
+							<motion.div
+								initial={initialTwo}
+								whileInView={fadeIn}
+								viewport={{once: true}}
+								className="flex items-center justify-center my-4 mb-8 gap-x-2"
+							>
+								<h3 className="text-lg md:text-xl md:text-2xl font-semibold uppercase text-black">
+									Sending Message...
+								</h3>
+							</motion.div>
+						) : messageSent ? (
+							<motion.div
+								initial={initialTwo}
+								whileInView={fadeIn}
+								viewport={{once: true}}
+								className="flex items-center justify-center my-4 mb-8 gap-x-2"
+							>
+								<h3 className="text-lg md:text-xl md:text-2xl font-semibold text-center uppercase text-black">
+									Message Sent!
+								</h3>
+							</motion.div>
+						) : errorMessage ? (
+							<motion.div
+								initial={initialTwo}
+								whileInView={fadeIn}
+								viewport={{once: true}}
+								className="flex items-center justify-center my-4 mb-8 gap-x-2"
+							>
+								<h3 className="text-lg md:text-xl md:text-2xl font-semibold text-center uppercase text-[#e20031]">
+									Error Message: Something went wrong with sending your message.
+									Please try again.
+								</h3>
+							</motion.div>
+						) : (
+							<motion.div
+								initial={initialTwo}
+								whileInView={fadeIn}
+								viewport={{once: true}}
+								className="mb-6"
+							>
+								<motion.h3
+									initial={initial}
+									whileInView={fadeInUp}
 									viewport={{once: true}}
-									className="flex items-center justify-center my-4 mb-8 gap-x-2"
+									className="my-3 max-w-xl mx-auto xl:mx-0 uppercase text-black text-center font-semibold text-lg md:text-xl md:text-2xl"
 								>
-									<h3 className="text-xl font-semibold uppercase text-primary-default">
-										Sending Message...
-									</h3>
-								</motion.div>
-							) : messageSent ? (
-								<motion.div
-									initial={initialTwo}
-									whileInView={fadeIn}
-									viewport={{once: true}}
-									className="flex items-center justify-center my-4 mb-8 gap-x-2"
-								>
-									<h3 className="text-xl font-semibold text-center uppercase text-primary-default">
-										Message Sent!
-									</h3>
-								</motion.div>
-							) : errorMessage ? (
-								<motion.div
-									initial={initialTwo}
-									whileInView={fadeIn}
-									viewport={{once: true}}
-									className="flex items-center justify-center my-4 mb-8 gap-x-2"
-								>
-									<h3 className="text-xl font-semibold text-center uppercase text-[#e20031]">
-										Error Message: Something went wrong with sending your
-										message. Please try again.
-									</h3>
-								</motion.div>
-							) : (
-								<motion.div
-									initial={initialTwo}
-									whileInView={fadeIn}
-									viewport={{once: true}}
-									className="mb-6"
-								>
-									<motion.h3
-										initial={initial}
-										whileInView={fadeInUp}
-										viewport={{once: true}}
-										className="my-3 max-w-xl mx-auto xl:mx-0 uppercase text-black text-center font-semibold text-lg md:text-xl"
-									>
-										Get In Touch
-									</motion.h3>
-								</motion.div>
-							)}
+									Get In Touch
+								</motion.h3>
+							</motion.div>
+						)}
 
+						<motion.div
+							initial={initial}
+							variants={stagger}
+							whileInView="animate"
+							viewport={{once: true}}
+							className="flex flex-col gap-4"
+						>
+							<div className="flex flex-col sm:flex-row gap-4">
+								<motion.div
+									initial={initial}
+									whileInView={fadeInUp}
+									viewport={{once: true}}
+									className="w-full"
+								>
+									{formik?.touched?.firstName && formik?.errors?.firstName ? (
+										<div>
+											<p className="py-1 text-left text-tiny text-primary-darker ">
+												{formik?.errors?.firstName}
+											</p>
+										</div>
+									) : null}
+									<Field
+										id="firstName"
+										name="firstName"
+										placeholder="First Name"
+										onBlur={formik?.handleBlur}
+										onChange={formik?.handleChange}
+										value={formik?.values?.firstName}
+										className="px-4 py-3 w-full text-darkGrey placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-primary-darker focus:border-primary-darker focus:ring-[1px] focus:ring-primary-darker"
+									/>
+								</motion.div>
+								<motion.div
+									initial={initial}
+									whileInView={fadeInUp}
+									viewport={{once: true}}
+									className="w-full"
+								>
+									{formik?.touched?.lastName && formik?.errors?.lastName ? (
+										<div>
+											<p className="py-1 text-left text-tiny text-primary-darker ">
+												{formik?.errors?.lastName}
+											</p>
+										</div>
+									) : null}
+									<Field
+										id="lastName"
+										name="lastName"
+										placeholder="Last Name"
+										onBlur={formik?.handleBlur}
+										onChange={formik?.handleChange}
+										value={formik?.values?.lastName}
+										className="px-4 py-3 w-full text-darkGrey placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-primary-darker focus:border-primary-darker focus:ring-[1px] focus:ring-primary-darker"
+									/>
+								</motion.div>
+							</div>
+							<div className="flex flex-col sm:flex-row gap-4">
+								<motion.div
+									initial={initial}
+									whileInView={fadeInUp}
+									viewport={{once: true}}
+									className="w-full"
+								>
+									{formik?.touched?.phoneNumber &&
+									formik?.errors?.phoneNumber ? (
+										<div>
+											<p className="py-1 text-left text-tiny text-primary-darker ">
+												{formik?.errors?.phoneNumber}
+											</p>
+										</div>
+									) : null}
+									<Field
+										id="phoneNumber"
+										name="phoneNumber"
+										type="number"
+										placeholder="Phone Number"
+										onBlur={formik?.handleBlur}
+										onChange={formik?.handleChange}
+										value={formik?.values?.phoneNumber}
+										className="px-4 py-3 w-full text-darkGrey placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-primary-darker focus:border-primary-darker focus:ring-[1px] focus:ring-primary-darker"
+									/>
+								</motion.div>
+								<motion.div
+									initial={initial}
+									whileInView={fadeInUp}
+									viewport={{once: true}}
+									className="w-full"
+								>
+									{formik?.touched?.subject && formik?.errors?.subject ? (
+										<div>
+											<p className="py-1 text-left text-tiny text-primary-darker ">
+												{formik?.errors?.subject}
+											</p>
+										</div>
+									) : null}
+									<Field
+										id="subject"
+										name="subject"
+										type="text"
+										placeholder="Subject"
+										onBlur={formik?.handleBlur}
+										onChange={formik?.handleChange}
+										value={formik?.values?.subject}
+										className="px-4 py-3 w-full text-darkGrey placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-primary-darker focus:border-primary-darker focus:ring-[1px] focus:ring-primary-darker"
+									/>
+								</motion.div>
+							</div>
 							<motion.div
 								initial={initial}
-								variants={stagger}
-								whileInView="animate"
+								whileInView={fadeInUp}
 								viewport={{once: true}}
-								className="flex flex-col gap-4"
+								className="w-full"
 							>
-								<div className="flex flex-col sm:flex-row gap-4">
-									<motion.div
-										initial={initial}
-										whileInView={fadeInUp}
-										viewport={{once: true}}
-										className="w-full"
-									>
-										{formik?.touched?.firstName && formik?.errors?.firstName ? (
-											<div>
-												<p className="py-1 text-left text-tiny text-primary-darker ">
-													{formik?.errors?.firstName}
-												</p>
-											</div>
-										) : null}
-										<Field
-											id="firstName"
-											name="firstName"
-											placeholder="First Name"
-											onBlur={formik?.handleBlur}
-											onChange={formik?.handleChange}
-											value={formik?.values?.firstName}
-											className="px-4 py-3 w-full text-darkGrey placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-primary-darker focus:border-primary-darker focus:ring-[1px] focus:ring-primary-darker"
-										/>
-									</motion.div>
-									<motion.div
-										initial={initial}
-										whileInView={fadeInUp}
-										viewport={{once: true}}
-										className="w-full"
-									>
-										{formik?.touched?.lastName && formik?.errors?.lastName ? (
-											<div>
-												<p className="py-1 text-left text-tiny text-primary-darker ">
-													{formik?.errors?.lastName}
-												</p>
-											</div>
-										) : null}
-										<Field
-											id="lastName"
-											name="lastName"
-											placeholder="Last Name"
-											onBlur={formik?.handleBlur}
-											onChange={formik?.handleChange}
-											value={formik?.values?.lastName}
-											className="px-4 py-3 w-full text-darkGrey placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-primary-darker focus:border-primary-darker focus:ring-[1px] focus:ring-primary-darker"
-										/>
-									</motion.div>
-								</div>
-								<div className="flex flex-col sm:flex-row gap-4">
-									<motion.div
-										initial={initial}
-										whileInView={fadeInUp}
-										viewport={{once: true}}
-										className="w-full"
-									>
-										{formik?.touched?.phoneNumber &&
-										formik?.errors?.phoneNumber ? (
-											<div>
-												<p className="py-1 text-left text-tiny text-primary-darker ">
-													{formik?.errors?.phoneNumber}
-												</p>
-											</div>
-										) : null}
-										<Field
-											id="phoneNumber"
-											name="phoneNumber"
-											type="number"
-											placeholder="Phone Number"
-											onBlur={formik?.handleBlur}
-											onChange={formik?.handleChange}
-											value={formik?.values?.phoneNumber}
-											className="px-4 py-3 w-full text-darkGrey placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-primary-darker focus:border-primary-darker focus:ring-[1px] focus:ring-primary-darker"
-										/>
-									</motion.div>
-									<motion.div
-										initial={initial}
-										whileInView={fadeInUp}
-										viewport={{once: true}}
-										className="w-full"
-									>
-										{formik?.touched?.subject && formik?.errors?.subject ? (
-											<div>
-												<p className="py-1 text-left text-tiny text-primary-darker ">
-													{formik?.errors?.subject}
-												</p>
-											</div>
-										) : null}
-										<Field
-											id="subject"
-											name="subject"
-											type="text"
-											placeholder="Subject"
-											onBlur={formik?.handleBlur}
-											onChange={formik?.handleChange}
-											value={formik?.values?.subject}
-											className="px-4 py-3 w-full text-darkGrey placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-primary-darker focus:border-primary-darker focus:ring-[1px] focus:ring-primary-darker"
-										/>
-									</motion.div>
-								</div>
-								<motion.div
-									initial={initial}
-									whileInView={fadeInUp}
-									viewport={{once: true}}
-									className="w-full"
-								>
-									{formik?.touched?.email && formik?.errors?.email ? (
-										<div>
-											<p className="py-1 text-left text-tiny text-primary-darker ">
-												{formik?.errors?.email}
-											</p>
-										</div>
-									) : null}
-									<Field
-										id="email"
-										name="email"
-										type="email"
-										placeholder="Email Address"
-										onBlur={formik?.handleBlur}
-										onChange={formik?.handleChange}
-										value={formik?.values?.email}
-										className="px-4 py-3 w-full text-darkGrey placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-primary-darker focus:border-primary-darker focus:ring-[1px] focus:ring-primary-darker"
-									/>
-								</motion.div>
-								<motion.div
-									initial={initial}
-									whileInView={fadeInUp}
-									viewport={{once: true}}
-									className="w-full"
-								>
-									{formik?.touched?.selectedServices &&
-									formik?.errors?.selectedServices ? (
-										<div>
-											<p className="py-1 text-left text-tiny text-primary-darker ">
-												{formik?.errors?.selectedServices}
-											</p>
-										</div>
-									) : null}
-									<Field
-										as="select"
-										id="selectedServices"
-										name="selectedServices"
-										placeholder="Pick a Service"
-										onBlur={formik?.handleBlur}
-										onChange={formik?.handleChange}
-										value={formik?.values?.selectedServices}
-										className="px-4 py-3 w-full text-darkGrey placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-primary-darker focus:border-primary-darker focus:ring-[1px] focus:ring-primary-darker"
-									>
-										{globalContext?.servicesSublinks?.length > 0 ? (
-											globalContext?.servicesSublinks?.map(
-												(item: any, keys: number) => (
-													<Fragment key={keys}>
-														<option value={item?.node?.label}>
-															{item?.node?.label}
-														</option>
-													</Fragment>
-												)
-											)
-										) : (
-											<></>
-										)}
-									</Field>
-								</motion.div>
-								<motion.div
-									initial={initial}
-									whileInView={fadeInUp}
-									viewport={{once: true}}
-								>
-									{formik?.touched?.message && formik?.errors?.message ? (
-										<div>
-											<p className="py-1 text-left text-tiny text-primary-darker ">
-												{formik?.errors?.message}
-											</p>
-										</div>
-									) : null}
-									<textarea
-										rows={5}
-										id="message"
-										name="message"
-										placeholder="Your message"
-										onBlur={formik?.handleBlur}
-										onChange={formik?.handleChange}
-										value={formik?.values?.message}
-										className="p-4 w-full h-48  text-darkGrey placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-primary-darker focus:border-primary-darker resize-none focus:ring-[1px] focus:ring-primary-darker"
-									/>
-								</motion.div>
-								<motion.div
-									initial={initial}
-									whileInView={fadeInUp}
-									viewport={{once: true}}
-									className={
-										formik?.touched?.firstName ||
-										formik?.touched?.lastName ||
-										formik?.touched?.email
-											? "block"
-											: "hidden"
-									}
-								>
-									<ReCAPTCHA
-										sitekey={`6LfF-pwpAAAAAGNKKz5Ae7Cbh18aLprnrq3r-ZEe`}
-										onChange={handleReCaptchaChange}
-									/>
-								</motion.div>
-								<motion.button
-									initial={initial}
-									whileInView={fadeInUp}
-									viewport={{once: true}}
-									onClick={onFormSubmit}
-									disabled={
-										!formik?.values?.firstName ||
-										!formik?.values?.lastName ||
-										!formik?.values?.email ||
-										!formik?.values?.phoneNumber ||
-										!formik?.values?.selectedServices ||
-										!formik?.values?.subject ||
-										!formik?.values?.message ||
-										reCaptchaResult === null ||
-										reCaptchaResult === undefined
-									}
-									className="w-full text-white font-semibold tracking-wide disabled:bg-opacity-20 disabled:cursor-not-allowed"
-									type="submit"
-								>
-									<span
-										className={
-											messageSent
-												? `${styles.messageSent}`
-												: `${styles.submitButton}`
-										}
-									>
-										<h3 className="tracking-widest text-white uppercase text-sm">
-											{loading
-												? "Sending Message..."
-												: messageSent
-												? "Message Sent!"
-												: errorMessage
-												? "Sending Error!"
-												: "Send Message"}
-										</h3>
-									</span>
-								</motion.button>
+								{formik?.touched?.email && formik?.errors?.email ? (
+									<div>
+										<p className="py-1 text-left text-tiny text-primary-darker ">
+											{formik?.errors?.email}
+										</p>
+									</div>
+								) : null}
+								<Field
+									id="email"
+									name="email"
+									type="email"
+									placeholder="Email Address"
+									onBlur={formik?.handleBlur}
+									onChange={formik?.handleChange}
+									value={formik?.values?.email}
+									className="px-4 py-3 w-full text-darkGrey placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-primary-darker focus:border-primary-darker focus:ring-[1px] focus:ring-primary-darker"
+								/>
 							</motion.div>
-						</Form>
-					</Formik>
-				</div>
+							<motion.div
+								initial={initial}
+								whileInView={fadeInUp}
+								viewport={{once: true}}
+								className="w-full"
+							>
+								{formik?.touched?.selectedServices &&
+								formik?.errors?.selectedServices ? (
+									<div>
+										<p className="py-1 text-left text-tiny text-primary-darker ">
+											{formik?.errors?.selectedServices}
+										</p>
+									</div>
+								) : null}
+								<Field
+									as="select"
+									id="selectedServices"
+									name="selectedServices"
+									placeholder="Pick a Service"
+									onBlur={formik?.handleBlur}
+									onChange={formik?.handleChange}
+									value={formik?.values?.selectedServices}
+									className="px-4 py-3 w-full text-darkGrey placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-primary-darker focus:border-primary-darker focus:ring-[1px] focus:ring-primary-darker"
+								>
+									{globalContext?.servicesSublinks?.length > 0 ? (
+										globalContext?.servicesSublinks?.map(
+											(item: any, keys: number) => (
+												<Fragment key={keys}>
+													<option value={item?.node?.label}>
+														{item?.node?.label}
+													</option>
+												</Fragment>
+											)
+										)
+									) : (
+										<></>
+									)}
+								</Field>
+							</motion.div>
+							<motion.div
+								initial={initial}
+								whileInView={fadeInUp}
+								viewport={{once: true}}
+							>
+								{formik?.touched?.message && formik?.errors?.message ? (
+									<div>
+										<p className="py-1 text-left text-tiny text-primary-darker ">
+											{formik?.errors?.message}
+										</p>
+									</div>
+								) : null}
+								<textarea
+									rows={5}
+									id="message"
+									name="message"
+									placeholder="Your message"
+									onBlur={formik?.handleBlur}
+									onChange={formik?.handleChange}
+									value={formik?.values?.message}
+									className="p-4 w-full h-48  text-darkGrey placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-primary-darker focus:border-primary-darker resize-none focus:ring-[1px] focus:ring-primary-darker"
+								/>
+							</motion.div>
+							<motion.div
+								initial={initial}
+								whileInView={fadeInUp}
+								viewport={{once: true}}
+								className={
+									formik?.touched?.firstName ||
+									formik?.touched?.lastName ||
+									formik?.touched?.email
+										? "block"
+										: "hidden"
+								}
+							>
+								<ReCAPTCHA
+									sitekey={`6LfF-pwpAAAAAGNKKz5Ae7Cbh18aLprnrq3r-ZEe`}
+									onChange={handleReCaptchaChange}
+								/>
+							</motion.div>
+							<motion.button
+								initial={initial}
+								whileInView={fadeInUp}
+								viewport={{once: true}}
+								onClick={onFormSubmit}
+								disabled={
+									!formik?.values?.firstName ||
+									!formik?.values?.lastName ||
+									!formik?.values?.email ||
+									!formik?.values?.phoneNumber ||
+									!formik?.values?.selectedServices ||
+									!formik?.values?.subject ||
+									!formik?.values?.message ||
+									reCaptchaResult === null ||
+									reCaptchaResult === undefined
+								}
+								className="w-full text-white font-semibold tracking-wide disabled:bg-opacity-20 disabled:cursor-not-allowed"
+								type="submit"
+							>
+								<span
+									className={
+										messageSent
+											? `${styles.messageSent}`
+											: `${styles.submitButton}`
+									}
+								>
+									<h3 className="tracking-widest text-white uppercase text-sm">
+										{loading
+											? "Sending Message..."
+											: messageSent
+											? "Message Sent!"
+											: errorMessage
+											? "Sending Error!"
+											: "Send Message"}
+									</h3>
+								</span>
+							</motion.button>
+						</motion.div>
+					</Form>
+				</Formik>
 			</div>
 		</>
 	);
