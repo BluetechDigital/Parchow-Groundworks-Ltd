@@ -283,7 +283,7 @@ const Navbar: FC = () => {
 															whileInView="animate"
 															viewport={{once: true}}
 															variants={arrayLoopStaggerChildren}
-															className="relative group py-0 px-8"
+															className="relative group py-0 py-0 px-2"
 														>
 															<div className="flex flex-row justify-center items-center gap-2 cursor-pointer">
 																<Link
@@ -370,7 +370,7 @@ const Navbar: FC = () => {
 																href={`${item?.node?.url}`}
 																target={item?.node?.target}
 															>
-																<span className="py-0 px-4 text-black hover:text-primary-three text-tiny text-center tracking-[0.05rem]">
+																<span className="py-0 px-2 text-black hover:text-primary-three text-tiny text-center tracking-[0.05rem]">
 																	{item?.node?.label}
 																</span>
 															</Link>

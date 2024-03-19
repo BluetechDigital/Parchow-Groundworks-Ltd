@@ -576,6 +576,23 @@ export type IContentSectorGridCard = {
 		};
 	};
 };
+export type ITitleContentImageCard = {
+	title: string;
+	subtitle: string;
+	paragraph: string;
+	textTitle: string;
+	paragraphColor: string;
+	buttonLink: {
+		url: string;
+		title: string;
+		target: string;
+	};
+	bulletPoints: [
+		{
+			points: string;
+		}
+	];
+};
 export type IExecutiveLeadershipsTeamCard = {
 	name: string;
 	position: string;
