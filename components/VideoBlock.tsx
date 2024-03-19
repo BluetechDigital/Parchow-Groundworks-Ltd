@@ -1,10 +1,8 @@
 // Imports
-import fadeInUp, {
-	fadeIn,
+import {
 	initial,
 	stagger,
-	initialTwo,
-	slideInLeftInitial,
+	fadeInUp,
 	slideInRightFinish,
 	slideInRightInitial,
 } from "@/animations/animations";
@@ -16,7 +14,6 @@ import {IVideoBlock} from "@/types/components";
 // Components
 import Paragraph from "./Elements/Paragraph";
 import VideoWrapper from "./Elements/VideoWrapper";
-import YoutubeButton from "./Elements/YoutubeButton";
 
 const VideoBlock: FC<IVideoBlock> = ({
 	title,
@@ -25,7 +22,6 @@ const VideoBlock: FC<IVideoBlock> = ({
 	paragraph,
 	buttonLink,
 	displayVideo,
-	displayYoutubeIcon,
 	videoBackgroundImage,
 }) => {
 	return (
@@ -69,17 +65,15 @@ const VideoBlock: FC<IVideoBlock> = ({
 							<Link
 								href={`${buttonLink?.url}`}
 								target={buttonLink?.target}
-								className={
-									buttonLink?.url
-										? "flex mt-6 lg:mt-0 items-center justify-center lg:justify-start"
-										: "hidden"
-								}
+								className={`${buttonLink?.url ? "block" : "hidden"}`}
 							>
-								<YoutubeButton
-									fullWidth={true}
-									title={buttonLink?.title}
-									displayYoutubeIcon={displayYoutubeIcon}
-								/>
+								<div
+									className={`w-fit mt-2 py-4 px-6 text-center cursor-pointer bg-primary-default hover:bg-primary-two transition-all ease-in-out duration-500`}
+								>
+									<h3 className="tracking-[0.10rem] text-white text-base text-center uppercase">
+										{buttonLink?.title}
+									</h3>
+								</div>
 							</Link>
 						</div>
 					</motion.div>

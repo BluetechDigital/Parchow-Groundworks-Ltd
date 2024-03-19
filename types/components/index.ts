@@ -96,7 +96,6 @@ export type IVideoBlock = {
 	subtitle: string;
 	paragraph: string;
 	displayVideo: boolean;
-	displayYoutubeIcon: boolean;
 	buttonLink: {
 		url: string;
 		title: string;
@@ -105,28 +104,6 @@ export type IVideoBlock = {
 	videoBackgroundImage: {
 		sourceUrl: string;
 	};
-};
-export type IAccreditations = {
-	title: string;
-	subtitle: string;
-	paragraph: string;
-	imageGrid: [
-		{
-			link: {
-				url: string;
-				title: string;
-				target: string;
-			};
-			image: {
-				altText: string;
-				sourceUrl: string;
-				mediaDetails: {
-					width: number;
-					height: number;
-				};
-			};
-		}
-	];
 };
 export type IOurServices = {
 	title: string;
@@ -240,6 +217,28 @@ export type IGallerySlider = {
 				target: string;
 			};
 			backgroundImage: {
+				altText: string;
+				sourceUrl: string;
+				mediaDetails: {
+					width: number;
+					height: number;
+				};
+			};
+		}
+	];
+};
+export type IAccreditations = {
+	title: string;
+	subtitle: string;
+	paragraph: string;
+	imageGrid: [
+		{
+			link: {
+				url: string;
+				title: string;
+				target: string;
+			};
+			image: {
 				altText: string;
 				sourceUrl: string;
 				mediaDetails: {

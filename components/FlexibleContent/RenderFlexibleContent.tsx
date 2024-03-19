@@ -208,7 +208,6 @@ const RenderFlexibleContent: FC = () => {
 									paragraph={item?.paragraph}
 									buttonLink={item?.buttonLink}
 									displayVideo={item?.displayVideo}
-									displayYoutubeIcon={item?.displayYoutubeIcon}
 									videoBackgroundImage={item?.videoBackgroundImage?.sourceUrl}
 								/>
 							</>
