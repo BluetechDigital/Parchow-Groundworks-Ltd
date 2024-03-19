@@ -46,7 +46,7 @@ const ExecutiveLeadershipsTeamCard: FC<IExecutiveLeadershipsTeamCard> = ({
 							initial={initial}
 							whileInView={fadeInUp}
 							viewport={{once: true}}
-							className="text-medium font-semibold text-primary-default mb-1"
+							className="text-medium font-aspektaMain text-primary-default mb-1"
 						>
 							{name}
 						</motion.h3>

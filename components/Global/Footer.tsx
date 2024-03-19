@@ -178,7 +178,7 @@ const Footer: FC = () => {
 					</motion.div>
 					<div className="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-6 xl:gap-14">
 						<div className="flex flex-col px-0">
-							<h3 className="mb-5 text-base tracking-normal text-center text-black uppercase lg:text-left">
+							<h3 className="mb-5 text-base tracking-normal text-center text-black uppercase font-aspektaMain lg:text-left">
 								About
 							</h3>
 							<motion.ul
@@ -236,7 +236,7 @@ const Footer: FC = () => {
 							</motion.ul>
 						</div>
 						<div className="flex flex-col px-0">
-							<h3 className="mb-5 text-base tracking-normal text-center text-black uppercase lg:text-left">
+							<h3 className="mb-5 text-base tracking-normal text-center text-black uppercase font-aspektaMain lg:text-left">
 								Info
 							</h3>
 							<div className="flex flex-col items-center lg:items-baseline justify-between">
@@ -481,7 +481,7 @@ const Footer: FC = () => {
 							</div>
 						</div>
 						<div className="flex flex-col px-0">
-							<h3 className="mb-5 text-base tracking-normal text-center text-black uppercase lg:text-left">
+							<h3 className="mb-5 text-base tracking-normal text-center text-black uppercase font-aspektaMain lg:text-left">
 								Newsletter
 							</h3>
 							<div className="flex flex-col items-start justify-start">

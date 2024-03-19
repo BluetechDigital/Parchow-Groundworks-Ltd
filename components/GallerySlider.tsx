@@ -55,14 +55,14 @@ const GallerySlider: FC<IGallerySlider> = ({gallerySlider}) => {
 													}}
 												>
 													<div className="max-w-sm lg:max-w-3xl mx-auto lg:mx-0 relative z-10 flex flex-col items-center lg:items-start px-8 sm:px-24">
-														<motion.h1
+														<motion.h3
 															initial={initialTwo}
 															whileInView={fadeIn}
 															viewport={{once: true}}
-															className="text-center uppercase text-lg md:text-xl lg:text-3xl xl:text-5xl tracking-[0.10rem] text-white font-semibold xl:leading-[2.5rem]"
+															className="text-center uppercase font-aspektaMain text-lg md:text-xl lg:text-3xl xl:text-5xl tracking-[0.10rem] text-white font-semibold xl:leading-[2.5rem]"
 														>
 															{item?.title}
-														</motion.h1>
+														</motion.h3>
 														<Paragraph
 															content={item?.paragraph}
 															tailwindStyling="py-2 text-white leading-[1.5rem] text-base text-center"

@@ -56,7 +56,7 @@ const ContentSectorGridCard: FC<IContentSectorGridCard> = ({
 						initial={initial}
 						whileInView={fadeInUp}
 						viewport={{once: true}}
-						className="text-center text-black uppercase text-paragraph my-3 font-semibold"
+						className="text-center text-black uppercase font-aspektaMain text-paragraph my-3 font-semibold"
 					>
 						{title}
 					</motion.h3>

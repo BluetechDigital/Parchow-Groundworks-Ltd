@@ -74,9 +74,9 @@ const Hero: FC<IHero> = ({
 								<div
 									className={`py-4 px-6 text-center cursor-pointer bg-primary-light hover:bg-primary-default transition-all ease-in-out duration-500`}
 								>
-									<h3 className="tracking-[0.10rem] text-white text-base text-center uppercase">
+									<span className="tracking-[0.10rem] text-white text-base text-center uppercase font-aspektaMain">
 										{buttonLink?.title}
-									</h3>
+									</span>
 								</div>
 							</Link>
 							<Link
@@ -87,9 +87,9 @@ const Hero: FC<IHero> = ({
 								<div
 									className={`py-4 px-6 text-center cursor-pointer bg-accent-default hover:bg-accent-two transition-all ease-in-out duration-500`}
 								>
-									<h3 className="tracking-[0.10rem] text-white text-base text-center uppercase">
+									<span className="tracking-[0.10rem] text-white text-base text-center uppercase font-aspektaMain">
 										{buttonLinkTwo?.title}
-									</h3>
+									</span>
 								</div>
 							</Link>
 						</div>
@@ -115,9 +115,9 @@ const Hero: FC<IHero> = ({
 												height={item?.icon?.mediaDetails?.height}
 												className="my-4 w-[50px] h-[50px] object-contain object-center"
 											/>
-											<h3 className="text-white mt-2 font-semibold text-base uppercase leading-[1.5rem] text-center tracking-[0.10rem]">
+											<span className="text-white mt-2 font-semibold text-base uppercase font-aspektaMain leading-[1.5rem] text-center tracking-[0.10rem]">
 												{item?.title}
-											</h3>
+											</span>
 											<Paragraph
 												content={item?.paragraph}
 												tailwindStyling="p-2 text-white text-tiny text-center"

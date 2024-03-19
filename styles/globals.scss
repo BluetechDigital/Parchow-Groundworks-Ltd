@@ -54,8 +54,11 @@ h4 {
 	font-family: $body;
 }
 
-h1,
-h3 {
+h1 {
+	font-family: $main;
+}
+
+.font-aspektaMain {
 	font-family: $main;
 }
 

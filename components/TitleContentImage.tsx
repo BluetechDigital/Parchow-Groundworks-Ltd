@@ -69,7 +69,7 @@ const TitleContentImage: FC<ITitleContentImage> = ({
 							initial={initial}
 							whileInView={fadeInUp}
 							viewport={{once: true}}
-							className="my-2 max-w-3xl leading-[2.5rem] lg:leading-[3rem] uppercase text-black text-center lg:text-left font-semibold text-lg sm:text-3xl lg:text-6xl"
+							className="my-2 max-w-3xl leading-[2.5rem] lg:leading-[3rem] uppercase font-aspektaMain text-black text-center lg:text-left font-semibold text-lg sm:text-3xl lg:text-6xl"
 						>
 							{title}
 						</motion.h3>

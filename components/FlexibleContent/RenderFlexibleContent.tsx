@@ -9,7 +9,6 @@ import Hero from "../Hero";
 import CTATwo from "../CTATwo";
 import HeroTwo from "../HeroTwo";
 import Gallery from "../Gallery";
-import Accreditations from "../Accreditations";
 import VideoBlock from "../VideoBlock";
 import TeamMembers from "../TeamMembers";
 import OurServices from "../OurServices";
@@ -18,8 +17,8 @@ import OurLocation from "../OurLocation";
 import ServicesGrid from "../ServicesGrid";
 import ErrorPage from "../Global/ErrorPage";
 import GallerySlider from "../GallerySlider";
-import GettingStarted from "../GettingStarted";
 import TitleParagraph from "../TitleParagraph";
+import Accreditations from "../Accreditations";
 import Maintenance from "../Global/Maintenance";
 import TestimonialsTwo from "../TestimonialsTwo";
 import DevelopmentsGrid from "../DevelopmentsGrid";
@@ -177,17 +176,6 @@ const RenderFlexibleContent: FC = () => {
 							<>
 								<OurLocation title={item?.title} paragraph={item?.paragraph} />
 							</>
-						) : item?.fieldGroupName === `${FlexibleContent}_GettingStarted` &&
-						  item?.displaySection ? (
-							<>
-								<GettingStarted
-									title={item?.title}
-									subtitle={item?.subtitle}
-									stepOne={item?.stepOne}
-									stepTwo={item?.stepTwo}
-									stepThree={item?.stepThree}
-								/>
-							</>
 						) : item?.fieldGroupName ===
 								`${FlexibleContent}_DevelopmentsGrid` &&
 						  item?.displaySection ? (
@@ -271,7 +259,11 @@ const RenderFlexibleContent: FC = () => {
 						) : item?.fieldGroupName === `${FlexibleContent}_ContactForm` &&
 						  item?.displaySection ? (
 							<>
-								<ContactForm title={item?.title} paragraph={item?.paragraph} />
+								<ContactForm
+									title={item?.title}
+									image={item?.image}
+									paragraph={item?.paragraph}
+								/>
 							</>
 						) : item?.fieldGroupName ===
 								`${FlexibleContent}_RequestAppointmentForm` &&

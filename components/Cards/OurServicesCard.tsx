@@ -52,7 +52,7 @@ const OurServicesCard: FC<IOurServicesCard> = ({
 									initial={initial}
 									whileInView={fadeInUp}
 									viewport={{once: true}}
-									className="text-center lg:text-left text-white uppercase text-paragraph my-3 font-semibold transition-all duration-500 ease-in-out"
+									className="text-center lg:text-left text-white uppercase font-aspektaMain text-paragraph my-3 transition-all duration-500 ease-in-out"
 								>
 									{title}
 								</motion.h3>

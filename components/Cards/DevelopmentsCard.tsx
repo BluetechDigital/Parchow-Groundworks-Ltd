@@ -48,7 +48,7 @@ const DevelopmentsCard: FC<IDevelopmentsCard> = ({
 							className={slug ? "absolute -bottom-2 right-2" : "hidden"}
 						>
 							<div className="flex justify-end gap-4 mb-4">
-								<h3 className="flex items-center justify-center font-semibold tracking-[0.10rem] text-white text-tiny uppercase pl-4 w-fit h-12 bg-primary-default hover:bg-primary-dark">
+								<span className="flex items-center justify-center font-semibold tracking-[0.10rem] text-white text-tiny uppercase font-aspektaMain pl-4 w-fit h-12 bg-primary-default hover:bg-primary-dark">
 									Read More
 									<Image
 										width={550}
@@ -57,7 +57,7 @@ const DevelopmentsCard: FC<IDevelopmentsCard> = ({
 										src="/svg/navigation-menu-dropdown-arrow-white.svg"
 										className="my-auto ml-2 mb-6 rotate-[-135deg] cursor-pointer w-[35px] h-[35px] object-contain object-center"
 									/>
-								</h3>
+								</span>
 							</div>
 						</motion.div>
 					</motion.div>
@@ -71,7 +71,7 @@ const DevelopmentsCard: FC<IDevelopmentsCard> = ({
 							initial={initial}
 							whileInView={fadeInUp}
 							viewport={{once: true}}
-							className="text-center lg:text-left text-black hover:text-primary-default uppercase text-paragraph my-3 font-semibold"
+							className="text-center lg:text-left text-black hover:text-primary-default uppercase font-aspektaMain text-paragraph my-3 font-semibold"
 						>
 							{title}
 						</motion.h3>

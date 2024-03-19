@@ -48,7 +48,7 @@ const OurServices: FC<IOurServices> = ({
 								initial={initial}
 								whileInView={fadeInUp}
 								viewport={{once: true}}
-								className="my-3 max-w-xl mx-auto lg:mx-0 text-white uppercase  leading-[2.25rem] text-center lg:text-left text-lg sm:text-3xl"
+								className="my-3 max-w-xl mx-auto lg:mx-0 text-white uppercase font-aspektaMain leading-[2.25rem] text-center lg:text-left text-lg sm:text-3xl"
 							>
 								{title}
 							</motion.h3>
@@ -64,7 +64,7 @@ const OurServices: FC<IOurServices> = ({
 								<div
 									className={`py-4 px-6 text-center cursor-pointer bg-accent-default hover:bg-accent-two transition-all ease-in-out duration-500`}
 								>
-									<h3 className="tracking-[0.10rem] text-white text-base text-center uppercase">
+									<h3 className="tracking-[0.10rem] text-white text-base text-center uppercase font-aspektaMain">
 										{buttonLink?.title}
 									</h3>
 								</div>

@@ -312,48 +312,6 @@ export const getAllFlexibleContentComponents = async (
 												paragraph
 												displaySection
 											}
-											... on ${postTypeFlexibleContent}_GettingStarted {
-            									fieldGroupName
-            									title
-												subtitle
-												displaySection
-            									stepOne {
-            										title
-            										paragraph
-            										image {
-            											altText
-            											sourceUrl
-            											mediaDetails {
-            												height
-            												width
-            											}
-            										}
-            									}
-            									stepTwo {
-            										title
-            										paragraph
-            										image {
-            											altText
-            											sourceUrl
-            											mediaDetails {
-            												height
-            												width
-            											}
-            										}
-            									}
-            									stepThree {
-            										title
-            										paragraph
-            										image {
-            											altText
-            											sourceUrl
-            											mediaDetails {
-            												height
-            												width
-            											}
-            										}
-            									}
-            								}
 											... on ${postTypeFlexibleContent}_DevelopmentsGrid {
 												fieldGroupName
 												title
@@ -466,6 +424,14 @@ export const getAllFlexibleContentComponents = async (
 												title
 												paragraph
 												displaySection
+												image {
+            										altText
+            										sourceUrl
+            										mediaDetails {
+            											height
+            											width
+            										}
+            									}
 											}
 											... on ${postTypeFlexibleContent}_RequestAppointmentForm {
 												fieldGroupName

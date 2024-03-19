@@ -167,6 +167,14 @@ export type IOurLocation = {
 export type IContactForm = {
 	title: string;
 	paragraph: string;
+	image: {
+		altText: string;
+		sourceUrl: string;
+		mediaDetails: {
+			width: number;
+			height: number;
+		};
+	};
 };
 export type IMaintenance = {
 	title: string;
@@ -253,46 +261,6 @@ export type ITitleParagraph = {
 	title: string;
 	paragraph: string;
 	displayParagraph: boolean;
-};
-export type IGettingStarted = {
-	title: string;
-	subtitle: string;
-	stepOne: {
-		title: string;
-		paragraph: string;
-		image: {
-			altText: string;
-			sourceUrl: string;
-			mediaDetails: {
-				width: number;
-				height: number;
-			};
-		};
-	};
-	stepTwo: {
-		title: string;
-		paragraph: string;
-		image: {
-			altText: string;
-			sourceUrl: string;
-			mediaDetails: {
-				width: number;
-				height: number;
-			};
-		};
-	};
-	stepThree: {
-		title: string;
-		paragraph: string;
-		image: {
-			altText: string;
-			sourceUrl: string;
-			mediaDetails: {
-				width: number;
-				height: number;
-			};
-		};
-	};
 };
 export type ITestimonialsTwo = {
 	title: string;

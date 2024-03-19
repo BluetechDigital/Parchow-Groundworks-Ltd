@@ -70,7 +70,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 													<Link
 														onClick={toggleMenu}
 														href={item?.node?.url}
-														className="text-black text-tiny text-center tracking-[0.05rem] hover:text-accent-two"
+														className="text-black text-tiny text-center font-aspektaMain tracking-[0.05rem] hover:text-accent-two"
 													>
 														{item?.node?.label}
 													</Link>
@@ -114,7 +114,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 																					<Link
 																						onClick={toggleMenu}
 																						href={`${item?.node?.url}`}
-																						className="block p-4 text-tiny"
+																						className="block p-4 text-tiny font-aspektaMain"
 																					>
 																						{item?.node?.label}
 																					</Link>
@@ -135,7 +135,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 												<Link
 													onClick={toggleMenu}
 													href={`${item?.node?.url}`}
-													className="block py-4 text-tiny text-black hover:text-accent-two"
+													className="block py-4 text-tiny text-black font-aspektaMain hover:text-accent-two"
 												>
 													{item?.node?.label}
 												</Link>
@@ -156,7 +156,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 							viewport={{once: true}}
 							className="flex flex-col items-center justify-between gap-4"
 						>
-							<h4 className="mb-5 text-base tracking-normal text-center uppercase md:text-left text-black">
+							<h4 className="mb-5 text-base tracking-normal text-center uppercase font-aspektaMain md:text-left text-black">
 								Contact Links
 							</h4>
 							<div className="flex items-center justify-center gap-4 text-center">

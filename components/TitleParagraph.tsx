@@ -26,7 +26,7 @@ const TitleParagraph: FC<ITitleParagraph> = ({
 					viewport={{once: true}}
 					className={
 						title
-							? "my-3 max-w-xl mx-auto uppercase text-black text-center font-semibold text-lg md:text-xl"
+							? "my-3 max-w-xl mx-auto uppercase font-aspektaMain text-black text-center font-semibold text-lg md:text-xl"
 							: "hidden"
 					}
 				>

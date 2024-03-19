@@ -52,7 +52,7 @@ const VideoBlock: FC<IVideoBlock> = ({
 								initial={initial}
 								whileInView={fadeInUp}
 								viewport={{once: true}}
-								className="my-3 max-w-xl mx-auto lg:mx-0 text-black uppercase leading-[2.25rem] text-center lg:text-left text-lg sm:text-3xl"
+								className="my-3 max-w-xl mx-auto lg:mx-0 text-black uppercase font-aspektaMain leading-[2.25rem] text-center lg:text-left text-lg sm:text-3xl"
 							>
 								{title}
 							</motion.h3>
@@ -70,7 +70,7 @@ const VideoBlock: FC<IVideoBlock> = ({
 								<div
 									className={`w-fit mt-2 py-4 px-6 text-center cursor-pointer bg-primary-default hover:bg-primary-two transition-all ease-in-out duration-500`}
 								>
-									<h3 className="tracking-[0.10rem] text-white text-base text-center uppercase">
+									<h3 className="tracking-[0.10rem] text-white text-base text-center uppercase font-aspektaMain">
 										{buttonLink?.title}
 									</h3>
 								</div>

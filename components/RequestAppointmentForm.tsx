@@ -165,7 +165,7 @@ const RequestAppointmentForm: FC<IRequestAppointmentForm> = ({
 								initial={initial}
 								whileInView={fadeInUp}
 								viewport={{once: true}}
-								className="my-3 max-w-xl mx-auto lg:mx-0 text-black uppercase leading-[2.25rem] text-center lg:text-left text-lg sm:text-3xl"
+								className="my-3 max-w-xl mx-auto lg:mx-0 text-black uppercase font-aspektaMain leading-[2.25rem] text-center lg:text-left text-lg sm:text-3xl"
 							>
 								{title}
 							</motion.h3>
@@ -184,9 +184,9 @@ const RequestAppointmentForm: FC<IRequestAppointmentForm> = ({
 								<div
 									className={`py-4 px-6 text-center cursor-pointer bg-accent-default hover:bg-accent-two transition-all ease-in-out duration-500`}
 								>
-									<h3 className="tracking-[0.10rem] text-white text-base text-center uppercase">
+									<span className="tracking-[0.10rem] text-white text-base text-center uppercase font-aspektaMain">
 										{buttonLink?.title}
-									</h3>
+									</span>
 								</div>
 							</Link>
 							<motion.div
@@ -232,7 +232,7 @@ const RequestAppointmentForm: FC<IRequestAppointmentForm> = ({
 										initial={initial}
 										whileInView={fadeInUp}
 										viewport={{once: true}}
-										className="mb-2 uppercase text-black text-center sm:text-left font-semibold text-base"
+										className="mb-2 uppercase font-aspektaMain text-black text-center sm:text-left font-semibold text-base"
 									>
 										Phone
 									</motion.h3>
@@ -264,7 +264,7 @@ const RequestAppointmentForm: FC<IRequestAppointmentForm> = ({
 									viewport={{once: true}}
 									className="flex items-center justify-center my-4 mb-8 gap-x-2"
 								>
-									<h3 className="text-xl font-semibold uppercase text-white">
+									<h3 className="text-xl font-semibold uppercase font-aspektaMain text-white">
 										Sending Message...
 									</h3>
 								</motion.div>
@@ -275,7 +275,7 @@ const RequestAppointmentForm: FC<IRequestAppointmentForm> = ({
 									viewport={{once: true}}
 									className="flex items-center justify-center my-4 mb-8 gap-x-2"
 								>
-									<h3 className="text-xl font-semibold text-center uppercase text-white">
+									<h3 className="text-xl font-semibold text-center uppercase font-aspektaMain text-white">
 										Message Sent!
 									</h3>
 								</motion.div>
@@ -286,7 +286,7 @@ const RequestAppointmentForm: FC<IRequestAppointmentForm> = ({
 									viewport={{once: true}}
 									className="flex items-center justify-center my-4 mb-8 gap-x-2"
 								>
-									<h3 className="text-xl font-semibold text-center uppercase text-white">
+									<h3 className="text-xl font-semibold text-center uppercase font-aspektaMain text-white">
 										Error Message: Something went wrong with sending your
 										message. Please try again.
 									</h3>
@@ -302,7 +302,7 @@ const RequestAppointmentForm: FC<IRequestAppointmentForm> = ({
 										initial={initial}
 										whileInView={fadeInUp}
 										viewport={{once: true}}
-										className="my-3 max-w-xl mx-auto xl:mx-0 uppercase text-white text-center lg:text-left font-semibold text-lg md:text-lg"
+										className="my-3 max-w-xl mx-auto xl:mx-0 uppercase font-aspektaMain text-white text-center lg:text-left font-semibold text-lg md:text-lg"
 									>
 										Make an Appointment
 									</motion.h3>
@@ -456,7 +456,7 @@ const RequestAppointmentForm: FC<IRequestAppointmentForm> = ({
 												: `${styles.submitButton}`
 										}
 									>
-										<h3 className="tracking-widest text-white uppercase text-sm">
+										<span className="tracking-widest text-white uppercase font-aspektaMain text-sm">
 											{loading
 												? "Sending Message..."
 												: messageSent
@@ -464,7 +464,7 @@ const RequestAppointmentForm: FC<IRequestAppointmentForm> = ({
 												: errorMessage
 												? "Sending Error!"
 												: "Request A Quote"}
-										</h3>
+										</span>
 									</span>
 								</motion.button>
 							</motion.div>

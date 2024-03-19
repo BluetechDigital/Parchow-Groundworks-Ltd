@@ -208,7 +208,7 @@ const Newsletter: FC<INewsletter> = ({paragraph}) => {
 						type="submit"
 					>
 						<span className="w-full flex items-center justify-center gap-3 py-3 px-6 bg-primary-default hover:bg-primary-two transition-all duration-200 ease-in-out">
-							<h3 className="text-white tracking-widest text-tiny uppercase">
+							<span className="text-white tracking-widest text-tiny uppercase font-aspektaMain">
 								{loading
 									? "Sending Message..."
 									: messageSent
@@ -216,7 +216,7 @@ const Newsletter: FC<INewsletter> = ({paragraph}) => {
 									: errorMessage
 									? "Sending Error!"
 									: "Send Message"}
-							</h3>
+							</span>
 						</span>
 					</motion.button>
 				</Form>

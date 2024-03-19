@@ -43,7 +43,7 @@ const CookiePolicyCard: FC = () => {
 						initial={initial}
 						whileInView={fadeInUp}
 						viewport={{once: true}}
-						className="font-bold text-base tracking-wide text-black uppercase"
+						className="text-base tracking-wide text-black uppercase font-aspektaMain"
 					>
 						Cookie Policy
 					</motion.h3>
@@ -63,7 +63,7 @@ const CookiePolicyCard: FC = () => {
 							initial={initial}
 							whileInView={fadeInUp}
 							viewport={{once: true}}
-							className="inline-block px-6 py-3 mr-2 text-xs leading-none text-white transition-all duration-200 ease-in-out bg-primary-default hover:bg-primary-dark"
+							className="inline-block px-6 py-3 mr-2 text-xs font-aspektaMain leading-none text-white transition-all duration-200 ease-in-out bg-primary-default hover:bg-primary-dark"
 						>
 							Accept Cookies
 						</motion.button>
@@ -72,7 +72,7 @@ const CookiePolicyCard: FC = () => {
 							initial={initial}
 							whileInView={fadeInUp}
 							viewport={{once: true}}
-							className="inline-block px-6 py-3 text-xs leading-none text-white bg-primary-dark hover:bg-primary-darker"
+							className="inline-block px-6 py-3 text-xs font-aspektaMain leading-none text-white bg-primary-dark hover:bg-primary-darker"
 						>
 							Refuse Cookies
 						</motion.button>

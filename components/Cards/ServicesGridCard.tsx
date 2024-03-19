@@ -41,7 +41,7 @@ const ServicesGridCard: FC<IServicesGridCard> = ({
 								initial={initialTwo}
 								whileInView={fadeIn}
 								viewport={{once: true}}
-								className="text-white text-xl text-center tracking-[0.10rem]"
+								className="text-white text-xl text-center font-aspektaMain tracking-[0.10rem]"
 							>
 								{title}
 							</motion.h3>
@@ -58,9 +58,9 @@ const ServicesGridCard: FC<IServicesGridCard> = ({
 							<div
 								className={`py-4 px-6 text-center cursor-pointer bg-accent-default hover:bg-accent-two transition-all ease-in-out duration-500`}
 							>
-								<h3 className="tracking-[0.10rem] text-white text-sm uppercase text-center">
+								<span className="tracking-[0.10rem] text-white text-sm uppercase font-aspektaMain text-center">
 									{link?.title}
-								</h3>
+								</span>
 							</div>
 						</button>
 					</div>

@@ -51,7 +51,7 @@ const OurServicesGridTwo: FC<IOurServicesGridTwo> = ({
 							initial={initial}
 							whileInView={fadeInUp}
 							viewport={{once: true}}
-							className="my-3 max-w-xl mx-auto lg:mx-0 text-black uppercase leading-[2.25rem] text-center lg:text-left text-lg sm:text-3xl"
+							className="my-3 max-w-xl mx-auto lg:mx-0 text-black uppercase font-aspektaMain leading-[2.25rem] text-center lg:text-left text-lg sm:text-3xl"
 						>
 							{title}
 						</motion.h3>
@@ -63,9 +63,9 @@ const OurServicesGridTwo: FC<IOurServicesGridTwo> = ({
 							<div
 								className={`py-4 px-6 text-center cursor-pointer bg-primary-three hover:bg-primary-dark transition-all ease-in-out duration-500`}
 							>
-								<h3 className="tracking-[0.10rem] text-white text-base uppercase text-center">
+								<span className="tracking-[0.10rem] text-white text-base uppercase font-aspektaMain text-center">
 									{buttonLink?.title}
-								</h3>
+								</span>
 							</div>
 						</Link>
 					</motion.div>

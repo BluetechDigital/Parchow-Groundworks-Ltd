@@ -104,6 +104,7 @@ export const getAllPreviewFlexibleContentComponents = async (
             									displaySection
             									displayContentOption
             									displayBackgroundIcon
+            									displayParagraphColor
             									displayBackgroundColor
             								}
 											... on ${postTypeFlexibleContent}_Accreditations {
@@ -259,54 +260,60 @@ export const getAllPreviewFlexibleContentComponents = async (
 													}
             									}
             								}
+											... on ${postTypeFlexibleContent}_TeamMembers {
+            									fieldGroupName
+            									title
+            									paragraph
+												displaySection
+            									teamMembersGrid {
+            										card {
+            											name
+            											position
+            											twitterLink
+            											linkedinLink
+            											facebookLink
+            											instagramLink
+            											image {
+            												altText
+            												sourceUrl
+            												mediaDetails {
+            													height
+            													width
+            												}
+            											}
+            										}
+            									}
+            								}
+            								... on ${postTypeFlexibleContent}_ExecutiveLeadershipsTeam {
+            									fieldGroupName
+            									title
+            									paragraph
+												displaySection
+            									leadershipTeamGrid {
+            										card {
+            											name
+            											position
+            											twitterLink
+            											linkedinLink
+            											facebookLink
+            											instagramLink
+            											image {
+            												altText
+            												sourceUrl
+            												mediaDetails {
+            													height
+            													width
+            												}
+            											}
+            										}
+            									}
+            								}
 											... on ${postTypeFlexibleContent}_OurLocation {
 												fieldGroupName
 												title
 												paragraph
 												displaySection
 											}
-											... on ${postTypeFlexibleContent}_GettingStarted {
-            									fieldGroupName
-            									title
-												subtitle
-												displaySection
-            									stepOne {
-            										title
-            										paragraph
-            										image {
-            											altText
-            											sourceUrl
-            											mediaDetails {
-            												height
-            												width
-            											}
-            										}
-            									}
-            									stepTwo {
-            										title
-            										paragraph
-            										image {
-            											altText
-            											sourceUrl
-            											mediaDetails {
-            												height
-            												width
-            											}
-            										}
-            									}
-            									stepThree {
-            										title
-            										paragraph
-            										image {
-            											altText
-            											sourceUrl
-            											mediaDetails {
-            												height
-            												width
-            											}
-            										}
-            									}
-            								}
 											... on ${postTypeFlexibleContent}_DevelopmentsGrid {
 												fieldGroupName
 												title
@@ -322,7 +329,6 @@ export const getAllPreviewFlexibleContentComponents = async (
 												paragraph
 												displayVideo
 												displaySection
-												displayYoutubeIcon
 												buttonLink {
 													url
 													title
@@ -373,6 +379,12 @@ export const getAllPreviewFlexibleContentComponents = async (
 												fieldGroupName
 												displaySection
 											}
+											... on ${postTypeFlexibleContent}_TestimonialsTwo {
+												fieldGroupName
+												title
+												subtitle
+												displaySection
+											}
 											... on ${postTypeFlexibleContent}_TestimonialsGrid {
 												fieldGroupName
 												title
@@ -414,6 +426,18 @@ export const getAllPreviewFlexibleContentComponents = async (
 												title
 												paragraph
 												displaySection
+											}
+											... on ${postTypeFlexibleContent}_RequestAppointmentForm {
+												fieldGroupName
+												title
+												subtitle
+												paragraph
+												displaySection
+												buttonLink {
+													url
+													title
+													target
+												}
 											}
 											... on ${postTypeFlexibleContent}_Maintenance {
 												fieldGroupName

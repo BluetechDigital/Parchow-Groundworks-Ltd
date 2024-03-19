@@ -16,7 +16,7 @@ const BackHoverButton: FC<IBackHoverButton> = ({link}) => {
 						href={`${link}`}
 						className={
 							styles.backHoverButton +
-							" flex bg-primary-default py-2 px-4 text-white uppercase text-sm hover:bg-primary-dark transition-all duration-500 ease-in-out"
+							" flex bg-primary-default py-2 px-4 text-white uppercase font-aspektaMain text-sm hover:bg-primary-dark transition-all duration-500 ease-in-out"
 						}
 					>
 						back

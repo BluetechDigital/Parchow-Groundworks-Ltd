@@ -76,7 +76,7 @@ const TestimonialsSlider: FC = () => {
 															}
 														/>
 														<h3
-															className={`text-primary-default text-lg lg:text-xl text-center lg:text-left font-semibold mb-1`}
+															className={`text-primary-default text-lg lg:text-xl text-center lg:text-left font-aspektaMain mb-1`}
 														>
 															{item?.node?.testimonialReview?.name}
 														</h3>

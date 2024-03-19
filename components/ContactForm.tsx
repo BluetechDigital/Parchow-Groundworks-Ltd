@@ -7,6 +7,9 @@ import {
 	stagger,
 	fadeInUp,
 	initialTwo,
+	slideInRightInitial,
+	slideInRightFinish,
+	slideInLeftInitial,
 } from "@/animations/animations";
 import Link from "next/link";
 import {motion} from "framer-motion";
@@ -24,7 +27,7 @@ import styles from "@/styles/components/ContactForm.module.scss";
 // Components
 import Paragraph from "./Elements/Paragraph";
 
-const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
+const ContactForm: FC<IContactForm> = ({title, image, paragraph}) => {
 	const router = useRouter();
 	const globalContext = useGlobalContext();
 
@@ -168,8 +171,13 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 									),url("/svg/background/grid-background-12.svg")`,
 				}}
 			>
-				<div className="lg:container mx-auto flex flex-col lg:flex-row items-baseline gap-14">
-					<div className="w-full lg:w-1/2 sm:p-6 flex flex-col">
+				<div className="lg:container mx-auto flex flex-col lg:flex-row items-center justify-center gap-14">
+					<motion.div
+						viewport={{once: true}}
+						initial={slideInLeftInitial}
+						whileInView={slideInRightFinish}
+						className="w-full lg:w-1/2 sm:p-6 flex flex-col"
+					>
 						<motion.div
 							initial={initial}
 							variants={stagger}
@@ -181,7 +189,7 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 								initial={initial}
 								whileInView={fadeInUp}
 								viewport={{once: true}}
-								className="my-3 max-w-xl mx-auto lg:mx-0 text-black uppercase leading-[2.25rem] text-center lg:text-left text-lg sm:text-3xl"
+								className="my-3 max-w-xl mx-auto lg:mx-0 text-black uppercase font-aspektaMain leading-[2.25rem] text-center lg:text-left text-lg sm:text-3xl"
 							>
 								{title}
 							</motion.h3>
@@ -368,8 +376,16 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 								/>
 							</motion.div>
 						</motion.div>
-					</div>
-					<div className=""></div>
+					</motion.div>
+					<motion.div
+						viewport={{once: true}}
+						initial={slideInRightInitial}
+						whileInView={slideInRightFinish}
+						className="w-full lg:w-1/2 h-[350px] lg:h-[500px] bg-center bg-no-repeat bg-cover"
+						style={{
+							backgroundImage: `url(${image?.sourceUrl})`,
+						}}
+					></motion.div>
 				</div>
 				<Formik
 					onSubmit={formik?.onSubmit}

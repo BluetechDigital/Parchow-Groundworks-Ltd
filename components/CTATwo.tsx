@@ -43,9 +43,9 @@ const CTATwo: FC<ICTATwo> = ({paragraph, buttonLink}) => {
 							" w-full lg:w-auto mx-auto lg:mx-0 py-4 lg:py-8 px-4 lg:pl-12 lg:pr-16 cursor-pointer bg-primary-three hover:bg-primary-dark transition-all ease-in-out duration-500"
 						}
 					>
-						<h3 className="tracking-[0.10rem] text-lightGrey text-tiny text-center">
+						<span className="tracking-[0.10rem] text-lightGrey text-tiny text-center font-aspektaMain">
 							{buttonLink?.title}
-						</h3>
+						</span>
 					</div>
 				</Link>
 			</motion.div>

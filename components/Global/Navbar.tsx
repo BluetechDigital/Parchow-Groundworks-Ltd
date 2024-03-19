@@ -291,7 +291,7 @@ const Navbar: FC = () => {
 																	target={item?.node?.target}
 																	onClick={resetNavbarStyling}
 																>
-																	<span className="text-black group-hover:text-primary-three text-tiny text-center tracking-[0.05rem]">
+																	<span className="text-black uppercase font-aspektaMain group-hover:text-primary-three text-tiny text-center">
 																		{item?.node?.label}
 																	</span>
 																</Link>
@@ -341,7 +341,7 @@ const Navbar: FC = () => {
 																											ourServicesSublinksOpen
 																												? "w-full hover:bg-primary-three text-center text-black hover:text-white"
 																												: "text-black"
-																										} block p-4 text-tiny`}
+																										} block p-4 text-tiny uppercase font-aspektaMain`}
 																									>
 																										{item?.node?.label}
 																									</Link>
@@ -370,7 +370,7 @@ const Navbar: FC = () => {
 																href={`${item?.node?.url}`}
 																target={item?.node?.target}
 															>
-																<span className="py-0 px-2 text-black hover:text-primary-three text-tiny text-center tracking-[0.05rem]">
+																<span className="py-0 px-2 text-black uppercase font-aspektaMain hover:text-primary-three text-tiny text-center">
 																	{item?.node?.label}
 																</span>
 															</Link>
