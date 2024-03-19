@@ -112,7 +112,9 @@ const TitleContentImage: FC<ITitleContentImage> = ({
 								variants={stagger}
 								whileInView="animate"
 								viewport={{once: true}}
-								className={`flex flex-col items-center py-10 px-4 lg:items-baseline`}
+								className={`flex flex-col items-center ${
+									title && subtitle ? "pt-2 pb-10 lg:py-10" : "py-10"
+								} px-4 lg:items-baseline`}
 							>
 								<motion.h3
 									initial={initialTwo}
