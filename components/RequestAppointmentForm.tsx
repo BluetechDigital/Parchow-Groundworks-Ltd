@@ -256,7 +256,7 @@ const RequestAppointmentForm: FC<IRequestAppointmentForm> = ({
 						onSubmit={formik?.onSubmit}
 						initialValues={formik?.initialValues}
 					>
-						<Form className="py-6 px-12 lg:mr-8 w-full bg-primary-default md:max-w-xl">
+						<Form className="py-6 px-12 xl:mr-8 w-full bg-primary-default max-w-full lg:max-w-md xl:max-w-xl">
 							{loading ? (
 								<motion.div
 									initial={initialTwo}
