@@ -115,7 +115,7 @@ const Hero: FC<IHero> = ({
 												height={item?.icon?.mediaDetails?.height}
 												className="my-4 w-[50px] h-[50px] object-contain object-center"
 											/>
-											<h3 className="text-white mt-2 font-semibold text-base leading-[1.5rem] text-center tracking-[0.10rem]">
+											<h3 className="text-white mt-2 font-semibold text-base uppercase leading-[1.5rem] text-center tracking-[0.10rem]">
 												{item?.title}
 											</h3>
 											<Paragraph
