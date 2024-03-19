@@ -106,7 +106,7 @@ export type IVideoBlock = {
 		sourceUrl: string;
 	};
 };
-export type IOurClients = {
+export type IAccreditations = {
 	title: string;
 	subtitle: string;
 	paragraph: string;

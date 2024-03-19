@@ -9,7 +9,7 @@ import Hero from "../Hero";
 import CTATwo from "../CTATwo";
 import HeroTwo from "../HeroTwo";
 import Gallery from "../Gallery";
-import OurClients from "../OurClients";
+import Accreditations from "../Accreditations";
 import VideoBlock from "../VideoBlock";
 import TeamMembers from "../TeamMembers";
 import OurServices from "../OurServices";
@@ -90,10 +90,10 @@ const RenderFlexibleContent: FC = () => {
 									displayBackgroundColor={item?.displayBackgroundColor}
 								/>
 							</>
-						) : item?.fieldGroupName === `${FlexibleContent}_OurClients` &&
+						) : item?.fieldGroupName === `${FlexibleContent}_Accreditations` &&
 						  item?.displaySection ? (
 							<>
-								<OurClients
+								<Accreditations
 									title={item?.title}
 									subtitle={item?.subtitle}
 									paragraph={item?.paragraph}

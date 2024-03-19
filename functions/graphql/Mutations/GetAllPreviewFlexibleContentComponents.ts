@@ -106,7 +106,7 @@ export const getAllPreviewFlexibleContentComponents = async (
             									displayBackgroundIcon
             									displayBackgroundColor
             								}
-											... on ${postTypeFlexibleContent}_OurClients {
+											... on ${postTypeFlexibleContent}_Accreditations {
 												fieldGroupName
 												title
 												subtitle

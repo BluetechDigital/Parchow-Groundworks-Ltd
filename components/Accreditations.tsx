@@ -8,15 +8,12 @@ import {
 import Image from "next/image";
 import {FC, Fragment} from "react";
 import {motion} from "framer-motion";
-import {IOurClients} from "@/types/components/index";
-
-// Styling
-import styles from "../styles/components/OurClients.module.scss";
+import {IAccreditations} from "@/types/components/index";
 
 // Components
 import Paragraph from "./Elements/Paragraph";
 
-const OurClients: FC<IOurClients> = ({
+const Accreditations: FC<IAccreditations> = ({
 	title,
 	subtitle,
 	paragraph,
@@ -25,10 +22,7 @@ const OurClients: FC<IOurClients> = ({
 	return (
 		<>
 			<div
-				className={
-					styles.ourClients +
-					` py-16 px-4 lg:px-0 bg-white bg-center bg-no-repeat bg-cover`
-				}
+				className="py-16 px-4 lg:px-0 bg-white bg-center bg-no-repeat bg-cover"
 				style={{
 					backgroundImage: `linear-gradient(
 								0deg,
@@ -112,4 +106,4 @@ const OurClients: FC<IOurClients> = ({
 	);
 };
 
-export default OurClients;
+export default Accreditations;

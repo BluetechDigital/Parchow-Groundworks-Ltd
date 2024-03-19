@@ -61,7 +61,7 @@ const TeamMembersCard: FC<ITeamMembersCard> = ({
 						>
 							<svg
 								height="100%"
-								className="w-5 h-5"
+								className="w-4 h-4"
 								style={{
 									fill: "#00007a",
 									fillRule: "evenodd",
@@ -87,7 +87,7 @@ const TeamMembersCard: FC<ITeamMembersCard> = ({
 						>
 							<svg
 								height="100%"
-								className="w-5 h-5"
+								className="w-4 h-4"
 								style={{
 									fill: "#00007a",
 									fillRule: "evenodd",
@@ -113,7 +113,7 @@ const TeamMembersCard: FC<ITeamMembersCard> = ({
 						>
 							<svg
 								viewBox="0 0 24 24"
-								className="w-5 h-5"
+								className="w-4 h-4"
 								fill="none"
 								xmlns="http://www.w3.org/2000/svg"
 							>
@@ -160,7 +160,7 @@ const TeamMembersCard: FC<ITeamMembersCard> = ({
 								}}
 								version="1.1"
 								viewBox="0 0 512 512"
-								className="w-5 h-5"
+								className="w-4 h-4"
 								width="100%"
 							>
 								<path
