@@ -242,7 +242,7 @@ const ContactForm: FC<IContactForm> = ({title, image, paragraph}) => {
 									initial={initial}
 									whileInView={fadeInUp}
 									viewport={{once: true}}
-									className="mb-2 uppercase text-black text-center sm:text-left font-semibold text-base"
+									className="mb-2 uppercase font-aspektaMain text-black text-center sm:text-left font-semibold text-base"
 								>
 									Phone
 								</motion.h3>
@@ -296,7 +296,7 @@ const ContactForm: FC<IContactForm> = ({title, image, paragraph}) => {
 									initial={initial}
 									whileInView={fadeInUp}
 									viewport={{once: true}}
-									className="mb-2 uppercase text-black text-center sm:text-left font-semibold text-base"
+									className="mb-2 uppercase font-aspektaMain text-black text-center sm:text-left font-semibold text-base"
 								>
 									Email
 								</motion.h3>
@@ -366,7 +366,7 @@ const ContactForm: FC<IContactForm> = ({title, image, paragraph}) => {
 									initial={initial}
 									whileInView={fadeInUp}
 									viewport={{once: true}}
-									className="mb-2 uppercase text-black text-center sm:text-left font-semibold text-base"
+									className="mb-2 uppercase font-aspektaMain text-black text-center sm:text-left font-semibold text-base"
 								>
 									Address
 								</motion.h3>
@@ -411,7 +411,7 @@ const ContactForm: FC<IContactForm> = ({title, image, paragraph}) => {
 								viewport={{once: true}}
 								className="flex items-center justify-center my-4 mb-8 gap-x-2"
 							>
-								<h3 className="text-lg md:text-xl md:text-2xl font-semibold uppercase text-black">
+								<h3 className="text-lg md:text-xl md:text-2xl font-semibold uppercase font-aspektaMain text-black">
 									Sending Message...
 								</h3>
 							</motion.div>
@@ -422,7 +422,7 @@ const ContactForm: FC<IContactForm> = ({title, image, paragraph}) => {
 								viewport={{once: true}}
 								className="flex items-center justify-center my-4 mb-8 gap-x-2"
 							>
-								<h3 className="text-lg md:text-xl md:text-2xl font-semibold text-center uppercase text-black">
+								<h3 className="text-lg md:text-xl md:text-2xl font-semibold text-center uppercase font-aspektaMain text-black">
 									Message Sent!
 								</h3>
 							</motion.div>
@@ -433,7 +433,7 @@ const ContactForm: FC<IContactForm> = ({title, image, paragraph}) => {
 								viewport={{once: true}}
 								className="flex items-center justify-center my-4 mb-8 gap-x-2"
 							>
-								<h3 className="text-lg md:text-xl md:text-2xl font-semibold text-center uppercase text-[#e20031]">
+								<h3 className="text-lg md:text-xl md:text-2xl font-semibold text-center uppercase font-aspektaMain text-[#e20031]">
 									Error Message: Something went wrong with sending your message.
 									Please try again.
 								</h3>
@@ -449,7 +449,7 @@ const ContactForm: FC<IContactForm> = ({title, image, paragraph}) => {
 									initial={initial}
 									whileInView={fadeInUp}
 									viewport={{once: true}}
-									className="my-3 max-w-xl mx-auto xl:mx-0 uppercase text-black text-center font-semibold text-lg md:text-xl md:text-2xl"
+									className="my-3 max-w-xl mx-auto xl:mx-0 uppercase font-aspektaMain text-black text-center font-semibold text-lg md:text-xl md:text-2xl"
 								>
 									Get In Touch
 								</motion.h3>
@@ -691,7 +691,7 @@ const ContactForm: FC<IContactForm> = ({title, image, paragraph}) => {
 											: `${styles.submitButton}`
 									}
 								>
-									<h3 className="tracking-widest text-white uppercase text-sm">
+									<span className="tracking-widest text-white uppercase font-aspektaMain text-sm">
 										{loading
 											? "Sending Message..."
 											: messageSent
@@ -699,7 +699,7 @@ const ContactForm: FC<IContactForm> = ({title, image, paragraph}) => {
 											: errorMessage
 											? "Sending Error!"
 											: "Send Message"}
-									</h3>
+									</span>
 								</span>
 							</motion.button>
 						</motion.div>
