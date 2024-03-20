@@ -7,9 +7,9 @@ import {
 	stagger,
 	fadeInUp,
 	initialTwo,
-	slideInRightInitial,
 	slideInRightFinish,
 	slideInLeftInitial,
+	slideInRightInitial,
 } from "@/animations/animations";
 import Link from "next/link";
 import {motion} from "framer-motion";

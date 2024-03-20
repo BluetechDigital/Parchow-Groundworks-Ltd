@@ -2,11 +2,9 @@
 import {
 	fadeIn,
 	initial,
-	initialTwo,
-	slideInLeftInitial,
-	slideInRightFinish,
-	arrayLoopStaggerChildren,
 	stagger,
+	initialTwo,
+	arrayLoopStaggerChildren,
 } from "../animations/animations";
 import Link from "next/link";
 import Image from "next/image";
