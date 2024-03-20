@@ -108,9 +108,14 @@ export const getAllFlexibleContentComponents = async (
 											... on ${postTypeFlexibleContent}_Accreditations {
 												fieldGroupName
 												title
+												video
 												subtitle
 												paragraph
+												displayVideo
 												displaySection
+												videoBackgroundImage {
+            										sourceUrl
+              									}
 												imageGrid {
 													link {
 														url

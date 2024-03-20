@@ -237,8 +237,13 @@ export type IGallerySlider = {
 };
 export type IAccreditations = {
 	title: string;
+	video: string;
 	subtitle: string;
 	paragraph: string;
+	displayVideo: boolean;
+	videoBackgroundImage: {
+		sourceUrl: string;
+	};
 	imageGrid: [
 		{
 			link: {

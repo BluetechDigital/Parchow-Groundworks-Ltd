@@ -3,7 +3,10 @@ import {
 	initial,
 	stagger,
 	fadeInUp,
+	slideInRightFinish,
+	slideInRightInitial,
 	arrayLoopStaggerChildren,
+	slideInLeftInitial,
 } from "../animations/animations";
 import Image from "next/image";
 import {FC, Fragment} from "react";
@@ -12,12 +15,16 @@ import {IAccreditations} from "@/types/components/index";
 
 // Components
 import Paragraph from "./Elements/Paragraph";
+import AccreditationsVideoWrapper from "./Elements/AccreditationsVideoWrapper";
 
 const Accreditations: FC<IAccreditations> = ({
 	title,
+	video,
 	subtitle,
 	paragraph,
 	imageGrid,
+	displayVideo,
+	videoBackgroundImage,
 }) => {
 	return (
 		<>
@@ -32,7 +39,7 @@ const Accreditations: FC<IAccreditations> = ({
 							),url("/img/background/Cement-Floor-Background.jpg")`,
 				}}
 			>
-				<div className="container px-0 mx-auto">
+				<div className="lg:container px-0 mx-auto">
 					<motion.div
 						initial={initial}
 						variants={stagger}
@@ -61,15 +68,20 @@ const Accreditations: FC<IAccreditations> = ({
 							tailwindStyling="lg:max-w-3xl mx-auto text-black leading-[1.5rem] text-paragraph text-center"
 						/>
 					</motion.div>
-					<div className="max-w-6xl mx-auto">
+					<div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16">
 						<motion.div
-							initial={initial}
-							variants={stagger}
-							whileInView="animate"
 							viewport={{once: true}}
-							className={`grid items-center justify-center grid-cols-2 gap-4 ${
-								imageGrid?.length <= 4 ? "lg:grid-cols-4" : "lg:grid-cols-6"
-							} lg:items-center lg:justify-between py-12`}
+							initial={slideInLeftInitial}
+							whileInView={slideInRightFinish}
+							className={`w-full ${
+								videoBackgroundImage && video ? "lg:w-1/2" : "lg:w-full"
+							} grid items-center justify-center grid-cols-2 gap-4 ${
+								imageGrid?.length <= 4
+									? "lg:grid-cols-3"
+									: videoBackgroundImage && video
+									? "lg:grid-cols-3"
+									: "lg:grid-cols-4"
+							} lg:items-center lg:justify-between py-12 max-w-6xl`}
 						>
 							{imageGrid?.length > 0 ? (
 								imageGrid.map((item: any, keys: number) => (
@@ -95,6 +107,27 @@ const Accreditations: FC<IAccreditations> = ({
 										</motion.div>
 									</Fragment>
 								))
+							) : (
+								<></>
+							)}
+						</motion.div>
+						<motion.div
+							viewport={{once: true}}
+							initial={slideInRightInitial}
+							whileInView={slideInRightFinish}
+							className={`${
+								videoBackgroundImage && video ? "block" : "hidden"
+							} ${
+								displayVideo ? "h-fit" : "h-[300px] lg:h-[500px]"
+							} bg-center bg-no-repeat bg-cover mt-6 lg:mt-12 w-full lg:w-1/2`}
+							style={{
+								backgroundImage: `url("${
+									displayVideo ? "none" : videoBackgroundImage
+								}")`,
+							}}
+						>
+							{displayVideo ? (
+								<AccreditationsVideoWrapper>{video}</AccreditationsVideoWrapper>
 							) : (
 								<></>
 							)}

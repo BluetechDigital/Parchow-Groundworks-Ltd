@@ -25,7 +25,7 @@ const OurServicesCard: FC<IOurServicesCard> = ({
 					initial={initial}
 					whileInView={fadeInUp}
 					viewport={{once: true}}
-					className="group h-full min-h-[300px] max-h-[450px]"
+					className="group"
 				>
 					<motion.div
 						initial={initial}
@@ -34,7 +34,7 @@ const OurServicesCard: FC<IOurServicesCard> = ({
 						viewport={{once: true}}
 						className={
 							link?.url
-								? "border-solid border-2 border-white hover:border-primary-three hover:bg-primary-three transition-all duration-500 ease-in-out"
+								? "min-h-[300px] lg:min-h-[365px] xl:min-h-[350px] 2xl:min-h-[325px] h-full max-h-[450px] border-solid border-2 border-white hover:border-primary-three hover:bg-primary-three transition-all duration-500 ease-in-out"
 								: "hidden"
 						}
 					>
@@ -62,7 +62,7 @@ const OurServicesCard: FC<IOurServicesCard> = ({
 											? paragraph?.substring(0, 235) + "..."
 											: paragraph
 									}
-									tailwindStyling="text-center lg:text-left text-white text-base sm:text-tiny"
+									tailwindStyling="text-center lg:text-left text-white text-base sm:text-tiny tracking-[0.05rem]"
 								/>
 							</div>
 							<motion.button

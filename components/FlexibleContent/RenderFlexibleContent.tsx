@@ -94,9 +94,12 @@ const RenderFlexibleContent: FC = () => {
 							<>
 								<Accreditations
 									title={item?.title}
+									video={item?.video}
 									subtitle={item?.subtitle}
 									paragraph={item?.paragraph}
 									imageGrid={item?.imageGrid}
+									displayVideo={item?.displayVideo}
+									videoBackgroundImage={item?.videoBackgroundImage?.sourceUrl}
 								/>
 							</>
 						) : item?.fieldGroupName === `${FlexibleContent}_OurServices` &&
