@@ -47,7 +47,7 @@ const GallerySlider: FC<IGallerySlider> = ({gallerySlider}) => {
 										<SwiperSlide>
 											<div className="w-full p-0">
 												<div
-													className="pt-24 pb-20 w-full h-[50vh] flex flex-col items-center justify-center relative bg-center bg-no-repeat bg-cover"
+													className="pt-24 pb-20 w-full h-[40vh] flex flex-col items-center justify-center relative bg-center bg-no-repeat bg-cover"
 													style={{
 														backgroundImage: `linear-gradient(
 																0deg,

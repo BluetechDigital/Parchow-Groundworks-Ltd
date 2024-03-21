@@ -57,7 +57,7 @@ export const stagger: Stagger = {
 		opacity: 1,
 		y: 0,
 		transition: {
-			delay: 0.1,
+			delay: 0.25,
 			duration: 0.75,
 			ease: "easeInOut",
 		},
@@ -72,7 +72,7 @@ export const arrayLoopStaggerChildren: ArrayLoopStaggerChildren = {
 		opacity: 1,
 		y: 0,
 		transition: {
-			delay: 0.1 * keys,
+			delay: 0.25 * keys,
 			duration: 0.75,
 			ease: "easeInOut",
 		},

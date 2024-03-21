@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import {motion} from "framer-motion";
 import {ICTA} from "@/types/components/index";
-import {fadeIn, initialTwo} from "@/animations/animations";
+import {fadeIn, initialTwo} from "../animations/animations";
 
 // Components
 import Paragraph from "./Elements/Paragraph";
@@ -12,47 +12,8 @@ import Paragraph from "./Elements/Paragraph";
 const CTA: FC<ICTA> = ({title, paragraph, buttonLink, backgroundImage}) => {
 	return (
 		<>
-			<div className="hidden lg:block">
-				<div
-					className="p-8 relative flex flex-col justify-end lg:flex-row gap-4 bg-cover bg-no-repeat bg-center"
-					style={{
-						backgroundImage: `url(${backgroundImage?.sourceUrl})`,
-					}}
-				>
-					<div className="py-10 px-8 lg:max-w-xl lg:container mx-auto lg:mx-0 bg-white">
-						<motion.h3
-							initial={initialTwo}
-							whileInView={fadeIn}
-							viewport={{once: true}}
-							className="my-3 max-w-xl mx-auto lg:mx-0 text-black uppercase font-aspektaMain leading-[2.25rem] text-center lg:text-left text-lg sm:text-3xl"
-						>
-							{title}
-						</motion.h3>
-						<Paragraph
-							content={paragraph}
-							tailwindStyling="mb-6 lg:mb-0 text-black text-base text-center lg:text-left"
-						/>
-						<Link
-							href={`${buttonLink?.url}`}
-							target={buttonLink?.target}
-							className={`${buttonLink?.url ? "block" : "hidden"}`}
-						>
-							<motion.div
-								initial={initialTwo}
-								whileInView={fadeIn}
-								viewport={{once: true}}
-								className="mt-4 py-4 px-6 text-center cursor-pointer bg-accent-default hover:bg-accent-two transition-all ease-in-out duration-500"
-							>
-								<h3 className="tracking-[0.10rem] text-white text-base text-center uppercase font-aspektaMain">
-									{buttonLink?.title}
-								</h3>
-							</motion.div>
-						</Link>
-					</div>
-				</div>
-			</div>
-			<div className="flex lg:hidden flex-col-reverse lg:flex-row flex-wrap p-4 lg:p-10 -m-4">
-				<div className="w-full p-4">
+			<div className="flex flex-col-reverse lg:flex-row flex-wrap p-4 lg:p-10 -m-4">
+				<div className="w-full lg:w-5/12 p-4">
 					<Link
 						href={buttonLink?.url}
 						target={buttonLink?.target}
@@ -73,14 +34,25 @@ const CTA: FC<ICTA> = ({title, paragraph, buttonLink, backgroundImage}) => {
 						</div>
 					</Link>
 				</div>
-				<div className="w-full p-4">
-					<div className="flex flex-col justify-between bg-blue-default h-full p-8">
+				<div className="w-full lg:w-7/12 p-4">
+					<div
+						className="flex flex-col justify-between bg-blue-default h-full p-8 bg-cover bg-no-repeat bg-center"
+						style={{
+							backgroundImage: `linear-gradient(
+										0deg,
+										rgba(255, 255, 255, 0.50),
+										rgba(255, 255, 255, 0.65),
+										rgba(255, 255, 255, 0.75),
+										rgba(255, 255, 255, 0.85)
+									),url("/svg/background/grid-background-06.svg")`,
+						}}
+					>
 						<div className="max-w-3xl mx-auto lg:mx-0">
 							<motion.h3
 								initial={initialTwo}
 								whileInView={fadeIn}
 								viewport={{once: true}}
-								className="mb-4 text-center lg:text-left text-lg sm:text-3xl text-black"
+								className="mb-4 text-center uppercase font-aspektaMain font-semibold leading-tight lg:text-left text-black text-lg sm:text-3xl"
 							>
 								{title}
 							</motion.h3>
@@ -93,19 +65,16 @@ const CTA: FC<ICTA> = ({title, paragraph, buttonLink, backgroundImage}) => {
 							href={`${buttonLink?.url}`}
 							target={buttonLink?.target}
 							className={`${
-								buttonLink?.url ? "block mx-auto lg:mx-0" : "hidden"
+								buttonLink?.url ? "block mt-4 w-fit mx-auto lg:mx-0" : "hidden"
 							}`}
 						>
-							<motion.div
-								initial={initialTwo}
-								whileInView={fadeIn}
-								viewport={{once: true}}
-								className="mt-4 py-4 px-6 mx-auto lg:mx-0 cursor-pointer bg-accent-default hover:bg-accent-two transition-all ease-in-out duration-500"
+							<div
+								className={`py-4 px-6 text-center cursor-pointer bg-primary-three hover:bg-primary-dark transition-all ease-in-out duration-500`}
 							>
-								<h3 className="tracking-[0.10rem] text-lightGrey text-tiny text-center uppercase">
+								<span className="tracking-[0.10rem] text-white text-base uppercase font-aspektaMain text-center">
 									{buttonLink?.title}
-								</h3>
-							</motion.div>
+								</span>
+							</div>
 						</Link>
 					</div>
 				</div>
