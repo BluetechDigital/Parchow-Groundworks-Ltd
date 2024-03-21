@@ -47,9 +47,9 @@ const TestimonialsCard: FC<ITestimonialsCard> = ({
 							}
 						/>
 						<div className={image?.sourceUrl ? "ml-0 lg:ml-2" : "ml-0"}>
-							<h3 className="block mb-3 text-base text-center lg:text-left text-black font-semibold leading-none uppercase">
+							<span className="block mb-3 text-base text-center lg:text-left text-black uppercase font-aspektaMain leading-none uppercase">
 								{name}
-							</h3>
+							</span>
 							<span className="block text-sm text-black text-center lg:text-left">
 								{position}
 							</span>

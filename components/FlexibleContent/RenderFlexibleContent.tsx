@@ -251,7 +251,7 @@ const RenderFlexibleContent: FC = () => {
 									backgroundImage={item?.backgroundImage}
 								/>
 							</>
-						) : item?.fieldGroupName === `${FlexibleContent}_CTATwo` &&
+						) : item?.fieldGroupName === `${FlexibleContent}_CtaTwo` &&
 						  item?.displaySection ? (
 							<>
 								<CTATwo

@@ -47,7 +47,7 @@ const Pagination: FC<IPagination> = ({
 	};
 
 	const tailwindButtonStyling =
-		"relative px-6 py-2 uppercase text-white font-semibold cursor-pointer tracking-widest text-tiny w-fit bg-primary-default hover:bg-primary-three transition-all ease-in-out duration-500 before:left-[15%]";
+		"relative px-6 py-2 uppercase font-aspektaMain text-white font-semibold cursor-pointer tracking-widest text-tiny w-fit bg-primary-default hover:bg-primary-three transition-all ease-in-out duration-500 before:left-[15%]";
 
 	return (
 		<>
@@ -157,10 +157,10 @@ const Pagination: FC<IPagination> = ({
 								disabled={currentPage === 1}
 								className={tailwindButtonStyling}
 							>
-								<h3>Previous</h3>
+								<span>Previous</span>
 							</motion.button>
-							<span className="text-center text-tiny font-semibold leading-tight text-black">
-								{`Page ${currentPage} of ${totalPages}`}
+							<span className="uppercase font-aspektaMain text-center text-tiny font-semibold leading-tight text-black">
+								{`${currentPage} of ${totalPages}`}
 							</span>
 							<motion.button
 								initial={initialTwo}
@@ -170,7 +170,7 @@ const Pagination: FC<IPagination> = ({
 								disabled={currentPage === totalPages}
 								className={tailwindButtonStyling}
 							>
-								<h3>Next</h3>
+								<span>Next</span>
 							</motion.button>
 						</div>
 					</>

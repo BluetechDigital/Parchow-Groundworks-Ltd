@@ -20,12 +20,14 @@ const CTATwo: FC<ICTATwo> = ({paragraph, buttonLink}) => {
 				whileInView="animate"
 				viewport={{once: true}}
 				className={
-					styles.ctaTwo + " flex flex-wrap items-center justify-between -mx-4"
+					styles.ctaTwo + " flex flex-wrap items-center justify-between"
 				}
 			>
 				<div
-					className="bg-accent-default px-16 w-full lg:w-2/5 lg:mb-6 lg:mb-0"
-					style={{clipPath: "polygon(0 0, 100% 0%, 97% 100%, 0% 100%)"}}
+					className={
+						styles.paragraphClipPath +
+						" bg-accent-default px-16 w-full lg:w-2/5"
+					}
 				>
 					<Paragraph
 						content={paragraph}
@@ -40,10 +42,10 @@ const CTATwo: FC<ICTATwo> = ({paragraph, buttonLink}) => {
 					<div
 						className={
 							styles.buttonLink +
-							" w-full lg:w-auto mx-auto lg:mx-0 py-4 lg:py-8 px-4 lg:pl-12 lg:pr-16 cursor-pointer bg-primary-three hover:bg-primary-dark transition-all ease-in-out duration-500"
+							" w-full lg:w-auto mx-auto lg:mx-0 py-4 lg:py-6 px-4 lg:pl-12 lg:pr-16 text-center lg:text-left cursor-pointer bg-primary-three hover:bg-primary-dark transition-all ease-in-out duration-500"
 						}
 					>
-						<span className="tracking-[0.10rem] text-lightGrey text-tiny text-center font-aspektaMain">
+						<span className="tracking-[0.10rem] text-lightGrey text-tiny uppercase font-aspektaMain">
 							{buttonLink?.title}
 						</span>
 					</div>

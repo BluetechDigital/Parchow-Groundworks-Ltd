@@ -22,9 +22,7 @@ const Gallery: FC<IGallery> = ({
 			<div
 				className={
 					styles.gallery +
-					` ${
-						title && paragraph ? "pt-4" : "pt-16"
-					} p-4 bg-white lg:container mx-auto`
+					` py-12 px-4 bg-white flex flex-col bg-white lg:container mx-auto`
 				}
 			>
 				<motion.div
@@ -33,8 +31,8 @@ const Gallery: FC<IGallery> = ({
 					whileInView="animate"
 					viewport={{once: true}}
 					className={
-						title
-							? "max-w-2xl mx-auto mb-16 text-center flex flex-col items-center lg:max-w-5xl"
+						title && paragraph
+							? "flex flex-col lg:flex-row items-center justify-between gap-8 w-full"
 							: "hidden"
 					}
 				>
@@ -48,7 +46,7 @@ const Gallery: FC<IGallery> = ({
 					</motion.h3>
 					<Paragraph
 						content={paragraph}
-						tailwindStyling="max-w-3xl mx-auto text-black text-base"
+						tailwindStyling="max-w-full lg:max-w-xl text-black text-base text-center lg:text-left"
 					/>
 				</motion.div>
 				<Pagination
@@ -57,7 +55,7 @@ const Gallery: FC<IGallery> = ({
 					numberOfItemsRenderedPerPage={12}
 					tailwindStyling={`${
 						gallery?.length > 0
-							? `grid gap-4 grid-cols-2 ${
+							? `py-6 px-0 grid gap-4 grid-cols-2 ${
 									parseInt(itemsDisplayedPerPage) === 12
 										? "lg:grid-cols-4"
 										: "lg:grid-cols-4 xl:grid-cols-5"

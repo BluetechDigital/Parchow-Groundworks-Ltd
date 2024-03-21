@@ -3,6 +3,14 @@
 @import "../base/colors";
 
 .ctaTwo {
+	.paragraphClipPath {
+		clip-path: none;
+
+		@media screen and (min-width: 1024px) {
+			clip-path: polygon(0 0, 100% 0%, 95% 100%, 0% 100%);
+		}
+	}
+
 	.buttonLink {
 		clip-path: none;
 
