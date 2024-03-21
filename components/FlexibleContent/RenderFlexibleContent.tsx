@@ -83,9 +83,9 @@ const RenderFlexibleContent: FC = () => {
 									paragraph={item?.paragraph}
 									buttonLink={item?.buttonLink}
 									bulletPoints={item?.bulletPoints}
+									displayImageClipPath={item?.displayImageClipPath}
 									displayContentOption={item?.displayContentOption}
 									displayParagraphColor={item?.displayParagraphColor}
-									displayBackgroundIcon={item?.displayBackgroundIcon}
 									displayBackgroundColor={item?.displayBackgroundColor}
 								/>
 							</>

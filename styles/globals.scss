@@ -92,7 +92,7 @@ h1 {
 }
 
 .swiper-button-prev::after {
-	content: "next";
+	content: "previous";
 	width: 15px !important;
 	height: 15px !important;
 	font-size: 15px !important;
@@ -107,6 +107,31 @@ h1 {
 	font-size: 15px !important;
 	font-weight: 900 !important;
 	color: $primaryDarker !important;
+}
+
+.gallerySlider {
+	.swiper-button-prev,
+	.swiper-button-next {
+		@apply border-2 border-primary-default hover:border-primary-darker bg-primary-default hover:bg-primary-darker;
+	}
+
+	.swiper-button-prev::after {
+		content: "previous";
+		width: 15px !important;
+		height: 15px !important;
+		font-size: 15px !important;
+		font-weight: 900 !important;
+		color: $white !important;
+	}
+
+	.swiper-button-next::after {
+		content: "next";
+		width: 15px !important;
+		height: 15px !important;
+		font-size: 15px !important;
+		font-weight: 900 !important;
+		color: $white !important;
+	}
 }
 
 /* SQUARE BOX CUBES

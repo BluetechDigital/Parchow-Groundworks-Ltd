@@ -47,7 +47,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 								height={500}
 								alt="Parchow Groundworks Ltd Logo White"
 								src="/img/logos/Parchow-Groundworks-Ltd-logo.png"
-								className="object-contain object-center w-[65px] h-[40px]"
+								className="object-contain object-center w-[125px] h-[40px]"
 							/>
 						</Link>
 					</div>
@@ -70,7 +70,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 													<Link
 														onClick={toggleMenu}
 														href={item?.node?.url}
-														className="text-black text-tiny text-center font-aspektaMain tracking-[0.05rem] hover:text-accent-two"
+														className="text-black text-tiny text-center uppercase font-aspektaMain tracking-[0.05rem] hover:text-accent-two"
 													>
 														{item?.node?.label}
 													</Link>
@@ -114,7 +114,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 																					<Link
 																						onClick={toggleMenu}
 																						href={`${item?.node?.url}`}
-																						className="block p-4 text-tiny font-aspektaMain"
+																						className="block p-4 text-tiny uppercase font-aspektaMain"
 																					>
 																						{item?.node?.label}
 																					</Link>
@@ -135,7 +135,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 												<Link
 													onClick={toggleMenu}
 													href={`${item?.node?.url}`}
-													className="block py-4 text-tiny text-black font-aspektaMain hover:text-accent-two"
+													className="block py-4 text-tiny text-black uppercase font-aspektaMain hover:text-accent-two"
 												>
 													{item?.node?.label}
 												</Link>

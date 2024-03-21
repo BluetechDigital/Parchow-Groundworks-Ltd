@@ -29,12 +29,12 @@ const HeroTwo: FC<IHeroTwo> = ({title, paragraph, backgroundImage}) => {
 							}")`,
 					}}
 				>
-					<div className="max-w-sm lg:max-w-2xl mx-auto lg:mx-0 relative z-10 flex flex-col items-center lg:items-start px-8 sm:px-24">
+					<div className="max-w-full lg:max-w-2xl mx-auto lg:mx-0 relative z-10 flex flex-col items-center lg:items-start px-8 sm:px-24">
 						<motion.h1
 							initial={initialTwo}
 							whileInView={fadeIn}
 							viewport={{once: true}}
-							className="text-center lg:text-left uppercase font-aspektaMain text-lg md:text-xl xl:text-3xl text-white font-semibold xl:leading-[2.5rem]"
+							className="text-center lg:text-left uppercase font-aspektaMain text-lg sm:text-xl xl:text-3xl text-white leading-snug lg:leading-[2.5rem]"
 						>
 							{title}
 						</motion.h1>

@@ -16,7 +16,7 @@ const CTA: FC<ICTA> = ({title, paragraph, buttonLink, backgroundImage}) => {
 				<div
 					className="p-8 relative flex flex-col justify-end lg:flex-row gap-4 bg-cover bg-no-repeat bg-center"
 					style={{
-						backgroundImage: `url("${backgroundImage?.sourceUrl}")`,
+						backgroundImage: `url(${backgroundImage?.sourceUrl})`,
 					}}
 				>
 					<div className="py-10 px-8 lg:max-w-xl lg:container mx-auto lg:mx-0 bg-white">

@@ -101,7 +101,7 @@ export const getAllFlexibleContentComponents = async (
             									}
             									displaySection
             									displayContentOption
-            									displayBackgroundIcon
+            									displayImageClipPath
             									displayParagraphColor
             									displayBackgroundColor
             								}

@@ -103,7 +103,7 @@ export const getAllPreviewFlexibleContentComponents = async (
             									}
             									displaySection
             									displayContentOption
-            									displayBackgroundIcon
+            									displayImageClipPath
             									displayParagraphColor
             									displayBackgroundColor
             								}

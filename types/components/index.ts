@@ -289,7 +289,7 @@ export type ITitleContentImage = {
 	displayContentOption: string;
 	displayParagraphColor: string;
 	displayBackgroundColor: string;
-	displayBackgroundIcon: boolean;
+	displayImageClipPath: boolean;
 	buttonLink: {
 		url: string;
 		title: string;

@@ -41,7 +41,7 @@ const ServicesGridCard: FC<IServicesGridCard> = ({
 								initial={initialTwo}
 								whileInView={fadeIn}
 								viewport={{once: true}}
-								className="text-white text-xl text-center font-aspektaMain tracking-[0.10rem]"
+								className="text-white text-lg leading-tight text-center uppercase font-aspektaMain tracking-[0.10rem]"
 							>
 								{title}
 							</motion.h3>

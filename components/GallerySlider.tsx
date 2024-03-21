@@ -22,7 +22,10 @@ const GallerySlider: FC<IGallerySlider> = ({gallerySlider}) => {
 	return (
 		<>
 			<div
-				className={styles.gallerySlider + " relative z-50 flex flex-col h-fit"}
+				className={
+					styles.gallerySlider +
+					" relative z-50 flex flex-col h-fit gallerySlider"
+				}
 			>
 				{/* q8ZuN94DSzAv*5lTOnFxx4WX */}
 				<div className="lg:relative flex flex-col lg:flex-row">
@@ -34,7 +37,7 @@ const GallerySlider: FC<IGallerySlider> = ({gallerySlider}) => {
 							centeredSlides={true}
 							modules={[Autoplay, Navigation]}
 							autoplay={{
-								delay: 10000,
+								delay: 5000,
 								disableOnInteraction: false,
 							}}
 						>
@@ -42,7 +45,7 @@ const GallerySlider: FC<IGallerySlider> = ({gallerySlider}) => {
 								gallerySlider?.map((item: any, keys: number) => (
 									<Fragment key={keys}>
 										<SwiperSlide>
-											<div className="w-full p-4">
+											<div className="w-full p-0">
 												<div
 													className="pt-24 pb-20 w-full h-[50vh] flex flex-col items-center justify-center relative bg-center bg-no-repeat bg-cover"
 													style={{

@@ -23,7 +23,7 @@ const TitleContentImage: FC<ITitleContentImage> = ({
 	bulletPoints,
 	displayContentOption,
 	displayParagraphColor,
-	displayBackgroundIcon,
+	displayImageClipPath,
 	displayBackgroundColor,
 }) => {
 	let backgroundColor;
@@ -69,7 +69,7 @@ const TitleContentImage: FC<ITitleContentImage> = ({
 							initial={initial}
 							whileInView={fadeInUp}
 							viewport={{once: true}}
-							className="my-2 max-w-3xl leading-[2.5rem] lg:leading-[3rem] uppercase font-aspektaMain text-black text-center lg:text-left font-semibold text-lg sm:text-3xl lg:text-6xl"
+							className="my-2 max-w-3xl leading-snug lg:leading-[3rem] uppercase font-aspektaMain text-black text-center lg:text-left font-semibold text-lg sm:text-xl lg:text-6xl"
 						>
 							{title}
 						</motion.h3>
@@ -90,6 +90,11 @@ const TitleContentImage: FC<ITitleContentImage> = ({
 							}`}
 							style={{
 								backgroundImage: `url(${image?.sourceUrl})`,
+								clipPath: `polygon(${
+									displayImageClipPath
+										? "0% 0%, 100% 0%, 100% 25%, 0% 25%, 0% 50%, 100% 50%, 100% 75%, 0% 75%, 0% 100%, 100% 100%, 100% 0%, 75% 0%, 75% 100%, 50% 100%, 50% 0%, 25% 0%, 25% 100%, 0% 100%"
+										: "0%"
+								})`,
 							}}
 						/>
 
@@ -152,6 +157,11 @@ const TitleContentImage: FC<ITitleContentImage> = ({
 							}`}
 							style={{
 								backgroundImage: `url(${image?.sourceUrl})`,
+								clipPath: `polygon(${
+									displayImageClipPath
+										? "0% 0%, 100% 0%, 100% 25%, 0% 25%, 0% 50%, 100% 50%, 100% 75%, 0% 75%, 0% 100%, 100% 100%, 100% 0%, 75% 0%, 75% 100%, 50% 100%, 50% 0%, 25% 0%, 25% 100%, 0% 100%"
+										: "0%"
+								})`,
 							}}
 						/>
 					</div>

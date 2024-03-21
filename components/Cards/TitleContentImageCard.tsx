@@ -48,7 +48,11 @@ const TitleContentImageCard: FC<ITitleContentImageCard> = ({
 					content={paragraph}
 					tailwindStyling={`lg:max-w-xl leading-[1.5rem] text-base text-center lg:text-left ${paragraphColor}`}
 				/>
-				<div className="flex flex-col my-8 lg:my-6 gap-4">
+				<div
+					className={
+						bulletPoints ? "flex flex-col my-8 lg:my-6 gap-4" : "hidden"
+					}
+				>
 					{bulletPoints?.length > 0 ? (
 						bulletPoints?.map((item: any, keys: number) => (
 							<Fragment key={keys}>
