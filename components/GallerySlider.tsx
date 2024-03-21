@@ -24,7 +24,7 @@ const GallerySlider: FC<IGallerySlider> = ({gallerySlider}) => {
 			<div
 				className={
 					styles.gallerySlider +
-					" relative z-50 flex flex-col h-fit gallerySlider"
+					" relative z-10 flex flex-col h-fit gallerySlider"
 				}
 			>
 				{/* q8ZuN94DSzAv*5lTOnFxx4WX */}
@@ -57,7 +57,7 @@ const GallerySlider: FC<IGallerySlider> = ({gallerySlider}) => {
 															),url("${item?.backgroundImage?.sourceUrl}")`,
 													}}
 												>
-													<div className="max-w-sm lg:max-w-3xl mx-auto lg:mx-0 relative z-10 flex flex-col items-center lg:items-start px-8 sm:px-24">
+													<div className="max-w-sm lg:max-w-3xl mx-auto lg:mx-0 relative z-10 flex flex-col items-center px-8 sm:px-24">
 														<motion.h3
 															initial={initialTwo}
 															whileInView={fadeIn}
@@ -75,27 +75,17 @@ const GallerySlider: FC<IGallerySlider> = ({gallerySlider}) => {
 															target={item?.buttonLink?.target}
 															className={`${
 																item?.buttonLink?.url
-																	? "block mt-8 mx-auto"
+																	? "block mt-4 mx-auto"
 																	: "hidden"
 															}`}
 														>
-															<motion.div
-																initial={initialTwo}
-																whileInView={fadeIn}
-																viewport={{once: true}}
-																className={`py-4 pl-4 pr-10 w-full mx-auto cursor-pointer bg-primary-default hover:bg-primary-dark transition-all ease-in-out duration-500`}
+															<div
+																className={`py-4 px-6 text-center cursor-pointer bg-primary-three hover:bg-primary-dark transition-all ease-in-out duration-500`}
 															>
-																<h3 className="relative flex items-center justify-center font-semibold tracking-[0.10rem] uppercase pl-4 text-lightGrey text-tiny text-center lg:text-left">
+																<span className="tracking-[0.10rem] text-white text-base uppercase font-aspektaMain text-center">
 																	{item?.buttonLink?.title}
-																	<Image
-																		width={550}
-																		height={550}
-																		alt="Black Arrow Icon"
-																		src="/svg/navigation-menu-dropdown-arrow-white.svg"
-																		className="my-auto ml-2 absolute top-[-20px] right-[-40px] rotate-[-135deg] cursor-pointer w-[35px] h-[35px] object-contain object-center"
-																	/>
-																</h3>
-															</motion.div>
+																</span>
+															</div>
 														</Link>
 													</div>
 												</div>

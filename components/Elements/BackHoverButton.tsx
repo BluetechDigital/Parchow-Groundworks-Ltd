@@ -10,7 +10,7 @@ const BackHoverButton: FC<IBackHoverButton> = ({link}) => {
 	return (
 		<>
 			<div className="absolute items-center justify-center hidden w-full h-full xl:flex">
-				<div className="fixed left-10 z-10 top-[9rem] flex justify-center">
+				<div className="fixed left-10 z-50 top-[9rem] flex justify-center">
 					<Link
 						target=""
 						href={`${link}`}

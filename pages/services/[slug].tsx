@@ -28,7 +28,6 @@ const dynamicSinglePosts: NextPage<IPageContext> = ({
 		>
 			<Layout>
 				<BackToTopButton link={`#`} />
-				<BackHoverButton link={`/services`} />
 				<RenderFlexibleContent />
 			</Layout>
 		</PageContextProvider>
