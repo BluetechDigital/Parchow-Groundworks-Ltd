@@ -38,7 +38,7 @@ const TitleContentImageCard: FC<ITitleContentImageCard> = ({
 					viewport={{once: true}}
 					className={
 						textTitle
-							? "mb-2 font-semibold text-center lg:text-left text-black text-medium"
+							? "lg:max-w-xl mb-2 font-semibold text-center lg:text-left text-black text-medium"
 							: "hidden"
 					}
 				>
@@ -50,7 +50,9 @@ const TitleContentImageCard: FC<ITitleContentImageCard> = ({
 				/>
 				<div
 					className={
-						bulletPoints ? "flex flex-col my-8 lg:my-6 gap-4" : "hidden"
+						bulletPoints
+							? "lg:max-w-xl flex flex-col my-8 lg:my-6 gap-4"
+							: "hidden"
 					}
 				>
 					{bulletPoints?.length > 0 ? (

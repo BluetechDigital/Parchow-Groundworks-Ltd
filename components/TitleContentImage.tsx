@@ -54,8 +54,8 @@ const TitleContentImage: FC<ITitleContentImage> = ({
 	}
 	return (
 		<>
-			<div className={`titleContentImage py-16 ${backgroundColor}`}>
-				<div className="lg:container m-auto px-0">
+			<div className={`titleContentImage py-12 ${backgroundColor}`}>
+				<div className="lg:container mx-auto p-0">
 					<div className={title && subtitle ? "block py-4" : "hidden"}>
 						<motion.h4
 							initial={initial}
