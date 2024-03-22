@@ -40,7 +40,7 @@ const Hero: FC<IHero> = ({
 							),url("${
 								backgroundImage?.sourceUrl
 									? backgroundImage?.sourceUrl
-									: "/svg/background/polygon-scatter-haikei-outline-green.svg"
+									: "/svg/background/grid-background-06.svg"
 							}")`,
 					}}
 				>
@@ -49,7 +49,7 @@ const Hero: FC<IHero> = ({
 						variants={stagger}
 						whileInView="animate"
 						viewport={{once: true}}
-						className="lg:container px-4 lg:px-10 xl:px-0 mx-auto max-w-xl flex flex-col justify-center gap-2 h-full"
+						className="lg:container px-6 lg:px-10 xl:px-0 mx-auto max-w-xl flex flex-col justify-center gap-2 h-full"
 					>
 						<motion.h1
 							initial={initialTwo}

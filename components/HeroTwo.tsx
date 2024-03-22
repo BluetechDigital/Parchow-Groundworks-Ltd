@@ -25,11 +25,11 @@ const HeroTwo: FC<IHeroTwo> = ({title, paragraph, backgroundImage}) => {
 							),url("${
 								backgroundImage?.sourceUrl
 									? backgroundImage?.sourceUrl
-									: "/svg/background/polygon-scatter-haikei-outline-green.svg"
+									: "/svg/background/grid-background-06.svg"
 							}")`,
 					}}
 				>
-					<div className="max-w-full lg:max-w-2xl mx-auto lg:mx-0 relative z-10 flex flex-col items-center lg:items-start px-8 sm:px-24">
+					<div className="max-w-full lg:max-w-2xl mx-auto lg:mx-0 relative z-10 flex flex-col items-center lg:items-start px-6 md:px-24">
 						<motion.h1
 							initial={initialTwo}
 							whileInView={fadeIn}
