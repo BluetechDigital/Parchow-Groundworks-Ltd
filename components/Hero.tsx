@@ -20,7 +20,7 @@ const Hero: FC<IHero> = ({
 }) => {
 	return (
 		<>
-			<div className={styles.hero + " relative z-50 flex flex-col lg:mb-28"}>
+			<div className={styles.hero + " relative z-50 flex flex-col "}>
 				<div
 					className="lg:relative pb-8 lg:pb-28 pt-[85px] lg:pt-[110px] h-[90vh] flex flex-col lg:flex-row bg-primary-darker w-full bg-cover bg-center bg-no-repeat"
 					style={{
