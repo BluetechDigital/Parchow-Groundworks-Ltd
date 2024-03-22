@@ -61,7 +61,7 @@ const SkillsExperiences: FC<ISkillsExperiences> = ({
 							/>
 						</div>
 					</div>
-					<div className="p-4 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-y-6 gap-4 items-center justify-center">
+					<div className="p-4 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-y-6 gap-4 items-start justify-center">
 						{skillsExperiencesGrid?.length > 0 ? (
 							skillsExperiencesGrid?.map((item: any, keys: number) => (
 								<Fragment key={keys}>

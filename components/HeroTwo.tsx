@@ -13,9 +13,13 @@ import Paragraph from "./Elements/Paragraph";
 const HeroTwo: FC<IHeroTwo> = ({title, paragraph, backgroundImage}) => {
 	return (
 		<>
-			<div className={styles.heroTwo + ` relative z-50 w-full pt-[110px]`}>
+			<div
+				className={
+					styles.heroTwo + ` relative z-50 w-full pt-[100px] lg:pt-[110px]`
+				}
+			>
 				<div
-					className="py-20 w-full h-[30vh] flex flex-col items-center lg:items-baseline justify-center relative bg-primary-darker bg-center bg-no-repeat bg-cover"
+					className="py-20 w-full h-[35vh] lg:h-[30vh] flex flex-col items-center lg:items-baseline justify-center relative bg-primary-darker bg-center bg-no-repeat bg-cover"
 					style={{
 						backgroundImage: `linear-gradient(
 								0deg,
