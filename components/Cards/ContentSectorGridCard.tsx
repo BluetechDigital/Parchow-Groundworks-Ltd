@@ -31,11 +31,7 @@ const ContentSectorGridCard: FC<IContentSectorGridCard> = ({
 							backgroundImage: `url("${image?.sourceUrl}")`,
 						}}
 					>
-						<motion.div
-							initial={initial}
-							variants={stagger}
-							whileInView="animate"
-							viewport={{once: true}}
+						<div
 							className={link?.url ? "absolute -bottom-0 right-0" : "hidden"}
 						>
 							<div className="w-fit p-2 bg-lightGreyTwo hover:bg-lightGrey">
@@ -48,7 +44,7 @@ const ContentSectorGridCard: FC<IContentSectorGridCard> = ({
 									className="cursor-pointer w-full h-[35px] rotate-[-45deg] object-contain object-center"
 								/>
 							</div>
-						</motion.div>
+						</div>
 					</motion.div>
 				</Link>
 				<div className="px-4 py-6">
