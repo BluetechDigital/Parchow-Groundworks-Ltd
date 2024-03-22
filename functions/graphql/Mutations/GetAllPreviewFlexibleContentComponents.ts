@@ -27,18 +27,6 @@ export const getAllPreviewFlexibleContentComponents = async (
             									title
             									paragraph
             									displaySection
-            									servicesList {
-            										title
-            										paragraph
-            										icon {
-            											altText
-            											sourceUrl
-            											mediaDetails {
-            												height
-            												width
-            											}
-            										}
-            									}
             									buttonLink {
             										url
             										title
@@ -110,9 +98,14 @@ export const getAllPreviewFlexibleContentComponents = async (
 											... on ${postTypeFlexibleContent}_Accreditations {
 												fieldGroupName
 												title
+												video
 												subtitle
 												paragraph
+												displayVideo
 												displaySection
+												videoBackgroundImage {
+            										sourceUrl
+              									}
 												imageGrid {
 													link {
 														url
@@ -426,6 +419,14 @@ export const getAllPreviewFlexibleContentComponents = async (
 												title
 												paragraph
 												displaySection
+												image {
+            										altText
+            										sourceUrl
+            										mediaDetails {
+            											height
+            											width
+            										}
+            									}
 											}
 											... on ${postTypeFlexibleContent}_RequestAppointmentForm {
 												fieldGroupName

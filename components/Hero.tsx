@@ -1,14 +1,7 @@
 // Imports
-import {
-	fadeIn,
-	initial,
-	stagger,
-	initialTwo,
-	arrayLoopStaggerChildren,
-} from "../animations/animations";
+import {fadeIn, initial, stagger, initialTwo} from "../animations/animations";
 import Link from "next/link";
-import Image from "next/image";
-import {FC, Fragment} from "react";
+import {FC} from "react";
 import {motion} from "framer-motion";
 import {IHero} from "@/types/components/index";
 
@@ -22,7 +15,6 @@ const Hero: FC<IHero> = ({
 	title,
 	paragraph,
 	buttonLink,
-	servicesList,
 	buttonLinkTwo,
 	backgroundImage,
 }) => {
@@ -92,42 +84,6 @@ const Hero: FC<IHero> = ({
 							</Link>
 						</div>
 					</motion.div>
-				</div>
-				<div className="relative flex flex-row py-0 justify-center items-center lg:justify-between">
-					<ul className="hidden md:grid grid-cols-4 w-full lg:w-[90%] mx-auto bg-primary-dark absolute mb-[130px] lg:mb-[-30px] 2xl:mb-[0px] left-0 right-0 flex-row items-center justify-center">
-						{servicesList?.length > 0 ? (
-							servicesList?.map((item: any, keys: number) => (
-								<Fragment key={keys}>
-									<motion.li
-										custom={keys}
-										initial={initial}
-										whileInView="animate"
-										viewport={{once: true}}
-										variants={arrayLoopStaggerChildren}
-									>
-										<div className="flex flex-col items-center justify-center border-x-4 border-solid border-primary-three p-2 w-full h-full sm:min-h-[22.5vh] lg:min-h-[25vh] xl:max-h-[22.5vh] transition-all ease-in-out duration-500">
-											<Image
-												alt={item?.icon?.altText}
-												src={item?.icon?.sourceUrl}
-												width={item?.icon?.mediaDetails?.width}
-												height={item?.icon?.mediaDetails?.height}
-												className="my-4 w-[50px] h-[50px] object-contain object-center"
-											/>
-											<span className="text-white mt-2 font-semibold text-base uppercase font-aspektaMain leading-[1.5rem] text-center tracking-[0.10rem]">
-												{item?.title}
-											</span>
-											<Paragraph
-												content={item?.paragraph}
-												tailwindStyling="p-2 text-white text-tiny text-center"
-											/>
-										</div>
-									</motion.li>
-								</Fragment>
-							))
-						) : (
-							<></>
-						)}
-					</ul>
 				</div>
 			</div>
 		</>

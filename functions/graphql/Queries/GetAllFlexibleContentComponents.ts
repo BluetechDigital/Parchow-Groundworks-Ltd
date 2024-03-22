@@ -25,18 +25,6 @@ export const getAllFlexibleContentComponents = async (
             									title
             									paragraph
             									displaySection
-            									servicesList {
-            										title
-            										paragraph
-            										icon {
-            											altText
-            											sourceUrl
-            											mediaDetails {
-            												height
-            												width
-            											}
-            										}
-            									}
             									buttonLink {
             										url
             										title

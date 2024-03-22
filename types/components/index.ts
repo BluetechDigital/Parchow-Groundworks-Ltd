@@ -37,20 +37,6 @@ export type IHero = {
 			height: number;
 		};
 	};
-	servicesList: [
-		{
-			title: string;
-			paragraph: string;
-			icon: {
-				altText: string;
-				sourceUrl: string;
-				mediaDetails: {
-					width: number;
-					height: number;
-				};
-			};
-		}
-	];
 };
 export type ICTATwo = {
 	paragraph: string;
