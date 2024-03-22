@@ -56,7 +56,7 @@ const TitleContentImage: FC<ITitleContentImage> = ({
 		<>
 			<div className={`titleContentImage py-12 ${backgroundColor}`}>
 				<div className="lg:container mx-auto p-0">
-					<div className={title && subtitle ? "block py-4" : "hidden"}>
+					<div className={title ? "block py-4" : "hidden"}>
 						<motion.h4
 							initial={initial}
 							whileInView={fadeInUp}

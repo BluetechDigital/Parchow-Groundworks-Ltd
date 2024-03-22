@@ -9,7 +9,7 @@ import {fadeInUp, initial, stagger} from "../animations/animations";
 import styles from "../styles/components/Testimonials.module.scss";
 
 // Components
-import TestimonialsTwoCard from "./Cards/TestimonialsTwoCard";
+import TestimonialsCard from "./Cards/TestimonialsCard";
 
 const TestimonialsTwo: FC<ITestimonialsTwo> = ({title, subtitle}) => {
 	const globalContext = useGlobalContext();
@@ -67,7 +67,7 @@ const TestimonialsTwo: FC<ITestimonialsTwo> = ({title, subtitle}) => {
 								?.slice(0, 3)
 								?.map((item: any, keys: number) => (
 									<Fragment key={keys}>
-										<TestimonialsTwoCard
+										<TestimonialsCard
 											name={item?.node?.testimonialReview?.name}
 											image={item?.node?.testimonialReview?.image}
 											rating={item?.node?.testimonialReview?.rating}
