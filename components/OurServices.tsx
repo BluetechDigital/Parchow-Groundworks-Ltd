@@ -62,9 +62,9 @@ const OurServices: FC<IOurServices> = ({
 								className={`${buttonLink?.url ? "block mt-4" : "hidden"}`}
 							>
 								<div
-									className={`py-4 px-6 text-center cursor-pointer bg-accent-default hover:bg-accent-two transition-all ease-in-out duration-500`}
+									className={`w-fit mx-auto md:mx-0 py-4 px-6 text-center cursor-pointer bg-accent-default hover:bg-accent-two transition-all ease-in-out duration-500`}
 								>
-									<h3 className="tracking-[0.10rem] text-white text-base text-center uppercase font-aspektaMain">
+									<h3 className="tracking-[0.10rem] text-white text-tiny md:text-base text-center uppercase font-aspektaMain">
 										{buttonLink?.title}
 									</h3>
 								</div>

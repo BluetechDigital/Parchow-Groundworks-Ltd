@@ -182,9 +182,9 @@ const RequestAppointmentForm: FC<IRequestAppointmentForm> = ({
 								className={`${buttonLink?.url ? "block" : "hidden"}`}
 							>
 								<div
-									className={`py-4 px-6 text-center cursor-pointer bg-accent-default hover:bg-accent-two transition-all ease-in-out duration-500`}
+									className={`w-fit mx-auto md:mx-0 py-4 px-6 text-center cursor-pointer bg-accent-default hover:bg-accent-two transition-all ease-in-out duration-500`}
 								>
-									<span className="tracking-[0.10rem] text-white text-base text-center uppercase font-aspektaMain">
+									<span className="tracking-[0.10rem] text-white text-tiny md:text-base text-center uppercase font-aspektaMain">
 										{buttonLink?.title}
 									</span>
 								</div>

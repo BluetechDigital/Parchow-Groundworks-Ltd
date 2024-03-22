@@ -56,7 +56,7 @@ const ServicesGridCard: FC<IServicesGridCard> = ({
 						</div>
 						<button className={`${link?.url ? "flex mx-auto" : "hidden"}`}>
 							<div
-								className={`py-4 px-6 text-center cursor-pointer bg-accent-default hover:bg-accent-two transition-all ease-in-out duration-500`}
+								className={`w-fit mx-auto md:mx-0 py-4 px-6 text-center cursor-pointer bg-accent-default hover:bg-accent-two transition-all ease-in-out duration-500`}
 							>
 								<span className="tracking-[0.10rem] text-white text-sm uppercase font-aspektaMain text-center">
 									{link?.title}

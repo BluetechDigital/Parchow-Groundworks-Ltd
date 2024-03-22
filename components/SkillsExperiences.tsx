@@ -86,7 +86,7 @@ const SkillsExperiences: FC<ISkillsExperiences> = ({
 										/>
 										<Paragraph
 											content={item?.text}
-											tailwindStyling="text-black text-tiny xl:text-tiny text-left"
+											tailwindStyling="text-black text-tiny text-center lg:text-left"
 										/>
 									</motion.div>
 								</Fragment>

@@ -80,7 +80,7 @@ const GallerySlider: FC<IGallerySlider> = ({gallerySlider}) => {
 															}`}
 														>
 															<div
-																className={`py-4 px-6 text-center cursor-pointer bg-primary-three hover:bg-primary-dark transition-all ease-in-out duration-500`}
+																className={`w-fit mx-auto md:mx-0 py-4 px-6 text-center cursor-pointer bg-primary-three hover:bg-primary-dark transition-all ease-in-out duration-500`}
 															>
 																<span className="tracking-[0.10rem] text-white text-base uppercase font-aspektaMain text-center">
 																	{item?.buttonLink?.title}
