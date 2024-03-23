@@ -45,7 +45,7 @@ const OurLocation: FC<IOurLocation> = ({title, paragraph}) => {
 						style={{border: "0"}}
 						allowFullScreen={true}
 						referrerPolicy="no-referrer-when-downgrade"
-						src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d20162.514047084078!2d-1.22016954706058!3d50.82534278150633!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487465cf539a4317%3A0x5998fce561e66f71!2sHusky%20Carpentry%20Limited!5e0!3m2!1sen!2suk!4v1709510339613!5m2!1sen!2suk"
+						src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d8471.911404124412!2d-1.0601882834643046!3d50.85497408409538!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4874688b751e688f%3A0xf043cb9f256783c5!2sParchow%20Groundworks%20Limited!5e0!3m2!1sen!2suk!4v1711221182165!5m2!1sen!2suk"
 					></iframe>
 				</div>
 			</div>
