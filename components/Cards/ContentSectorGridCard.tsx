@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import {motion} from "framer-motion";
 import {IContentSectorGridCard} from "@/types/components";
-import {initial, stagger, fadeInUp} from "@/animations/animations";
+import {initial, fadeInUp} from "@/animations/animations";
 
 // Styling
 import styles from "../../styles/components/OurServices.module.scss";

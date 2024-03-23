@@ -52,7 +52,7 @@ const CTA: FC<ICTA> = ({title, paragraph, buttonLink, backgroundImage}) => {
 								initial={initialTwo}
 								whileInView={fadeIn}
 								viewport={{once: true}}
-								className="mb-4 text-center uppercase font-aspektaMain font-semibold leading-tight lg:text-left text-black text-lg sm:text-3xl"
+								className="mb-4 text-center uppercase font-aspektaMain font-semibold leading-tight lg:text-left text-primary-default text-lg sm:text-3xl"
 							>
 								{title}
 							</motion.h3>

@@ -1,9 +1,16 @@
 // Imports
-import {fadeIn, initial, stagger, initialTwo} from "../animations/animations";
-import Link from "next/link";
 import {FC} from "react";
+import Link from "next/link";
+import Image from "next/image";
 import {motion} from "framer-motion";
 import {IHero} from "@/types/components/index";
+import {
+	fadeIn,
+	fadeInUp,
+	initial,
+	initialTwo,
+	stagger,
+} from "../animations/animations";
 
 // Styling
 import styles from "../styles/components/Hero.module.scss";
@@ -13,58 +20,63 @@ import Paragraph from "./Elements/Paragraph";
 
 const Hero: FC<IHero> = ({
 	title,
+	cardOne,
+	cardTwo,
+	cardFour,
+	cardThree,
 	paragraph,
 	buttonLink,
 	buttonLinkTwo,
-	backgroundImage,
 }) => {
 	return (
 		<>
-			<div className={styles.hero + " relative z-50 flex flex-col "}>
-				<div
-					className="lg:relative pb-8 lg:pb-28 pt-[85px] lg:pt-[110px] h-[90vh] flex flex-col lg:flex-row bg-primary-darker w-full bg-cover bg-center bg-no-repeat"
-					style={{
-						backgroundImage: `linear-gradient(
+			<div
+				className={
+					styles.hero +
+					" relative z-50 flex flex-col bg-center bg-no-repeat bg-cover"
+				}
+				style={{
+					backgroundImage: `linear-gradient(
 								0deg,
-								rgb(0, 0, 0, 0.40),
-								rgba(0, 0, 0, 0.40),
-								rgba(0, 0, 0, 0.40)
-							),url("${
-								backgroundImage?.sourceUrl
-									? backgroundImage?.sourceUrl
-									: "/svg/background/grid-background-06.svg"
-							}")`,
-					}}
-				>
+								rgb(255, 255, 255, 0.90),
+								rgba(255, 255, 255, 0.90),
+								rgba(255, 255, 255, 0.90),
+								rgba(255, 255, 255, 0.95)
+							),url("/svg/background/grid-background-12.svg")`,
+				}}
+			>
+				<div className="lg:relative pb-4 pt-[85px] lg:pt-[110px] flex flex-col items-center">
 					<motion.div
 						initial={initial}
 						variants={stagger}
 						whileInView="animate"
 						viewport={{once: true}}
-						className="lg:container px-6 lg:px-10 xl:px-0 mx-auto max-w-xl flex flex-col justify-center gap-2 h-full"
+						className="lg:container m-auto max-w-8xl w-full flex flex-col lg:flex-row items-center justify-between gap-4 p-4"
 					>
-						<motion.h1
-							initial={initialTwo}
-							whileInView={fadeIn}
-							viewport={{once: true}}
-							className="max-w-2xl text-center lg:text-left uppercase text-lg sm:text-xl lg:text-5xl xl:text-6xl text-white leading-snug lg:leading-[3rem]"
-						>
-							{title}
-						</motion.h1>
-						<Paragraph
-							content={paragraph}
-							tailwindStyling="max-w-xl py-2 text-white leading-[1.5rem] text-base text-center lg:text-left"
-						/>
-						<div className="flex flex-col md:flex-row gap-4 max-w-sm lg:max-w-4xl mx-auto lg:mx-0">
+						<div className="flex flex-col">
+							<motion.h3
+								initial={initial}
+								whileInView={fadeInUp}
+								viewport={{once: true}}
+								className="max-w-7xl text-center lg:text-left uppercase font-aspektaMain text-lg sm:text-xl lg:text-5xl xl:text-6xl text-primary-default leading-snug lg:leading-[3rem]"
+							>
+								{title}
+							</motion.h3>
+							<Paragraph
+								content={paragraph}
+								tailwindStyling="max-w-full lg:max-w-xl mx-auto lg:mx-0 leading-7 text-black text-base text-center lg:text-left"
+							/>
+						</div>
+						<div className="flex flex-col">
 							<Link
 								href={`${buttonLink?.url}`}
 								target={buttonLink?.target}
-								className={`${buttonLink?.url ? "block" : "hidden"}`}
+								className={`${buttonLink?.url ? "block mt-4" : "hidden"}`}
 							>
 								<div
-									className={`w-fit mx-auto md:mx-0 py-4 px-6 text-center cursor-pointer bg-primary-light hover:bg-primary-default transition-all ease-in-out duration-500`}
+									className={`mx-auto md:mx-0 py-4 px-6 lg:px-10 text-center cursor-pointer bg-accent-default hover:bg-accent-two transition-all ease-in-out duration-500`}
 								>
-									<span className="tracking-[0.10rem] text-white text-tiny md:text-base text-center uppercase font-aspektaMain">
+									<span className="tracking-[0.10rem] text-white text-tiny md:text-base uppercase font-aspektaMain text-center">
 										{buttonLink?.title}
 									</span>
 								</div>
@@ -72,18 +84,212 @@ const Hero: FC<IHero> = ({
 							<Link
 								href={`${buttonLinkTwo?.url}`}
 								target={buttonLinkTwo?.target}
-								className={`${buttonLinkTwo?.url ? "block" : "hidden"}`}
+								className={`${buttonLinkTwo?.url ? "block mt-4" : "hidden"}`}
 							>
 								<div
-									className={`w-fit mx-auto md:mx-0 py-4 px-6 text-center cursor-pointer bg-accent-default hover:bg-accent-two transition-all ease-in-out duration-500`}
+									className={`mx-auto md:mx-0 py-4 px-6 lg:px-10 text-center cursor-pointer bg-primary-three hover:bg-primary-dark transition-all ease-in-out duration-500`}
 								>
-									<span className="tracking-[0.10rem] text-white text-tiny md:text-base text-center uppercase font-aspektaMain">
+									<span className="tracking-[0.10rem] text-white text-tiny md:text-base uppercase font-aspektaMain text-center">
 										{buttonLinkTwo?.title}
 									</span>
 								</div>
 							</Link>
 						</div>
 					</motion.div>
+					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full px-4 py-4">
+						<div className="cardOne flex flex-col overflow-hidden">
+							<Link
+								href={`${cardOne?.buttonLink?.url}`}
+								target={cardOne?.buttonLink?.target}
+								className={
+									styles.card +
+									" bg-white transform lg:hover:scale-105 transition-all ease-in-out duration-500"
+								}
+							>
+								<motion.div
+									initial={initial}
+									whileInView={fadeInUp}
+									viewport={{once: true}}
+									className="bg-primary-darker group-hover:bg-primary-darker relative px-4 py-6 w-full lg:py-12 h-[350px] md:h-[450px] xl:h-[650px] bg-center bg-no-repeat bg-cover"
+									style={{
+										backgroundImage: `url("${cardOne?.backgroundImage?.sourceUrl}")`,
+									}}
+								>
+									<div className="absolute -top-[-50px] left-0 w-fit py-2 px-4 bg-lightGreyTwo hover:bg-lightGrey">
+										<motion.h3
+											initial={initial}
+											whileInView={fadeInUp}
+											viewport={{once: true}}
+											className="text-left text-primary-default uppercase font-aspektaMain text-paragraph"
+										>
+											{cardOne?.text}
+										</motion.h3>
+									</div>
+									<div
+										className={
+											cardOne?.buttonLink?.url
+												? "absolute -bottom-0 right-0"
+												: "hidden"
+										}
+									>
+										<div className="w-fit p-2 bg-lightGreyTwo hover:bg-lightGrey">
+											<Image
+												width={550}
+												height={550}
+												alt="Right Direction Yellow Arrow Icon"
+												src="/svg/right-direction-yellow.svg"
+												className="cursor-pointer w-full h-[35px] rotate-[-45deg] object-contain object-center"
+											/>
+										</div>
+									</div>
+								</motion.div>
+							</Link>
+						</div>
+						<div className="cardTwo flex flex-col overflow-hidden">
+							<Link
+								href={`${cardTwo?.buttonLink?.url}`}
+								target={cardTwo?.buttonLink?.target}
+								className={
+									styles.card +
+									" bg-white transform lg:hover:scale-105 transition-all ease-in-out duration-500"
+								}
+							>
+								<motion.div
+									initial={initial}
+									whileInView={fadeInUp}
+									viewport={{once: true}}
+									className="bg-primary-darker group-hover:bg-primary-darker relative px-4 py-6 w-full lg:py-12 h-[350px] md:h-[450px] xl:h-[650px] bg-center bg-no-repeat bg-cover"
+									style={{
+										backgroundImage: `url("${cardTwo?.backgroundImage?.sourceUrl}")`,
+									}}
+								>
+									<div className="absolute -top-[-50px] left-0 w-fit py-2 px-4 bg-lightGreyTwo hover:bg-lightGrey">
+										<motion.h3
+											initial={initial}
+											whileInView={fadeInUp}
+											viewport={{once: true}}
+											className="text-left text-primary-default uppercase font-aspektaMain text-paragraph"
+										>
+											{cardTwo?.text}
+										</motion.h3>
+									</div>
+									<div
+										className={
+											cardTwo?.buttonLink?.url
+												? "absolute -bottom-0 right-0"
+												: "hidden"
+										}
+									>
+										<div className="w-fit p-2 bg-lightGreyTwo hover:bg-lightGrey">
+											<Image
+												width={550}
+												height={550}
+												alt="Right Direction Yellow Arrow Icon"
+												src="/svg/right-direction-yellow.svg"
+												className="cursor-pointer w-full h-[35px] rotate-[-45deg] object-contain object-center"
+											/>
+										</div>
+									</div>
+								</motion.div>
+							</Link>
+						</div>
+						<div className="cardThree flex flex-col overflow-hidden">
+							<Link
+								href={`${cardThree?.buttonLink?.url}`}
+								target={cardThree?.buttonLink?.target}
+								className={
+									styles.card +
+									" bg-white transform lg:hover:scale-105 transition-all ease-in-out duration-500"
+								}
+							>
+								<motion.div
+									initial={initial}
+									whileInView={fadeInUp}
+									viewport={{once: true}}
+									className="bg-primary-darker group-hover:bg-primary-darker relative px-4 py-6 w-full lg:py-12 h-[350px] md:h-[450px] xl:h-[650px] bg-center bg-no-repeat bg-cover"
+									style={{
+										backgroundImage: `url("${cardThree?.backgroundImage?.sourceUrl}")`,
+									}}
+								>
+									<div className="absolute -top-[-50px] left-0 w-fit py-2 px-4 bg-lightGreyTwo hover:bg-lightGrey">
+										<motion.h3
+											initial={initial}
+											whileInView={fadeInUp}
+											viewport={{once: true}}
+											className="text-left text-primary-default uppercase font-aspektaMain text-paragraph"
+										>
+											{cardThree?.text}
+										</motion.h3>
+									</div>
+									<div
+										className={
+											cardThree?.buttonLink?.url
+												? "absolute -bottom-0 right-0"
+												: "hidden"
+										}
+									>
+										<div className="w-fit p-2 bg-lightGreyTwo hover:bg-lightGrey">
+											<Image
+												width={550}
+												height={550}
+												alt="Right Direction Yellow Arrow Icon"
+												src="/svg/right-direction-yellow.svg"
+												className="cursor-pointer w-full h-[35px] rotate-[-45deg] object-contain object-center"
+											/>
+										</div>
+									</div>
+								</motion.div>
+							</Link>
+						</div>
+						<div className="cardFour flex flex-col overflow-hidden">
+							<Link
+								href={`${cardFour?.buttonLink?.url}`}
+								target={cardFour?.buttonLink?.target}
+								className={
+									styles.card +
+									" bg-white transform lg:hover:scale-105 transition-all ease-in-out duration-500"
+								}
+							>
+								<motion.div
+									initial={initial}
+									whileInView={fadeInUp}
+									viewport={{once: true}}
+									className="bg-primary-darker group-hover:bg-primary-darker relative px-4 py-6 w-full lg:py-12 h-[350px] md:h-[450px] xl:h-[650px] bg-center bg-no-repeat bg-cover"
+									style={{
+										backgroundImage: `url("${cardFour?.backgroundImage?.sourceUrl}")`,
+									}}
+								>
+									<div className="absolute -top-[-50px] left-0 w-fit py-2 px-4 bg-lightGreyTwo hover:bg-lightGrey">
+										<motion.h3
+											initial={initial}
+											whileInView={fadeInUp}
+											viewport={{once: true}}
+											className="text-left text-primary-default uppercase font-aspektaMain text-paragraph"
+										>
+											{cardFour?.text}
+										</motion.h3>
+									</div>
+									<div
+										className={
+											cardFour?.buttonLink?.url
+												? "absolute -bottom-0 right-0"
+												: "hidden"
+										}
+									>
+										<div className="w-fit p-2 bg-lightGreyTwo hover:bg-lightGrey">
+											<Image
+												width={550}
+												height={550}
+												alt="Right Direction Yellow Arrow Icon"
+												src="/svg/right-direction-yellow.svg"
+												className="cursor-pointer w-full h-[35px] rotate-[-45deg] object-contain object-center"
+											/>
+										</div>
+									</div>
+								</motion.div>
+							</Link>
+						</div>
+					</div>
 				</div>
 			</div>
 		</>
