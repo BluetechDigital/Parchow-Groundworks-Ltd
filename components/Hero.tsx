@@ -45,7 +45,7 @@ const Hero: FC<IHero> = ({
 						variants={stagger}
 						whileInView="animate"
 						viewport={{once: true}}
-						className="lg:container m-auto max-w-8xl w-full flex flex-col lg:flex-row items-center justify-between gap-4 px-4 py-12 lg:py-8"
+						className="lg:container mx-auto w-full flex flex-col gap-4 px-4 py-12 lg:py-8"
 					>
 						<div className="flex flex-col">
 							<motion.h3
