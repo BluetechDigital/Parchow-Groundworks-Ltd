@@ -13,7 +13,7 @@
 	h3,
 	h4 {
 		font-family: $main;
-		@apply text-lg text-primary-default font-semibold py-4 uppercase;
+		@apply text-lg text-primary-default py-4 uppercase;
 	}
 
 	h3,
@@ -23,7 +23,7 @@
 
 	h2 {
 		strong {
-			@apply tracking-tight font-semibold;
+			@apply tracking-tight;
 		}
 	}
 
