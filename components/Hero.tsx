@@ -4,13 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import {motion} from "framer-motion";
 import {IHero} from "@/types/components/index";
-import {
-	fadeIn,
-	fadeInUp,
-	initial,
-	initialTwo,
-	stagger,
-} from "../animations/animations";
+import {initial, stagger, fadeInUp} from "../animations/animations";
 
 // Styling
 import styles from "../styles/components/Hero.module.scss";
@@ -51,27 +45,27 @@ const Hero: FC<IHero> = ({
 						variants={stagger}
 						whileInView="animate"
 						viewport={{once: true}}
-						className="lg:container m-auto max-w-8xl w-full flex flex-col lg:flex-row items-center justify-between gap-4 p-4"
+						className="lg:container m-auto max-w-8xl w-full flex flex-col lg:flex-row items-center justify-between gap-4 px-4 py-12 lg:py-8"
 					>
 						<div className="flex flex-col">
 							<motion.h3
 								initial={initial}
 								whileInView={fadeInUp}
 								viewport={{once: true}}
-								className="max-w-7xl text-center lg:text-left uppercase font-aspektaMain text-lg sm:text-xl lg:text-5xl xl:text-6xl text-primary-default leading-snug lg:leading-[3rem]"
+								className="max-w-7xl mx-auto text-center uppercase font-aspektaMain text-lg sm:text-xl lg:text-5xl xl:text-6xl text-primary-default leading-snug lg:leading-[3rem]"
 							>
 								{title}
 							</motion.h3>
 							<Paragraph
 								content={paragraph}
-								tailwindStyling="max-w-full lg:max-w-xl mx-auto lg:mx-0 leading-7 text-black text-base text-center lg:text-left"
+								tailwindStyling="max-w-full lg:max-w-xl mx-auto leading-7 text-black text-base text-center"
 							/>
 						</div>
-						<div className="flex flex-col">
+						<div className="flex lg:hidden flex-col items-center justify-start gap-4">
 							<Link
 								href={`${buttonLink?.url}`}
 								target={buttonLink?.target}
-								className={`${buttonLink?.url ? "block mt-4" : "hidden"}`}
+								className={`${buttonLink?.url ? "block w-full" : "hidden"}`}
 							>
 								<div
 									className={`mx-auto md:mx-0 py-4 px-6 lg:px-10 text-center cursor-pointer bg-accent-default hover:bg-accent-two transition-all ease-in-out duration-500`}
@@ -84,7 +78,7 @@ const Hero: FC<IHero> = ({
 							<Link
 								href={`${buttonLinkTwo?.url}`}
 								target={buttonLinkTwo?.target}
-								className={`${buttonLinkTwo?.url ? "block mt-4" : "hidden"}`}
+								className={`${buttonLinkTwo?.url ? "block w-full" : "hidden"}`}
 							>
 								<div
 									className={`mx-auto md:mx-0 py-4 px-6 lg:px-10 text-center cursor-pointer bg-primary-three hover:bg-primary-dark transition-all ease-in-out duration-500`}
