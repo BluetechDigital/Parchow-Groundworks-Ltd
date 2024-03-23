@@ -13,7 +13,7 @@
 	h3,
 	h4 {
 		font-family: $main;
-		@apply text-lg font-semibold py-4 uppercase;
+		@apply text-lg text-primary-default font-semibold py-4 uppercase;
 	}
 
 	h3,
@@ -39,14 +39,14 @@
 			}
 
 			a {
-				@apply font-semibold underline text-primary-default hover:text-primary-dark transition-all ease-in-out duration-500;
+				@apply font-semibold underline text-primary-default hover:text-accent-default  transition-all ease-in-out duration-500;
 			}
 		}
 	}
 
 	p {
 		a {
-			@apply font-semibold underline text-primary-default hover:text-primary-dark transition-all ease-in-out duration-500;
+			@apply font-semibold underline text-primary-default hover:text-accent-default transition-all ease-in-out duration-500;
 		}
 
 		img {
