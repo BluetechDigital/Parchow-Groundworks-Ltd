@@ -1,6 +1,5 @@
 // Imports
 import Link from "next/link";
-import Image from "next/image";
 import {FC, Fragment} from "react";
 import {motion} from "framer-motion";
 import {IGallerySlider} from "@/types/components/index";
