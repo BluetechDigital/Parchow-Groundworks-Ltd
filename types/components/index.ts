@@ -29,70 +29,26 @@ export type IHero = {
 		title: string;
 		target: string;
 	};
-	cardOne: {
-		text: string;
-		buttonLink: {
-			url: string;
-			title: string;
-			target: string;
-		};
-		backgroundImage: {
-			altText: string;
-			sourceUrl: string;
-			mediaDetails: {
-				width: number;
-				height: number;
+	cardGrid: [
+		{
+			card: {
+				text: string;
+				buttonLink: {
+					url: string;
+					title: string;
+					target: string;
+				};
+				backgroundImage: {
+					altText: string;
+					sourceUrl: string;
+					mediaDetails: {
+						width: number;
+						height: number;
+					};
+				};
 			};
-		};
-	};
-	cardTwo: {
-		text: string;
-		buttonLink: {
-			url: string;
-			title: string;
-			target: string;
-		};
-		backgroundImage: {
-			altText: string;
-			sourceUrl: string;
-			mediaDetails: {
-				width: number;
-				height: number;
-			};
-		};
-	};
-	cardThree: {
-		text: string;
-		buttonLink: {
-			url: string;
-			title: string;
-			target: string;
-		};
-		backgroundImage: {
-			altText: string;
-			sourceUrl: string;
-			mediaDetails: {
-				width: number;
-				height: number;
-			};
-		};
-	};
-	cardFour: {
-		text: string;
-		buttonLink: {
-			url: string;
-			title: string;
-			target: string;
-		};
-		backgroundImage: {
-			altText: string;
-			sourceUrl: string;
-			mediaDetails: {
-				width: number;
-				height: number;
-			};
-		};
-	};
+		}
+	];
 };
 export type ICTATwo = {
 	paragraph: string;
@@ -483,6 +439,22 @@ export type IPagination = {
 };
 
 // Cards
+export type IHeroCard = {
+	text: string;
+	buttonLink: {
+		url: string;
+		title: string;
+		target: string;
+	};
+	backgroundImage: {
+		altText: string;
+		sourceUrl: string;
+		mediaDetails: {
+			width: number;
+			height: number;
+		};
+	};
+};
 export type ITeamMembersCard = {
 	name: string;
 	position: string;

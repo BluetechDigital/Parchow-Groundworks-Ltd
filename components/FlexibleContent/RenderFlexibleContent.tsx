@@ -46,10 +46,7 @@ const RenderFlexibleContent: FC = () => {
 							<>
 								<Hero
 									title={item?.title}
-									cardOne={item?.cardOne}
-									cardTwo={item?.cardTwo}
-									cardFour={item?.cardFour}
-									cardThree={item?.cardThree}
+									cardGrid={item?.cardGrid}
 									paragraph={item?.paragraph}
 									buttonLink={item?.buttonLink}
 									buttonLinkTwo={item?.buttonLinkTwo}

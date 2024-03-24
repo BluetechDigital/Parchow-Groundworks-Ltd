@@ -144,8 +144,8 @@ const RequestAppointmentForm: FC<IRequestAppointmentForm> = ({
 					" px-4 py-10 bg-white requestAppointmentForm"
 				}
 			>
-				<div className="lg:container m-auto px-0 flex flex-col lg:flex-row items-baseline justify-between gap-8">
-					<div className="flex flex-col">
+				<div className="lg:container mx-auto px-0 flex flex-col lg:flex-row items-baseline justify-between gap-8">
+					<div className="flex flex-col items-center justify-center lg:items-baseline w-full">
 						<motion.div
 							initial={initial}
 							variants={stagger}

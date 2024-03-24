@@ -35,70 +35,24 @@ export const getAllFlexibleContentComponents = async (
             									 	title
             									 	target
             									}
-												cardOne {
-             										text
-													buttonLink {
-            											url
-            											title
-            											target
-            										}
-             										backgroundImage {
-             											altText
-             											sourceUrl
-             											mediaDetails {
-             											height
-             											width
+												cardGrid {
+            										card {
+														text
+														buttonLink {
+            												url
+            												title
+            												target
+            											}
+             											backgroundImage {
+             												altText
+             												sourceUrl
+             												mediaDetails {
+             												height
+             												width
+             												}
              											}
-             										}
-             									}
-			 									cardTwo {
-             										text
-													buttonLink {
-            											url
-            											title
-            											target
             										}
-             										backgroundImage {
-             											altText
-             											sourceUrl
-             											mediaDetails {
-             											height
-             											width
-             											}
-             										}
-             									}
-			 									cardThree {
-             										text
-													buttonLink {
-            											url
-            											title
-            											target
-            										}
-             										backgroundImage {
-             											altText
-             											sourceUrl
-             											mediaDetails {
-             											height
-             											width
-             											}
-             										}
-             									}
-			 									cardFour {
-             										text
-													buttonLink {
-            											url
-            											title
-            											target
-            										}
-             										backgroundImage {
-             											altText
-             											sourceUrl
-             											mediaDetails {
-             											height
-             											width
-             											}
-             										}
-             									}
+            									}
 											}
 											... on ${postTypeFlexibleContent}_HeroTwo {
 												fieldGroupName

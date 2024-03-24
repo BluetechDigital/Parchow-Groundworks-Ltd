@@ -68,7 +68,7 @@ const VideoBlock: FC<IVideoBlock> = ({
 								className={`${buttonLink?.url ? "block" : "hidden"}`}
 							>
 								<div
-									className={`mt-4 lg:mt-2 w-fit mx-auto md:mx-0 py-4 px-6 text-center cursor-pointer bg-primary-default hover:bg-primary-two transition-all ease-in-out duration-500`}
+									className={`mt-4 lg:mt-2 w-fit mx-auto lg:mx-0 py-4 px-6 text-center cursor-pointer bg-primary-default hover:bg-primary-two transition-all ease-in-out duration-500`}
 								>
 									<h3 className="tracking-[0.10rem] text-white text-tiny md:text-base text-center uppercase font-aspektaMain">
 										{buttonLink?.title}

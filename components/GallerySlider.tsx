@@ -56,7 +56,7 @@ const GallerySlider: FC<IGallerySlider> = ({gallerySlider}) => {
 															),url("${item?.backgroundImage?.sourceUrl}")`,
 													}}
 												>
-													<div className="max-w-sm lg:max-w-3xl mx-auto lg:mx-0 relative z-10 flex flex-col items-center px-8 sm:px-24">
+													<div className="max-w-3xl mx-auto lg:mx-0 relative z-10 flex flex-col items-center px-8 sm:px-24">
 														<motion.h3
 															initial={initialTwo}
 															whileInView={fadeIn}
