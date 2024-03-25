@@ -190,7 +190,7 @@ const Newsletter: FC<INewsletter> = ({paragraph}) => {
 						className={formik?.touched?.email ? "block" : "hidden"}
 					>
 						<ReCAPTCHA
-							sitekey={`6LeV75gpAAAAAMO-pJCD28mN8upDYZtFncpgf-94`}
+							sitekey={`6LfF-pwpAAAAAGNKKz5Ae7Cbh18aLprnrq3r-ZEe`}
 							onChange={handleReCaptchaChange}
 						/>
 					</motion.div>
