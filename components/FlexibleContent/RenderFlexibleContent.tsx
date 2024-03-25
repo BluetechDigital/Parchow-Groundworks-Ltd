@@ -31,7 +31,6 @@ import OurServicesGridTwo from "../OurServicesGridTwo";
 import RequestAppointmentForm from "../RequestAppointmentForm";
 import ExecutiveLeadershipsTeam from "../ExecutiveLeadershipsTeam";
 
-import {useGlobalContext} from "@/context/global";
 const RenderFlexibleContent: FC = () => {
 	const content = usePageContext();
 	const FlexibleContent: IPostTypeFlexibleContent =
