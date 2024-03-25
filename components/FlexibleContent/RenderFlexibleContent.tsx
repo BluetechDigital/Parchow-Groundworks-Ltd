@@ -31,10 +31,20 @@ import OurServicesGridTwo from "../OurServicesGridTwo";
 import RequestAppointmentForm from "../RequestAppointmentForm";
 import ExecutiveLeadershipsTeam from "../ExecutiveLeadershipsTeam";
 
+import {useGlobalContext} from "@/context/global";
+import CustomerInquiryConfirmationEmail from "../Emails/CustomerInquiryConfirmationEmail";
+import BusinessCustomerInquiryConfirmationEmail from "../Emails/BusinessCustomerInquiryConfirmationEmail";
+import NewsletterInquiryConfirmationEmail from "../Emails/NewsletterInquiryConfirmationEmail";
+import CustomerRequestAppointmentEmail from "../Emails/CustomerRequestAppointmentEmail";
+import BusinessRequestAppointmentInquiryEmail from "../Emails/BusinessRequestAppointmentInquiryEmail";
+
 const RenderFlexibleContent: FC = () => {
 	const content = usePageContext();
 	const FlexibleContent: IPostTypeFlexibleContent =
 		content?.postTypeFlexibleContent;
+
+	const imagesDirUrl: any = `https://vzt.nmy.mybluehost.me/new/wp-content/uploads/2024/03`;
+	const globalContext = useGlobalContext();
 
 	return (
 		<>
@@ -261,6 +271,47 @@ const RenderFlexibleContent: FC = () => {
 						) : item?.fieldGroupName === `${FlexibleContent}_ContactForm` &&
 						  item?.displaySection ? (
 							<>
+								<CustomerInquiryConfirmationEmail
+									email={`email`}
+									imagesDirUrl={imagesDirUrl}
+									subject={`subject`}
+									lastName={`lastName`}
+									phoneNumber={7497866034}
+									firstName={`firstName`}
+									themesOptionsContent={globalContext?.themesOptionsContent}
+									selectedServices={`selectedServices}`}
+								/>
+								<BusinessCustomerInquiryConfirmationEmail
+									email={`email`}
+									imagesDirUrl={imagesDirUrl}
+									subject={`subject`}
+									message={`message`}
+									lastName={`lastName`}
+									phoneNumber={7497866034}
+									firstName={`firstName`}
+									themesOptionsContent={globalContext?.themesOptionsContent}
+									selectedServices={`selectedServices`}
+								/>
+								<NewsletterInquiryConfirmationEmail
+									email={`email`}
+									imagesDirUrl={imagesDirUrl}
+									themesOptionsContent={globalContext?.themesOptionsContent}
+								/>
+								<CustomerRequestAppointmentEmail
+									imagesDirUrl={imagesDirUrl}
+									subject={`subject`}
+									phoneNumber={7497866034}
+									fullName={`fullName`}
+									themesOptionsContent={globalContext?.themesOptionsContent}
+								/>
+								<BusinessRequestAppointmentInquiryEmail
+									subject={`subject`}
+									message={`message`}
+									fullName={`fullName`}
+									phoneNumber={7497866034}
+									imagesDirUrl={imagesDirUrl}
+									themesOptionsContent={globalContext?.themesOptionsContent}
+								/>
 								<ContactForm
 									title={item?.title}
 									image={item?.image}

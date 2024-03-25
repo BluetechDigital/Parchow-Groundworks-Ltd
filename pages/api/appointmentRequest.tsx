@@ -2,12 +2,15 @@
 import {render} from "@react-email/components";
 import {emailTransporter} from "@/config/nodemailer";
 import type {NextApiRequest, NextApiResponse} from "next";
-import {IBusinessEmail, ICustomerEmail} from "@/types/email";
+import {
+	IBusinessRequestAppointmentEmail,
+	ICustomerRequestAppointmentEmail,
+} from "@/types/email";
 import {getThemesOptionsContent} from "@/functions/graphql/Queries/GetAllThemesOptions";
 
 // Components
-import CustomerInquiryConfirmationEmail from "@/components/Emails/CustomerInquiryConfirmationEmail";
-import BusinessCustomerInquiryConfirmationEmail from "@/components/Emails/BusinessCustomerInquiryConfirmationEmail";
+import CustomerRequestAppointmentEmail from "@/components/Emails/CustomerRequestAppointmentEmail";
+import BusinessRequestAppointmentInquiryEmail from "@/components/Emails/BusinessRequestAppointmentInquiryEmail";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 	if (req.method === "POST") {
@@ -36,52 +39,48 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 			/* Render React Customer Inquiry 
 			Confirmation Email Component*/
 			const customerEmailHtml: string = render(
-				<CustomerInquiryConfirmationEmail
-					email={`${data?.email}`}
+				<CustomerRequestAppointmentEmail
 					imagesDirUrl={imagesDirUrl}
 					subject={`${data?.subject}`}
-					lastName={`${data?.lastName}`}
+					fullName={`${data?.fullName}`}
 					phoneNumber={data?.phoneNumber}
-					firstName={`${data?.firstName}`}
 					themesOptionsContent={themesOptionsContent}
-					selectedServices={`${data?.selectedServices}`}
 				/>
 			);
 
 			/* Render React Business Customer 
 			Inquiry Confirmation Email Component*/
 			const businessEmailHtml: string = render(
-				<BusinessCustomerInquiryConfirmationEmail
-					email={`${data?.email}`}
+				<BusinessRequestAppointmentInquiryEmail
 					imagesDirUrl={imagesDirUrl}
 					subject={`${data?.subject}`}
 					message={`${data?.message}`}
-					lastName={`${data?.lastName}`}
+					fullName={`${data?.fullName}`}
 					phoneNumber={data?.phoneNumber}
-					firstName={`${data?.firstName}`}
 					themesOptionsContent={themesOptionsContent}
-					selectedServices={`${data?.selectedServices}`}
 				/>
 			);
 
-			/* Customer Inquiry Confirmation Email */
-			const customerEmail: ICustomerEmail = {
-				from: `${themesOptionsContent?.email}`,
-				to: `${data?.email}`,
-				subject: `Thank You for Contacting Parchow Groundworks Ltd`,
-				html: customerEmailHtml,
-			};
+			/* Customer Request Appointment Confirmation Email */
+			const customerRequestAppointmentEmail: ICustomerRequestAppointmentEmail =
+				{
+					from: `${themesOptionsContent?.email}`,
+					to: `${data?.email}`,
+					subject: `Thank You for Contacting Parchow Groundworks Ltd`,
+					html: customerEmailHtml,
+				};
 
-			/* Business Customer Inquiry Confirmation Email */
-			const businessEmail: IBusinessEmail = {
-				from: `${themesOptionsContent?.email}`,
-				to: `${themesOptionsContent?.email}`,
-				subject: `New Website Inquiry: ${data?.subject}`,
-				html: businessEmailHtml,
-			};
+			/* Business Customer Request Appointment Inquiry Confirmation Email */
+			const businessRequestAppointmentEmail: IBusinessRequestAppointmentEmail =
+				{
+					from: `${themesOptionsContent?.email}`,
+					to: `${themesOptionsContent?.email}`,
+					subject: `New Website Inquiry: ${data?.subject}`,
+					html: businessEmailHtml,
+				};
 
-			await emailTransporter.sendMail({...customerEmail});
-			await emailTransporter.sendMail({...businessEmail});
+			await emailTransporter.sendMail({...customerRequestAppointmentEmail});
+			await emailTransporter.sendMail({...businessRequestAppointmentEmail});
 
 			return res.status(200).json({
 				status: "success",

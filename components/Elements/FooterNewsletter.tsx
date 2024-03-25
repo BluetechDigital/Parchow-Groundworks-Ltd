@@ -1,13 +1,6 @@
 "use client";
 
 // Imports
-import {
-	fadeIn,
-	initial,
-	stagger,
-	fadeInUp,
-	initialTwo,
-} from "@/animations/animations";
 import {FC, useState} from "react";
 import {motion} from "framer-motion";
 import {INewsletter} from "@/types/components/index";
@@ -15,10 +8,10 @@ import {INewsletter} from "@/types/components/index";
 import router from "next/router";
 import ReCAPTCHA from "react-google-recaptcha";
 import {Field, Form, Formik, useFormik} from "formik";
-import {sendNewsletterForm} from "@/lib/newsletterForm";
+import {sendAppointmentRequestForm} from "@/lib/appointmentRequest";
+import {fadeIn, initial, fadeInUp, initialTwo} from "@/animations/animations";
 
 // Styling
-import styles from "@/styles/components/ContactForm.module.scss";
 import Paragraph from "./Paragraph";
 
 // Components
@@ -67,7 +60,7 @@ const Newsletter: FC<INewsletter> = ({paragraph}) => {
 			if (reCaptchaResult) {
 				try {
 					console.log(values);
-					await sendNewsletterForm(values);
+					await sendAppointmentRequestForm(values);
 				} catch (error) {
 					setErrorMessage(true);
 					throw new Error(
