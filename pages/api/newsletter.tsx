@@ -4,7 +4,7 @@ import {render} from "@react-email/components";
 import {emailTransporter} from "@/config/nodemailer";
 import type {NextApiRequest, NextApiResponse} from "next";
 import {getThemesOptionsContent} from "@/functions/graphql/Queries/GetAllThemesOptions";
-import NewsletterEnquiryConfirmationEmail from "@/components/Emails/NewsletterEnquiryConfirmationEmail";
+import NewsletterInquiryConfirmationEmail from "@/components/Emails/NewsletterInquiryConfirmationEmail";
 
 // Components
 
@@ -27,7 +27,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 			/* Render React Newsletter
 			 Confirmation Email Component*/
 			const newsletterEmailHtml: string = render(
-				<NewsletterEnquiryConfirmationEmail
+				<NewsletterInquiryConfirmationEmail
 					email={`${data?.email}`}
 					imagesDirUrl={imagesDirUrl}
 					themesOptionsContent={themesOptionsContent}
@@ -54,7 +54,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
 			return res.status(400).json({
 				status: "error",
-				message: "Something went wrong sending your enquiry. Please try again.",
+				message: "Something went wrong sending your Inquiry. Please try again.",
 				data: err,
 			});
 		}

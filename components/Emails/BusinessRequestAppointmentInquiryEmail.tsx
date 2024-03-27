@@ -10,24 +10,21 @@ import {
 	Container,
 } from "@react-email/components";
 import * as React from "react";
-import {IBusinessEmail} from "@/types/email";
+import {IBusinessRequestAppointmentEmail} from "@/types/email";
 
 // Components
 import EmailFooter from "./Layout/EmailFooter";
 import EmailHeader from "./Layout/EmailHeader";
 
-export const BusinessCustomerEnquiryConfirmationEmail: React.FC<
-	IBusinessEmail.IBusinessConfirmationEmail
+export const BusinessRequestAppointmentInquiryEmail: React.FC<
+	IBusinessRequestAppointmentEmail.IBusinessRequestAppointmentConfirmationEmail
 > = ({
-	email,
 	subject,
 	message,
-	lastName,
-	firstName,
+	fullName,
 	updatedDate,
 	phoneNumber,
 	imagesDirUrl,
-	selectedServices,
 	themesOptionsContent,
 }) => {
 	const formattedDate = new Intl.DateTimeFormat("en", {
@@ -38,37 +35,27 @@ export const BusinessCustomerEnquiryConfirmationEmail: React.FC<
 	return (
 		<Html>
 			<Head />
-			<Preview>New Website Inquiry: {`${selectedServices}`}</Preview>
+			<Preview>New Appointment Request Inquiry from {`${fullName}`}</Preview>
 			<Body style={main}>
 				<Container style={container}>
 					<EmailHeader
-						imagesDirUrl={`${imagesDirUrl}/Parchow-Groundworks-Ltd-Email-Header-Business.png`}
+						imagesDirUrl={`${imagesDirUrl}/Parchow-Groundworks-Ltd-Email-Header-Business-Appointment.png`}
 					/>
 					<Section style={content}>
 						<Text style={introParagraph}>Hello Team,</Text>
 						<Text style={paragraph}>
-							We&apos;ve just received a new inquiry through our website&apos;s
-							regarding, &quot;{subject}&quot; and our general carpentry
-							services. The customer as contacted us on {formattedDate} their
-							details are below.
+							We&apos;ve just received a new appointment request regarding,
+							&quot;{subject}&quot; and our general services. The customer as
+							contacted us on {formattedDate} their details are below.
 						</Text>
 						<Text style={detailsParagraph}>Inquiry Details:</Text>
 						<Text style={paragraph}>
-							<strong>First Name:</strong> {firstName}
-							<br />
-							<strong>Last Name:</strong> {lastName}
-							<br />
-							<strong>Email:</strong>{" "}
-							<Link href={`mailto:${email}`} style={link}>
-								{email}
-							</Link>
+							<strong>Full Name:</strong> {fullName}
 							<br />
 							<strong>Phone Number:</strong>{" "}
 							<Link href={`tel:${phoneNumber}`} style={link}>
 								{phoneNumber}
 							</Link>
-							<br />
-							<strong>Services Inquired:</strong> {selectedServices} Services
 						</Text>
 						<Text style={paragraph}>
 							<strong>Subject:</strong> {subject}
@@ -76,13 +63,13 @@ export const BusinessCustomerEnquiryConfirmationEmail: React.FC<
 							<strong>Message:</strong> &quot;{message}&quot;
 						</Text>
 						<Text style={paragraph}>
-							Can we begin reviewing the details of {firstName}&apos;s inquiry
-							shortly and promptly follow up! If we require any additional
-							information can we get in contact with {firstName}. Thanks Team!
+							Can we begin reviewing the details of the inquiry and shortly and
+							schedule an appointment! If we require any additional information
+							can we get in contact with them. Thanks Team!
 						</Text>
 						<Text style={paragraph}>Best regards,</Text>
 						<Text style={paragraph}>
-							Andy Philip Howe,
+							Andy Howe,
 							<br />
 							Director,
 							<br />
@@ -99,16 +86,16 @@ export const BusinessCustomerEnquiryConfirmationEmail: React.FC<
 	);
 };
 
-export default BusinessCustomerEnquiryConfirmationEmail;
+export default BusinessRequestAppointmentInquiryEmail;
 
 const fontFamily: string = "PlusJakartaSans,Helvetica,Arial,sans-serif";
 
-const main: IBusinessEmail.IMain = {
+const main: IBusinessRequestAppointmentEmail.IMain = {
 	fontFamily,
 	padding: "0px",
 	backgroundColor: "#ffffff",
 };
-const introParagraph: IBusinessEmail.IIntroParagraph = {
+const introParagraph: IBusinessRequestAppointmentEmail.IIntroParagraph = {
 	lineHeight: 1.5,
 	fontSize: 14,
 	fontWeight: "600",
@@ -116,28 +103,28 @@ const introParagraph: IBusinessEmail.IIntroParagraph = {
 
 	paddingTop: "1.5rem",
 };
-const detailsParagraph: IBusinessEmail.IDetailsParagraph = {
+const detailsParagraph: IBusinessRequestAppointmentEmail.IDetailsParagraph = {
 	lineHeight: 1.5,
 	fontSize: 14,
 	fontWeight: "600",
 	padding: "0.25rem 0.5rem",
 };
-const paragraph: IBusinessEmail.IParagraph = {
+const paragraph: IBusinessRequestAppointmentEmail.IParagraph = {
 	lineHeight: 1.5,
 	fontSize: 14,
 	fontWeight: "400",
 	padding: "0.25rem 0.5rem",
 };
-const container: IBusinessEmail.IContainer = {
+const container: IBusinessRequestAppointmentEmail.IContainer = {
 	maxWidth: "580px",
 	margin: "0px auto",
 	marginBottom: "0px",
 	backgroundColor: "#ffffff",
 };
-const content: IBusinessEmail.IContent = {
+const content: IBusinessRequestAppointmentEmail.IContent = {
 	padding: "10px",
 };
-const link: IBusinessEmail.ILink = {
-	color: "#11acff",
+const link: IBusinessRequestAppointmentEmail.ILink = {
+	color: "#1414dc",
 	textDecoration: "underline",
 };

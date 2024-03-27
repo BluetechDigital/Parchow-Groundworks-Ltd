@@ -81,7 +81,7 @@ const ContactForm: FC<IContactForm> = ({title, image, paragraph}) => {
 		if (!values?.message) {
 			errors.message = "Required*";
 		} else if (values?.message.length <= 0) {
-			errors.message = "Please tell us about your enquiry.";
+			errors.message = "Please tell us about your Inquiry.";
 		}
 
 		return errors;

@@ -15,7 +15,7 @@ const EmailHeader: React.FC<IEmailHeader.IEmailHeader> = ({imagesDirUrl}) => {
 					alt="Parchow Groundworks Ltd Logo"
 				/>
 			</Section>
-			<Section style={{border: "5px solid", borderColor: "#11acff"}}></Section>
+			<Section style={{border: "5px solid", borderColor: "#f7a500"}}></Section>
 		</>
 	);
 };
@@ -28,7 +28,7 @@ const imageSection: IEmailHeader.IImageSection = {
 	display: "flex",
 	alignItems: "center",
 	justifyContent: "center",
-	backgroundColor: "#027bbd",
+	backgroundColor: "#00007a",
 };
 
 const logo: IEmailHeader.ILogo = {

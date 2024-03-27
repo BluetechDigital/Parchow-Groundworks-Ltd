@@ -16,7 +16,7 @@ import {INewsletterEmail} from "@/types/email";
 import EmailFooter from "./Layout/EmailFooter";
 import EmailHeader from "./Layout/EmailHeader";
 
-export const NewsletterEnquiryConfirmationEmail: React.FC<
+export const NewsletterInquiryConfirmationEmail: React.FC<
 	INewsletterEmail.INewsletterConfirmationEmail
 > = ({email, imagesDirUrl, themesOptionsContent}) => {
 	return (
@@ -26,7 +26,7 @@ export const NewsletterEnquiryConfirmationEmail: React.FC<
 			<Body style={main}>
 				<Container style={container}>
 					<EmailHeader
-						imagesDirUrl={`${imagesDirUrl}/Parchow-Groundworks-Ltd-Email-Header-1.png`}
+						imagesDirUrl={`${imagesDirUrl}/Parchow-Groundworks-Ltd-Email-Header-Newsletter.png`}
 					/>
 					<Section style={content}>
 						<Text style={introParagraph}>Hello Team,</Text>
@@ -48,7 +48,7 @@ export const NewsletterEnquiryConfirmationEmail: React.FC<
 						</Text>
 						<Text style={paragraph}>Best regards,</Text>
 						<Text style={paragraph}>
-							Andy Philip Howe,
+							Andy Howe,
 							<br />
 							Director,
 							<br />
@@ -65,7 +65,7 @@ export const NewsletterEnquiryConfirmationEmail: React.FC<
 	);
 };
 
-export default NewsletterEnquiryConfirmationEmail;
+export default NewsletterInquiryConfirmationEmail;
 
 const fontFamily: string = "PlusJakartaSans,Helvetica,Arial,sans-serif";
 
@@ -104,6 +104,6 @@ const content: INewsletterEmail.IContent = {
 	padding: "10px",
 };
 const link: INewsletterEmail.ILink = {
-	color: "#20ce88",
+	color: "#1414dc",
 	textDecoration: "underline",
 };

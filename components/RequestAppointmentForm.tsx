@@ -11,10 +11,10 @@ import {
 import Link from "next/link";
 import {motion} from "framer-motion";
 import {useRouter} from "next/router";
+import React, {useState, FC} from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import {useGlobalContext} from "@/context/global";
 import {sendContactForm} from "@/lib/contactForm";
-import React, {useState, FC, Fragment} from "react";
 import {useFormik, Formik, Field, Form} from "formik";
 import {IRequestAppointmentForm} from "@/types/components";
 
@@ -63,7 +63,7 @@ const RequestAppointmentForm: FC<IRequestAppointmentForm> = ({
 		if (!values?.message) {
 			errors.message = "Required*";
 		} else if (values?.message.length <= 0) {
-			errors.message = "Please tell us about your enquiry.";
+			errors.message = "Please tell us about your Inquiry.";
 		}
 
 		return errors;
