@@ -72,10 +72,10 @@ const Pagination: FC<IPagination> = ({
 											height={item?.mediaDetails?.height}
 											className={
 												item?.sourceUrl
-													? `block object-cover object-center w-full h-[175px] ${
+													? `block object-cover object-center w-full h-[150px] ${
 															itemsPerPage === 12
-																? "sm:h-[250px]"
-																: "sm:h-[250px] xl:h-[205px]"
+																? "md:h-[250px]"
+																: "md:h-[250px] xl:h-[205px]"
 													  }`
 													: `hidden`
 											}
